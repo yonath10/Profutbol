@@ -1,322 +1,226 @@
-/* Definición de variables CSS para los colores */
+/* --- 1. Variables CSS (Colores de Marca) --- */
 :root {
-    --color-amarillo: #FFD700;
-    --color-azul: #007bff;
-    --color-negro: #282c34;
+    --color-azul: #004D7A; /* Azul principal de tu marca */
+    --color-amarillo: #FFD700; /* Amarillo vibrante de tu marca */
+    --color-negro: #1A1A1A;
     --color-blanco: #FFFFFF;
-    --color-gris-claro: #f4f4f4;
-    --color-gris-oscuro: #333;
+    --color-gris-claro: #F8F8F8;
+    --color-gris-oscuro: #555555;
+    --color-dark-gray: #343a40; /* Color estándar de Bootstrap para fondos oscuros */
+
+    /* Fuentes */
+    --font-primary: 'Arial', sans-serif; /* O la fuente que estés usando */
+    --font-secondary: 'Helvetica', sans-serif;
 }
 
-/* Estilos Generales */
+/* --- 2. Sobreescritura de Variables de Bootstrap con tus Colores --- */
+/* Esto hace que los componentes de Bootstrap (botones, etc.) usen los colores de tu marca */
+
+/* Botón Primario */
+.btn-primary {
+    --bs-btn-bg: var(--color-azul);
+    --bs-btn-border-color: var(--color-azul);
+    --bs-btn-hover-bg: #003350; /* Un azul ligeramente más oscuro para el hover */
+    --bs-btn-hover-border-color: #003350;
+    --bs-btn-active-bg: #003350;
+    --bs-btn-active-border-color: #003350;
+    --bs-btn-focus-shadow-rgb: 0, 77, 122; /* RGB del azul */
+}
+
+/* Botón Secundario (lo he configurado con tu amarillo) */
+.btn-secondary {
+    --bs-btn-bg: var(--color-amarillo);
+    --bs-btn-border-color: var(--color-amarillo);
+    --bs-btn-color: var(--color-negro); /* Texto negro en botón amarillo */
+    --bs-btn-hover-bg: #E6B800; /* Un amarillo ligeramente más oscuro para el hover */
+    --bs-btn-hover-border-color: #E6B800;
+    --bs-btn-active-bg: #E6B800;
+    --bs-btn-active-border-color: #E6B800;
+    --bs-btn-focus-shadow-rgb: 255, 215, 0; /* RGB del amarillo */
+}
+
+/* Botón Outline Primario */
+.btn-outline-primary {
+    --bs-btn-color: var(--color-azul);
+    --bs-btn-border-color: var(--color-azul);
+    --bs-btn-hover-color: var(--color-blanco);
+    --bs-btn-hover-bg: var(--color-azul);
+    --bs-btn-hover-border-color: var(--color-azul);
+    --bs-btn-active-bg: var(--color-azul);
+    --bs-btn-active-border-color: var(--color-azul);
+    --bs-btn-focus-shadow-rgb: 0, 77, 122;
+}
+
+/* Botón Outline Claro (útil para fondos oscuros como el Hero) */
+.btn-outline-light {
+    --bs-btn-color: var(--color-blanco);
+    --bs-btn-border-color: var(--color-blanco);
+    --bs-btn-hover-color: var(--color-negro);
+    --bs-btn-hover-bg: var(--color-blanco);
+    --bs-btn-hover-border-color: var(--color-blanco);
+    --bs-btn-active-bg: var(--color-blanco);
+    --bs-btn-active-border-color: var(--color-blanco);
+    --bs-btn-focus-shadow-rgb: 255, 255, 255;
+}
+
+/* Navbar de Bootstrap (Ajustes de Color) */
+.navbar-dark.bg-dark {
+    background-color: var(--color-negro) !important; /* Asegura que el navbar sea negro */
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.75); /* Color de enlaces normal */
+    transition: color 0.3s ease;
+}
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    color: var(--color-amarillo); /* Color de enlaces al hover y activo */
+}
+.navbar-dark .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+.navbar-dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+
+/* --- 3. Estilos Globales (Resets y Básicos) --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
+    font-family: var(--font-primary);
     line-height: 1.6;
     color: var(--color-negro);
-    background-color: var(--color-gris-claro);
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Estilos de Botones */
-.button {
-    display: inline-block;
-    padding: 15px 30px;
-    margin: 10px;
-    border: none;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.primary-button {
-    background-color: var(--color-amarillo);
-    color: var(--color-negro);
-    border: 2px solid var(--color-amarillo);
-}
-
-.primary-button:hover {
-    background-color: #e6c200;
-    border-color: #e6c200;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-.secondary-button {
-    background-color: var(--color-azul);
-    color: var(--color-blanco);
-    border: 2px solid var(--color-azul);
-}
-
-.secondary-button:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-.outline-button {
-    background-color: transparent;
-    color: var(--color-azul);
-    border: 2px solid var(--color-azul);
-}
-
-.outline-button:hover {
-    background-color: var(--color-azul);
-    color: var(--color-blanco);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-.small-button {
-    padding: 10px 20px;
-    font-size: 0.95rem;
-    background-color: var(--color-negro);
-    color: var(--color-blanco);
-    border: 2px solid var(--color-negro);
-}
-
-.small-button:hover {
-    background-color: var(--color-gris-oscuro);
-    border-color: var(--color-gris-oscuro);
-    transform: translateY(-2px);
-}
-
-
-/* --- Navbar --- */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--color-negro);
-    padding: 10px 30px;
-    color: var(--color-blanco);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.navbar .logo {
-    font-size: 0;
-}
-
-.navbar .logo img {
-    height: 60px;
-    width: auto;
-    max-width: 150px;
-}
-
-.navbar .nav-links {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-
-.navbar .nav-links li {
-    margin-left: 30px;
-}
-
-.navbar .nav-links a {
-    color: var(--color-blanco);
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: color 0.3s ease-in-out;
-}
-
-.navbar .nav-links a:hover {
-    color: var(--color-amarillo);
-}
-/* ... (estilos de navbar existentes) ... */
-
-.navbar .nav-links a:hover {
-    color: var(--color-amarillo);
-}
-
-/* Estilo para el enlace activo de la página actual */
-.navbar .nav-links a.active {
-    color: var(--color-amarillo); /* O un color diferente si prefieres */
-    font-weight: bold;
-    border-bottom: 2px solid var(--color-amarillo);
-    padding-bottom: 2px; /* Pequeño ajuste para la línea inferior */
-}
-
-/* ... (resto del base.css) ... */
-/* --- Menú Hamburguesa (para móviles) --- */
-.hamburger-menu {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.hamburger-menu .bar {
-    width: 25px;
-    height: 3px;
     background-color: var(--color-blanco);
-    margin: 4px 0;
-    transition: all 0.3s ease-in-out;
+    overflow-x: hidden; /* Evita el scroll horizontal */
+    padding-top: 56px; /* Para que el contenido no quede detrás del navbar fixed-top */
 }
 
-/* --- Media Queries para Navbar --- */
-@media (max-width: 768px) {
-    .navbar {
-        flex-wrap: wrap;
-        padding: 10px 20px;
-    }
-
-    .navbar .logo {
-        font-size: 1.5rem;
-    }
-
-    .navbar .logo img {
-        height: 50px;
-    }
-
-    .hamburger-menu {
-        display: flex;
-    }
-
-    .navbar .nav-links {
-        width: 100%;
-        flex-direction: column;
-        text-align: center;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-in-out;
-    }
-
-    .navbar .nav-links.active {
-        max-height: 300px;
-        padding-top: 10px;
-    }
-
-    .navbar .nav-links li {
-        margin: 10px 0;
-    }
+/* Ajustes básicos de tipografía */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-secondary);
+    color: var(--color-negro);
+    margin-top: 0; /* Bootstrap ya tiene margen inferior por defecto */
 }
 
-/* --- Footer --- */
-footer {
-    background-color: var(--color-negro);
-    color: var(--color-blanco);
-    padding: 40px 0 20px;
-    font-size: 0.95rem;
+p {
+    margin-bottom: 1rem; /* Margen inferior estándar de Bootstrap */
 }
 
-.footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.footer-section {
-    flex: 1;
-    min-width: 250px;
-    margin-bottom: 20px;
-}
-
-.footer-section h3 {
-    color: var(--color-amarillo);
-    margin-bottom: 20px;
-    font-size: 1.3rem;
-}
-
-.footer-section p {
-    margin-bottom: 10px;
-    line-height: 1.6;
-}
-
-.footer-section ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-section ul li {
-    margin-bottom: 10px;
-}
-
-.footer-section ul li a {
-    color: var(--color-blanco);
+a {
+    color: var(--color-azul);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.footer-section ul li a:hover {
+a:hover {
     color: var(--color-amarillo);
+    text-decoration: none;
 }
 
-/* Footer Logo */
-.footer-logo img {
-    height: 70px;
-    width: auto;
-    max-width: 180px;
-    margin-bottom: 15px;
+ul {
+    list-style: none;
 }
 
-/* Social Links */
-.social-links {
-    margin-top: 20px;
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Para evitar espacios extra bajo las imágenes */
 }
 
-.social-links a {
+
+/* --- 4. Estilos de Componentes Generales --- */
+
+/* Logo en el Navbar */
+.navbar-brand img {
+    height: 50px; /* Tamaño del logo en el navbar */
+    transition: height 0.3s ease; /* Transición para posible cambio de tamaño */
+}
+
+/* Footer General */
+footer {
+    background-color: var(--color-dark-gray); /* Asegura que este color esté definido en tus variables CSS */
     color: var(--color-blanco);
+}
+
+/* Ajuste del tamaño del logo en el footer */
+footer .footer-logo img {
+    height: 45px; /* Sigue ajustando este valor si 45px es muy grande o muy pequeño (ej. 40px, 35px). */
+    width: auto;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    /* No descomentes el !important a menos que los demás pasos fallen */
+    /* height: 45px !important; */
+}
+
+/* Resto de tu CSS para el footer (h3, p, ul, li, a, etc.) */
+footer h3 {
+    color: var(--color-blanco);
+    margin-bottom: 1.5rem;
     font-size: 1.5rem;
-    margin-right: 15px;
-    transition: color 0.3s ease;
 }
 
-.social-links a:hover {
-    color: var(--color-azul);
+footer p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
 }
 
-/* Contact Info Icons */
-.footer-section.contact p i {
-    margin-right: 10px;
+footer ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+footer ul li {
+    margin-bottom: 0.5rem;
+}
+
+footer ul li a {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+footer ul li a:hover {
     color: var(--color-amarillo);
 }
 
-/* Footer Bottom */
+footer .fas {
+    color: rgba(255, 255, 255, 0.7);
+    margin-right: 0.5rem;
+}
+
+footer .social-links a .fab {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+footer .social-links a:hover .fab {
+    color: var(--color-azul);
+    transform: translateY(-3px);
+}
+
 .footer-bottom {
-    text-align: center;
-    padding-top: 20px;
-    margin-top: 30px;
-    border-top: 1px solid var(--color-gris-oscuro);
-    color: var(--color-gris-claro);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
 }
 
-/* --- Media Queries para el Footer --- */
-@media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .footer-section {
-        margin-bottom: 30px;
-    }
-
-    .footer-section.about {
-        padding-bottom: 20px;
-        border-bottom: 1px solid var(--color-gris-oscuro);
-        width: 100%;
-    }
-
-    .footer-section:last-child {
-        margin-bottom: 0;
-    }
+.footer-bottom p {
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 0;
 }
+/* Ocultar el scrollbar si no lo quieres (opcional) */
+/* body::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+} */

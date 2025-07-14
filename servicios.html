@@ -4,241 +4,346 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profutbol JC</title>
+    <title>Profutbol JC - Servicios</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/home.css">
-       <link rel="stylesheet" href="css/services.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-        integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/services.css">
 
 </head>
 
 <body>
     <header>
-        <nav class="navbar">
-            <a href="index.html" class="logo">
-                <img src="images/profutbol.png" alt="Logo ProFutbol Complejo Deportivo y Recreativo">
-            </a>
-            <div class="hamburger-menu" id="hamburger-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/profutbol.png" alt="Logo ProFutbol Complejo Deportivo y Recreativo" height="50">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="torneos.html">Torneos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="servicios.html">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.html">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="torneos.html">Torneos</a></li>
-                <li><a href="servicios.html">Servicios</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
         </nav>
     </header>
 
-<main>
-    <section class="page-hero hero-services">
-        <div class="container">
-            <h1>Nuestros Servicios de Excelencia</h1>
-            <p>Descubre ProFutbol: Donde la calidad de las canchas y la formación de campeones se unen.</p>
-            <a href="#our-fields" class="button primary-button scroll-down-button">Explorar Canchas <i class="fas fa-arrow-down"></i></a>
-        </div>
-    </section>
-
-    <section id="our-fields" class="content-section light-background">
-        <div class="container">
-            <h2>Nuestras Canchas de Última Generación</h2>
-            <p class="section-description">En ProFutbol, la calidad del campo es la base de un gran partido. Ofrecemos canchas con:</p>
-            
-            <div class="field-features-grid">
-                <div class="feature-item">
-                    <i class="fas fa-leaf feature-icon"></i>
-                    <h3>Grama Natural</h3>
-                    <p>Experimenta el verdadero fútbol en superficies de grama natural meticulosamente cuidadas para un rendimiento óptimo y una menor carga en tus articulaciones.</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-lightbulb feature-icon"></i>
-                    <h3>Iluminación Profesional</h3>
-                    <p>Nuestros campos cuentan con sistemas de iluminación de alta intensidad, perfectos para partidos nocturnos y entrenamientos, garantizando visibilidad total.</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-ruler-combined feature-icon"></i>
-                    <h3>Múltiples Tamaños</h3>
-                    <p>Desde la agilidad del fútbol 5, la estrategia del fútbol 8, hasta la emoción del fútbol 11, tenemos la cancha perfecta para cada modalidad y cantidad de jugadores.</p>
-                </div>
-            </div>
-
-            <div class="field-features-grid">
-                <div class="feature-item">
-                    <i class="fas fa-leaf feature-icon"></i>
-                    <h3>Grama Natural de Primera</h3>
-                    <p>Experimenta el verdadero fútbol en superficies de grama natural meticulosamente cuidadas para un rendimiento óptimo y una menor carga en tus articulaciones.</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-lightbulb feature-icon"></i>
-                    <h3>Iluminación Profesional</h3>
-                    <p>Nuestros campos cuentan con sistemas de iluminación de alta intensidad, perfectos para partidos nocturnos y entrenamientos, garantizando visibilidad total.</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-ruler-combined feature-icon"></i>
-                    <h3>Múltiples Tamaños</h3>
-                    <p>Desde la agilidad del fútbol 5, la estrategia del fútbol 8, hasta la emoción del fútbol 11, tenemos la cancha perfecta para cada modalidad y cantidad de jugadores.</p>
-                </div>
-            </div>
-
-            <h2 class="mt-50">Nuestros Clientes Destacados</h2> <p class="section-description">Estamos orgullosos de trabajar con empresas y organizaciones líderes, que confían en ProFutbol para sus necesidades deportivas y de eventos.</p>
-
-            <div class="client-showcase-grid">
-                <div class="client-card">
-                    <div class="client-logo-container">
-                        <img src="images/client_logo_1.png" alt="Logo Cliente 1">
+    <main>
+        <section class="page-hero hero-services d-flex align-items-center text-white text-center">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-lg-9">
+                        <h1 class="display-3 fw-bold mb-4">Nuestros Servicios de Excelencia</h1>
+                        <p class="lead mb-5">Descubre ProFutbol: Donde la calidad de las canchas y la formación de
+                            campeones se unen.</p>
+                        <a href="#our-fields" class="btn btn-primary btn-lg px-4 scroll-down-button">Explorar Canchas
+                            <i class="fas fa-arrow-down ms-2"></i></a>
                     </div>
-                    <h3>Empresa Innovadora SA</h3>
-                    <p>"ProFutbol ha sido nuestro aliado perfecto para los torneos corporativos. Sus instalaciones son de primera y el servicio, inmejorable."</p>
                 </div>
+            </div>
+        </section>
 
-                <div class="client-card">
-                    <div class="client-logo-container">
-                        <img src="images/client_logo_2.png" alt="Logo Cliente 2">
+        <section id="our-fields" class="content-section light-background py-5">
+            <div class="container">
+                <h2 class="text-center mb-4">Nuestras Canchas de Última Generación</h2>
+                <p class="section-description text-center mb-5">En ProFutbol, la calidad del campo es la base de un
+                    gran partido. Ofrecemos canchas con:</p>
+
+                <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center mb-5">
+                    <div class="col">
+                        <div class="card h-100 shadow-sm text-center">
+                            <div class="card-body">
+                                <i class="fas fa-leaf feature-icon display-4 mb-3"></i>
+                                <h3 class="card-title text-primary">Grama Natural</h3>
+                                <p class="card-text">Experimenta el verdadero fútbol en superficies de grama natural
+                                    meticulosamente cuidadas para un rendimiento óptimo y una menor carga en tus
+                                    articulaciones.</p>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Academia de Campeones</h3>
-                    <p>"Gracias a ProFutbol, nuestra escuela tiene el mejor lugar para entrenar. La calidad de la grama y la iluminación son ideales para nuestros jóvenes talentos."</p>
-                </div>
-
-                <div class="client-card">
-                    <div class="client-logo-container">
-                        <img src="images/client_logo_3.png" alt="Logo Cliente 3">
+                    <div class="col">
+                        <div class="card h-100 shadow-sm text-center">
+                            <div class="card-body">
+                                <i class="fas fa-lightbulb feature-icon display-4 mb-3"></i>
+                                <h3 class="card-title text-primary">Iluminación Profesional</h3>
+                                <p class="card-text">Nuestros campos cuentan con sistemas de iluminación de alta
+                                    intensidad, perfectos para partidos nocturnos y entrenamientos, garantizando
+                                    visibilidad total.</p>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Liga Comunitaria Pro</h3>
-                    <p>"Organizar nuestra liga en ProFutbol es garantía de éxito. La versatilidad de las canchas y el apoyo del equipo hacen la diferencia."</p>
+                    <div class="col">
+                        <div class="card h-100 shadow-sm text-center">
+                            <div class="card-body">
+                                <i class="fas fa-ruler-combined feature-icon display-4 mb-3"></i>
+                                <h3 class="card-title text-primary">Múltiples Tamaños</h3>
+                                <p class="card-text">Desde la agilidad del fútbol 5, la estrategia del fútbol 8, hasta
+                                    la emoción del fútbol 11, tenemos la cancha perfecta para cada modalidad y cantidad
+                                    de jugadores.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+                    <div class="col">
+                        <div class="card h-100 shadow-sm text-center">
+                            <div class="card-body">
+                                <i class="fas fa-leaf feature-icon display-4 mb-3"></i>
+                                <h3 class="card-title text-primary">Grama Natural de Primera</h3>
+                                <p class="card-text">Experimenta el verdadero fútbol en superficies de grama natural
+                                    meticulosamente cuidadas para un rendimiento óptimo y una menor carga en tus
+                                    articulaciones.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 shadow-sm text-center">
+                            <div class="card-body">
+                                <i class="fas fa-lightbulb feature-icon display-4 mb-3"></i>
+                                <h3 class="card-title text-primary">Iluminación Profesional</h3>
+                                <p class="card-text">Nuestros campos cuentan con sistemas de iluminación de alta
+                                    intensidad, perfectos para partidos nocturnos y entrenamientos, garantizando
+                                    visibilidad total.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 shadow-sm text-center">
+                            <div class="card-body">
+                                <i class="fas fa-ruler-combined feature-icon display-4 mb-3"></i>
+                                <h3 class="card-title text-primary">Múltiples Tamaños</h3>
+                                <p class="card-text">Desde la agilidad del fútbol 5, la estrategia del fútbol 8, hasta
+                                    la emoción del fútbol 11, tenemos la cancha perfecta para cada modalidad y cantidad
+                                    de jugadores.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="text-center mt-5 pt-4 mb-4">Nuestros Clientes Destacados</h2>
+                <p class="section-description text-center mb-5">Estamos orgullosos de trabajar con empresas y
+                    organizaciones líderes, que confían en ProFutbol para sus necesidades deportivas y de eventos.</p>
+
+                <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+                    <div class="col">
+                        <div class="card h-100 shadow-sm client-card-custom text-center">
+                            <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                                <div class="client-logo-container mb-3">
+                                    <img src="images/client_logo_1.png" alt="Logo Cliente 1" class="img-fluid">
+                                </div>
+                                <h3 class="card-title text-primary mb-2">Empresa Innovadora SA</h3>
+                                <p class="card-text flex-grow-1">"ProFutbol ha sido nuestro aliado perfecto para los
+                                    torneos corporativos. Sus instalaciones son de primera y el servicio, inmejorable."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card h-100 shadow-sm client-card-custom text-center">
+                            <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                                <div class="client-logo-container mb-3">
+                                    <img src="images/client_logo_2.png" alt="Logo Cliente 2" class="img-fluid">
+                                </div>
+                                <h3 class="card-title text-primary mb-2">Academia de Campeones</h3>
+                                <p class="card-text flex-grow-1">"Gracias a ProFutbol, nuestra escuela tiene el mejor
+                                    lugar para entrenar. La calidad de la grama y la iluminación son ideales para
+                                    nuestros jóvenes talentos."</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card h-100 shadow-sm client-card-custom text-center">
+                            <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                                <div class="client-logo-container mb-3">
+                                    <img src="images/client_logo_3.png" alt="Logo Cliente 3" class="img-fluid">
+                                </div>
+                                <h3 class="card-title text-primary mb-2">Liga Comunitaria Pro</h3>
+                                <p class="card-text flex-grow-1">"Organizar nuestra liga en ProFutbol es garantía de
+                                    éxito. La versatilidad de las canchas y el apoyo del equipo hacen la diferencia."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            </div>
-    </section>
-        </div>
-    </section>
+        </section>
 
-    <section id="gallery-carousel" class="content-section secondary-background">
+        <section id="gallery-carousel" class="content-section secondary-background py-5">
+            <div class="container">
+                <h2 class="text-center mb-4">Nuestros Eventos</h2>
+                <div class="carousel-container position-relative mx-auto" style="max-width: 800px;">
+                    <div class="carousel-slide-wrapper overflow-hidden">
+                        <div class="d-flex transition-transform" id="carouselSlides">
+                            <img src="images/3.jpg" alt="Instalación 1" class="img-fluid w-100 flex-shrink-0">
+                            <img src="images/4.jpg" alt="Instalación 2" class="img-fluid w-100 flex-shrink-0">
+                            <img src="images/5.jpg" alt="Instalación 3" class="img-fluid w-100 flex-shrink-0">
+                            <img src="images/6.jpg" alt="Instalación 4" class="img-fluid w-100 flex-shrink-0">
+                        </div>
+                    </div>
+                    <button class="carousel-button prev btn btn-light rounded-circle position-absolute top-50 start-0 translate-middle-y ms-3 p-2 shadow"><i class="fas fa-chevron-left"></i></button>
+                    <button class="carousel-button next btn btn-light rounded-circle position-absolute top-50 end-0 translate-middle-y me-3 p-2 shadow"><i class="fas fa-chevron-right"></i></button>
+                    <div class="carousel-dots d-flex justify-content-center mt-3"></div>
+                </div>
+                <p class="carousel-caption text-center mt-4">Descubre la calidad y el ambiente de ProFutbol a través de
+                    nuestra galería.</p>
+            </div>
+        </section>
+
+        <section id="training-programs" class="content-section py-5">
+            <div class="container">
+                <h2 class="text-center mb-4">Programas de Rendimiento y Formación</h2>
+                <p class="section-description text-center mb-5">En ProFutbol, no solo juegas, ¡te conviertes en un
+                    mejor futbolista!</p>
+
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
+                    <div class="col">
+                        <div class="card h-100 shadow-sm text-center program-card-custom">
+                            <div class="card-body">
+                                <i class="fas fa-graduation-cap program-icon display-4 mb-3 text-primary"></i>
+                                <h3 class="card-title text-primary mb-3">Escuela de Formación Infantil</h3>
+                                <p class="card-text mb-4">Desarrollo de habilidades desde temprana edad en un ambiente
+                                    divertido y educativo. Clases para niños y niñas de todos los niveles.</p>
+                                <ul class="list-unstyled text-start mb-4">
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Metodología
+                                        adaptada a la edad</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Enfoque en
+                                        valores deportivos</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Entrenadores
+                                        especializados</li>
+                                </ul>
+                                <a href="contacto.html" class="btn btn-outline-primary mt-auto">Inscribir Ahora</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card h-100 shadow-sm text-center program-card-custom">
+                            <div class="card-body">
+                                <i class="fas fa-dumbbell program-icon display-4 mb-3 text-primary"></i>
+                                <h3 class="card-title text-primary mb-3">Programas de Rendimiento Deportivo</h3>
+                                <p class="card-text mb-4">Entrenamiento avanzado para jugadores que buscan maximizar su
+                                    potencial físico y técnico. Sesiones personalizadas y grupales.</p>
+                                <ul class="list-unstyled text-start mb-4">
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Preparación
+                                        física específica</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Técnica y
+                                        táctica avanzada</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Análisis de
+                                        rendimiento</li>
+                                </ul>
+                                <a href="contacto.html" class="btn btn-outline-primary mt-auto">Más Información</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card h-100 shadow-sm text-center program-card-custom">
+                            <div class="card-body">
+                                <i class="fas fa-users program-icon display-4 mb-3 text-primary"></i>
+                                <h3 class="card-title text-primary mb-3">Clínicas y Talleres Intensivos</h3>
+                                <p class="card-text mb-4">Eventos periódicos con invitados especiales y temáticas
+                                    específicas para mejorar aspectos concretos del juego.</p>
+                                <ul class="list-unstyled text-start mb-4">
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>
+                                        Perfeccionamiento técnico</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Estrategias
+                                        de juego</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Preparación
+                                        mental</li>
+                                </ul>
+                                <a href="contacto.html" class="btn btn-outline-primary mt-auto">Ver Próximos</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta-contact" class="content-section primary-background py-5">
+            <div class="container text-center">
+                <h2 class="text-white mb-4">¿Listo para Jugar?</h2>
+                <p class="lead text-white-50 mb-5">Reserva tu cancha, inscríbete en nuestros programas o resuelve tus
+                    dudas. ¡Te esperamos en ProFutbol!</p>
+                <a href="contacto.html" class="btn btn-secondary btn-lg">Contáctanos y Reserva</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white py-5">
         <div class="container">
-            <h2>Nuestros Eventos</h2>
-            <div class="carousel-container">
-                <div class="carousel-slide">
-                    <img src="images/3.jpg" alt="Instalación 1">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0 text-center text-md-start">
+                    <a href="index.html" class="d-inline-block mb-3 footer-logo"> <img src="images/profutbol.png" alt="Logo ProFutbol">
+</a>
+                    <p class="text-white-50">ProFutbol: Tu complejo deportivo y recreativo, donde la pasión por el
+                        fútbol cobra vida.</p>
+                    <div class="social-links mt-3">
+                        <a href="https://www.facebook.com/p/Profutbol-JC-100083072811985/" target="_blank"
+                            aria-label="Facebook" class="text-white-50 me-3 fs-4"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/profutboljc/?hl=es" target="_blank" aria-label="Instagram"
+                            class="text-white-50 me-3 fs-4"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@profutbol.jc" target="_blank" aria-label="tiktok"
+                            class="text-white-50 fs-4"> <i class="fab fa-tiktok"></i></a>
+                    </div>
                 </div>
-                <div class="carousel-slide">
-                    <img src="images/4.jpg" alt="Instalación 2">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5.jpg" alt="Instalación 3">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/6.jpg" alt="Instalación 4">
-                </div>
-                <button class="carousel-button prev"><i class="fas fa-chevron-left"></i></button>
-                <button class="carousel-button next"><i class="fas fa-chevron-right"></i></button>
-                <div class="carousel-dots"></div>
-            </div>
-            <p class="carousel-caption">Descubre la calidad y el ambiente de ProFutbol a través de nuestra galería.</p>
-        </div>
-    </section>
 
-    <section id="training-programs" class="content-section">
-        <div class="container">
-            <h2>Programas de Rendimiento y Formación</h2>
-            <p class="section-description">En ProFutbol, no solo juegas, ¡te conviertes en un mejor futbolista!</p>
-            
-            <div class="program-cards-grid">
-                <div class="program-card">
-                    <i class="fas fa-graduation-cap program-icon"></i>
-                    <h3>Escuela de Formación Infantil</h3>
-                    <p>Desarrollo de habilidades desde temprana edad en un ambiente divertido y educativo. Clases para niños y niñas de todos los niveles.</p>
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> Metodología adaptada a la edad</li>
-                        <li><i class="fas fa-check-circle"></i> Enfoque en valores deportivos</li>
-                        <li><i class="fas fa-check-circle"></i> Entrenadores especializados</li>
+                <div class="col-md-4 mb-4 mb-md-0 text-center text-md-start">
+                    <h3 class="text-white mb-3">Enlaces Rápidos</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white-50 text-decoration-none">Inicio</a></li>
+                        <li><a href="torneos.html" class="text-white-50 text-decoration-none">Torneos</a></li>
+                        <li><a href="servicios.html" class="text-white-50 text-decoration-none">Servicios</a></li>
+                        <li><a href="contacto.html" class="text-white-50 text-decoration-none">Contacto</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Política de Privacidad</a></li>
                     </ul>
-                    <a href="contacto.html" class="button outline-button">Inscribir Ahora</a>
                 </div>
 
-                <div class="program-card">
-                    <i class="fas fa-dumbbell program-icon"></i>
-                    <h3>Programas de Rendimiento Deportivo</h3>
-                    <p>Entrenamiento avanzado para jugadores que buscan maximizar su potencial físico y técnico. Sesiones personalizadas y grupales.</p>
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> Preparación física específica</li>
-                        <li><i class="fas fa-check-circle"></i> Técnica y táctica avanzada</li>
-                        <li><i class="fas fa-check-circle"></i> Análisis de rendimiento</li>
-                    </ul>
-                    <a href="contacto.html" class="button outline-button">Más Información</a>
-                </div>
-                
-                <div class="program-card">
-                    <i class="fas fa-users program-icon"></i>
-                    <h3>Clínicas y Talleres Intensivos</h3>
-                    <p>Eventos periódicos con invitados especiales y temáticas específicas para mejorar aspectos concretos del juego.</p>
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> Perfeccionamiento técnico</li>
-                        <li><i class="fas fa-check-circle"></i> Estrategias de juego</li>
-                        <li><i class="fas fa-check-circle"></i> Preparación mental</li>
-                    </ul>
-                    <a href="contacto.html" class="button outline-button">Ver Próximos</a>
+                <div class="col-md-4 text-center text-md-start">
+                    <h3 class="text-white mb-3">Contáctanos</h3>
+                    <p class="text-white-50"><i class="fas fa-map-marker-alt me-2"></i> Dirección: Kilometro 3 via
+                        Siberia a, Tenjo, Cundinamarca, Colombia</p>
+                    <p class="text-white-50"><i class="fas fa-phone me-2"></i> Teléfono: +57 3203459145</p>
+                    <p class="text-white-50"><i class="fas fa-envelope me-2"></i> Email: info@profutbol.com</p>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section id="cta-contact" class="content-section primary-background">
-        <div class="container text-center">
-            <h2>¿Listo para Jugar?</h2>
-            <p>Reserva tu cancha, inscríbete en nuestros programas o resuelve tus dudas. ¡Te esperamos en ProFutbol!</p>
-            <a href="contacto.html" class="button secondary-button large-button">Contáctanos y Reserva</a>
-        </div>
-    </section>
-</main>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section about">
-                <a href="index.html" class="footer-logo">
-                    <img src="images/profutbol.png" alt="Logo ProFutbol">
-                </a>
-                <p>ProFutbol: Tu complejo deportivo y recreativo, donde la pasión por el fútbol cobra vida.</p>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/p/Profutbol-JC-100083072811985/" target="_blank"
-                        aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/profutboljc/?hl=es" target="_blank" aria-label="Instagram"><i
-                            class="fab fa-instagram"></i></a>
-                    <a href="https://www.tiktok.com/@profutbol.jc" target="_blank" aria-label="tiktok"> <i
-                            class="fab fa-tiktok"></i></a>
-                </div>
-            </div>
-
-            <div class="footer-section links">
-                <h3>Enlaces Rápidos</h3>
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="torneos.html">Torneos</a></li>
-                    <li><a href="servicios.html" class="active">Servicios</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                    <li><a href="#">Política de Privacidad</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-section contact">
-                <h3>Contáctanos</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Dirección: Kilometro 3 via Siberia a, Tenjo, Cundinamarca,
-                    Colombia</p>
-                <p><i class="fas fa-phone"></i> Teléfono: +57 3203459145</p>
-                <p><i class="fas fa-envelope"></i> Email: info@profutbol.com</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 ProFutbol Complejo Deportivo y Recreativo. Todos los derechos reservados.</p>
+        <div class="footer-bottom text-center py-3 border-top border-secondary mt-4">
+            <p class="mb-0 text-white-50">&copy; 2025 ProFutbol Complejo Deportivo y Recreativo. Todos los derechos
+                reservados.</p>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7FJ6rD+5b/N6F"
+        crossorigin="anonymous"></script>
+
+    <script src="js/script.js"></script>
 </body>
-
-
-<script src="js/script.js"></script>
 
 </html>

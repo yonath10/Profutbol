@@ -1,76 +1,310 @@
-/* Estilos Generales de Contenido (específicos de páginas con secciones) */
+/* --- Estilos Generales de Contenido para Home (Ajustados para Bootstrap) --- */
+/* La mayoría de los paddings/margins/text-align ahora se manejan con clases de Bootstrap (py-5, mb-4, text-center, etc.) */
 .content-section {
-    padding: 60px 0;
-    text-align: center;
+    /* Puedes mantener un padding si quieres que sea consistente en todas las secciones,
+       o confiar completamente en py-X de Bootstrap */
+    padding-top: 80px;
+    padding-bottom: 80px;
 }
 
 .content-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
+    font-size: 3rem; /* Tamaño de título grande */
     color: var(--color-negro);
+    /* margin-bottom y text-align manejados por Bootstrap: mb-4, text-center */
 }
 
-.content-section p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    max-width: 800px;
-    margin: 0 auto 20px auto;
-}
-
-.light-background {
-    background-color: var(--color-gris-claro);
-}
-
-/* --- Sección HERO (#hero-home) --- */
-.hero-section {
+/* --- SECCIÓN HERO REDISEÑADA (Aprovecha las clases de Bootstrap para el layout) --- */
+.hero-home-redesigned {
     position: relative;
     width: 100%;
-    height: 600px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: var(--color-blanco);
-    background-color: var(--color-negro);
-
-    /* PROPIEDADES CLAVE PARA LA IMAGEN DE FONDO */
-    background-image: url('../images/2.jpg'); /* Ruta a tu imagen */
+    min-height: 100vh; /* Altura mínima de la ventana */
+    background-image: url('../images/1.jpg'); /* Asegúrate que la ruta sea correcta */
     background-size: cover;
-    background-position: center center;
+    background-position: center;
     background-repeat: no-repeat;
-    background-attachment: scroll;
-
     overflow: hidden;
+    padding-top: 56px; /* Para compensar el navbar fixed-top de Bootstrap */
+    display: flex; /* Asegura que el contenido se centre verticalmente */
+    align-items: center; /* Centra el contenido verticalmente */
 }
 
-/* Overlay para la sección hero */
-.hero-section::before {
+/* Overlay para el hero */
+.hero-home-redesigned::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.65); /* Overlay más oscuro */
     z-index: 1;
 }
 
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 900px;
-    padding: 20px;
-}
-
-.hero-content h1 {
-    font-size: 3.8rem;
-    margin-bottom: 20px;
+/* Estilos de texto dentro del Hero (aplica a lo que no se sobrescribe con clases de Bootstrap como display-3, lead) */
+.hero-home-redesigned h1 {
     line-height: 1.1;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.9); /* Sombra de texto personalizada */
+    color: var(--color-blanco); /* Color de texto blanco, si no se sobreescribe por otra clase */
 }
 
-.hero-content p {
+.hero-home-redesigned p {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Sombra de texto personalizada */
+    color: var(--color-blanco); /* Color de texto blanco, si no se sobreescribe por otra clase */
+}
+
+
+/* --- Sección "Acerca de Nosotros" en Home (ajustada para Bootstrap) --- */
+#about-us .lead { /* Si quieres que los párrafos lead tengan un estilo específico */
+    color: var(--color-gris-oscuro);
+    margin-bottom: 1.5rem; /* Espaciado estándar de Bootstrap */
+}
+
+/* Estilo para la imagen dentro de la sección About Us */
+.about-image img {
+    width: 100%;
+    height: 400px; /* Altura fija para la imagen */
+    object-fit: cover; /* Recorta la imagen para cubrir el espacio */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Sombra dramática */
+    margin-bottom: 1.5rem; /* Espacio para móviles antes del texto */
+}
+
+@media (min-width: 992px) { /* En pantallas grandes, quitar margen inferior de la imagen */
+    .about-image img {
+        margin-bottom: 0;
+    }
+}
+
+/* --- Sección "Nuestros Destacados" (Ahora usa las Cards de Bootstrap) --- */
+/* Los estilos de .advantage-card se trasladan a .card dentro de #highlights */
+#highlights .card {
+    background-color: var(--color-blanco);
+    padding: 35px; /* Padding interno de la tarjeta */
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none; /* Eliminar el borde predeterminado de Bootstrap si no lo quieres */
+    height: 100%; /* Asegura que todas las tarjetas en la fila tengan la misma altura */
+}
+
+#highlights .card:hover {
+    transform: translateY(-10px); /* Efecto de levitación más pronunciado */
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+#highlights .card-title {
+    font-size: 2rem; /* Tamaño del título de la tarjeta */
+    color: var(--color-azul); /* Color de tu marca */
+    margin-bottom: 15px;
+}
+
+#highlights .card-text {
+    font-size: 1.05rem; /* Tamaño del texto del cuerpo de la tarjeta */
+    line-height: 1.7;
+    margin-bottom: 0; /* Eliminar margen inferior si el botón va justo después */
+}
+
+/* Iconos dentro de las tarjetas (si los añades en el futuro) */
+.highlight-icon { /* Puedes añadir un div con esta clase para envolver un icono */
+    font-size: 4rem; /* Iconos grandes */
+    color: var(--color-amarillo); /* Color primario para los iconos */
+    margin-bottom: 25px;
+    display: block; /* Asegura que el icono ocupe su propia línea */
+}
+
+
+/* --- Sección Testimonios (Mayormente custom, con ajustes de Bootstrap) --- */
+#testimonials {
+    background-image: url('../images/2.jpg'); /* Fondo para testimonios */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efecto parallax */
+    color: var(--color-blanco);
+    position: relative;
+    overflow: hidden;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+#testimonials::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Overlay más oscuro */
+    z-index: 1;
+}
+
+#testimonials .container {
+    position: relative;
+    z-index: 2; /* Asegurar que el contenido esté sobre el overlay */
+}
+
+#testimonials h2 {
+    color: var(--color-blanco); /* Título blanco */
+    margin-bottom: 40px; /* Margen inferior del título */
+}
+
+.testimonial-carousel-container {
+    position: relative;
+    max-width: 800px;
+    margin: 40px auto 0;
+    overflow: hidden;
+    padding: 20px 0; /* Padding para evitar que las flechas queden pegadas */
+}
+
+.testimonial-slide {
+    display: none; /* Controlado por JS */
+    text-align: center;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo semitransparente para el testimonio */
+    border-radius: 10px;
+    backdrop-filter: blur(5px); /* Efecto de desenfoque detrás del texto */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+}
+
+.testimonial-slide.active {
+    display: block;
+    opacity: 1;
+}
+
+.testimonial-slide p {
     font-size: 1.5rem;
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: var(--color-blanco);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.testimonial-slide cite {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--color-amarillo); /* Nombre en amarillo */
+    display: block;
+    margin-top: 15px;
+}
+
+.testimonial-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--color-blanco);
+    border: none;
+    padding: 12px 15px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+}
+
+.testimonial-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.testimonial-button.prev {
+    left: 0;
+}
+
+.testimonial-button.next {
+    right: 0;
+}
+
+
+/* --- CTA Final para Home --- */
+#home-cta {
+    background-color: var(--color-amarillo); /* Fondo amarillo */
+    color: var(--color-negro); /* Texto negro */
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+#home-cta h2 {
+    color: var(--color-negro);
+    font-size: 3rem;
+}
+
+#home-cta p {
+    color: var(--color-negro);
+    font-size: 1.3rem;
     margin-bottom: 40px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+
+/* --- Media Queries (Ajustadas para complementar Bootstrap) --- */
+/* Estas media queries se usarán para afinar los estilos donde Bootstrap no es suficiente */
+
+@media (max-width: 991.98px) { /* Menor que 'lg' (tablets y móviles) */
+    .content-section {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    .content-section h2 {
+        font-size: 2.8rem;
+    }
+    .hero-home-redesigned {
+        min-height: 80vh; /* Ajuste de altura para pantallas más pequeñas */
+    }
+    .hero-home-redesigned h1 {
+        font-size: 3rem; /* Título un poco más pequeño */
+    }
+    .hero-home-redesigned p {
+        font-size: 1.2rem;
+    }
+    .testimonial-slide p {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 767.98px) { /* Menor que 'md' (móviles) */
+    .content-section {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .content-section h2 {
+        font-size: 2.2rem;
+    }
+    .hero-home-redesigned {
+        min-height: 70vh;
+    }
+    .hero-home-redesigned h1 {
+        font-size: 2.5rem;
+    }
+    .hero-home-redesigned p {
+        font-size: 1rem;
+    }
+    #highlights .card {
+        padding: 25px; /* Menos padding en tarjetas para móviles */
+    }
+    #highlights .card-title {
+        font-size: 1.8rem;
+    }
+    .testimonial-slide p {
+        font-size: 1.1rem;
+    }
+    .testimonial-button {
+        padding: 8px 10px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 575.98px) { /* Menor que 'sm' (móviles muy pequeños) */
+    .hero-home-redesigned {
+        min-height: 60vh;
+    }
+    .hero-home-redesigned h1 {
+        font-size: 2rem;
+    }
+    .hero-home-redesigned p {
+        font-size: 0.9rem;
+    }
 }

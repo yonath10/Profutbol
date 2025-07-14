@@ -1,173 +1,148 @@
-/* --- Página Hero para páginas internas --- */
+/* --- Estilos para la sección Hero de la página de Contacto --- */
 .page-hero {
-    background-color: var(--color-negro);
+    position: relative;
+    width: 100%;
+    min-height: 80vh; /* Altura del hero, ajusta según necesidad */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: var(--color-blanco);
-    padding: 80px 0 40px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
+    overflow: hidden;
+    /* Las propiedades de display y alineación se manejan en el HTML con Bootstrap:
+       d-flex align-items-center text-white text-center */
 }
 
-.page-hero h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-    color: var(--color-blanco);
+/* Imagen de fondo específica para el hero de Contacto */
+.hero-contacto {
+    background-image: url('../images/5.jpg'); /* Define una imagen de fondo para contacto si tienes una, o usa la misma que en index */
+    /* Sugerencia: crea esta imagen en tu carpeta images/ */
+    background-image: url('../images/2.jpg'); /* Si no tienes una específica, puedes usar esta */
 }
 
+
+/* Overlay para el hero */
+.page-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Overlay oscuro */
+    z-index: 1;
+}
+
+/* Asegura que el contenido del hero esté por encima del overlay */
+.page-hero .container-fluid {
+    position: relative;
+    z-index: 2;
+}
+
+/* Estilos para el texto del hero (aparte de lo que maneja Bootstrap con display-3, lead) */
+.page-hero h1,
 .page-hero p {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Sombra de texto */
 }
 
-/* --- Sección de Contacto (Formulario e Info) --- */
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    padding-bottom: 60px;
-}
 
-.contact-form-container,
-.contact-details-container {
-    background-color: var(--color-blanco);
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-}
+/* --- Sección de Formulario e Información de Contacto --- */
+/* Las cuadrículas contact-grid y los form-group antiguos se reemplazan por row y col de Bootstrap */
 
-.contact-form-container h2,
-.contact-details-container h2 {
-    color: var(--color-azul);
-    font-size: 2rem;
-    margin-bottom: 25px;
-    text-align: center;
-}
-
-/* Estilos para el formulario */
-.contact-form .form-group {
-    margin-bottom: 20px;
-    text-align: left;
+.contact-form-container {
+    border: 1px solid var(--color-gris-claro);
+    /* padding y shadow-sm, rounded-3 se aplican en el HTML con clases de Bootstrap */
 }
 
 .contact-form label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: var(--color-negro);
+    font-weight: 600;
+    margin-bottom: 0.5rem; /* Espacio debajo de la etiqueta */
+    color: var(--color-gris-oscuro);
 }
 
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form input[type="tel"],
-.contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+.contact-form .form-control {
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--color-gris);
     font-size: 1rem;
-    box-sizing: border-box;
+    transition: border-color 0.3s ease;
 }
 
-.contact-form textarea {
-    resize: vertical;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
+.contact-form .form-control:focus {
     border-color: var(--color-azul);
-    outline: none;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+    box-shadow: 0 0 0 0.25rem rgba(var(--color-azul-rgb), 0.25);
 }
 
-.contact-form button.primary-button {
-    width: 100%;
-    margin-top: 20px;
-    padding: 15px;
-    font-size: 1.2rem;
-}
-
-/* Mensaje de éxito del formulario */
-.form-success-message {
-    color: green;
-    font-weight: bold;
-    margin-top: 15px;
-    text-align: center;
-    padding: 10px;
-    background-color: #e6ffe6;
-    border: 1px solid #b3ffb3;
-    border-radius: 5px;
-}
-
-/* Estilos para la información de contacto */
-.contact-details-container .detail-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    text-align: left;
-}
-
-.contact-details-container .detail-item i {
-    font-size: 1.8rem;
-    color: var(--color-amarillo);
-    margin-right: 15px;
-    width: 30px;
-    text-align: center;
-}
-
-.contact-details-container .detail-item p {
-    margin: 0;
+.contact-form button[type="submit"] {
     font-size: 1.1rem;
-    color: var(--color-negro);
-    max-width: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    /* Las clases btn btn-primary w-100 se aplican en el HTML */
 }
 
-.contact-details-container .detail-item a {
+.form-success-message {
+    font-weight: 600;
+    /* text-success y text-center se aplican en el HTML */
+}
+
+.contact-details-container {
+    border: 1px solid var(--color-gris-claro);
+    background-color: var(--color-claro); /* light-background para los detalles */
+    /* padding y shadow-sm, rounded-3 se aplican en el HTML con clases de Bootstrap */
+}
+
+.detail-item i {
+    color: var(--color-azul); /* Color para los íconos de detalle */
+    /* fs-4 y me-3 se aplican en el HTML con clases de Bootstrap */
+}
+
+.detail-item p {
+    margin-bottom: 0;
+    color: var(--color-gris-oscuro);
+}
+
+.detail-item p strong {
     color: var(--color-negro);
+}
+
+.detail-item a {
+    color: var(--color-gris-oscuro);
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.2s ease;
 }
 
-.contact-details-container .detail-item a:hover {
+.detail-item a:hover {
     color: var(--color-azul);
-}
-
-.social-links-contact {
-    margin-top: 40px;
-    text-align: center;
 }
 
 .social-links-contact h3 {
     color: var(--color-negro);
-    margin-bottom: 20px;
-    font-size: 1.4rem;
+    margin-bottom: 1rem;
 }
 
 .social-links-contact a {
-    color: var(--color-azul);
-    font-size: 2rem;
-    margin: 0 10px;
-    transition: color 0.3s ease;
+    color: var(--color-azul); /* Color para los íconos sociales */
+    transition: transform 0.2s ease;
+    /* fs-3 y me-3 se aplican en el HTML con clases de Bootstrap */
 }
 
 .social-links-contact a:hover {
-    color: var(--color-amarillo);
+    transform: translateY(-3px);
 }
 
-/* --- Sección de Mapa (#map-location) --- */
-.no-padding-top {
-    padding-top: 0 !important;
+
+/* --- Sección del Mapa --- */
+#map-location h2 {
+    color: var(--color-negro);
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
 .map-container {
     position: relative;
-    padding-bottom: 56.25%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
     height: 0;
     overflow: hidden;
-    background-color: var(--color-gris-oscuro);
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-    margin-top: 30px;
+    /* rounded-3, overflow-hidden, shadow-sm se aplican en el HTML */
 }
 
 .map-container iframe {
@@ -179,95 +154,46 @@
     border: 0;
 }
 
-/* --- Media Queries para la Página de Contacto --- */
-@media (max-width: 992px) {
+
+/* --- Media Queries (Ajustadas para complementar Bootstrap) --- */
+
+@media (max-width: 991.98px) { /* Menor que 'lg' (tablets y móviles) */
+    .page-hero {
+        min-height: 70vh;
+    }
     .page-hero h1 {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
     }
     .page-hero p {
         font-size: 1.1rem;
     }
-    .contact-grid {
-        gap: 30px;
+    #contact-info-form .col-lg-7,
+    #contact-info-form .col-lg-5 {
+        margin-bottom: 2rem; /* Espacio entre columnas en tablet/móvil */
     }
     .contact-form-container,
     .contact-details-container {
-        padding: 30px;
-    }
-    .contact-form-container h2,
-    .contact-details-container h2 {
-        font-size: 1.8rem;
+        padding: 2rem; /* Menor padding en pantallas más pequeñas */
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767.98px) { /* Menor que 'md' (móviles) */
     .page-hero {
-        padding: 60px 0 30px;
+        min-height: 60vh;
     }
     .page-hero h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
+        margin-bottom: 1rem !important;
     }
     .page-hero p {
-        font-size: 1rem;
-    }
-    .contact-grid {
-        grid-template-columns: 1fr;
+        font-size: 0.95rem;
+        margin-bottom: 2rem !important;
     }
     .contact-form-container,
     .contact-details-container {
-        margin-bottom: 20px;
-        padding: 25px;
+        padding: 1.5rem;
     }
-    .contact-form-container h2,
-    .contact-details-container h2 {
-        font-size: 1.6rem;
+    .social-links-contact {
+        text-align: center !important; /* Asegura centrado en móviles */
     }
-    .contact-form button.primary-button {
-        padding: 12px;
-        font-size: 1.1rem;
-    }
-    .map-container {
-        padding-bottom: 75%;
-    }
-}
-
-@media (max-width: 480px) {
-    .page-hero {
-        padding: 40px 0 20px;
-    }
-    .page-hero h1 {
-        font-size: 1.8rem;
-    }
-    .contact-form-container,
-    .contact-details-container {
-        padding: 20px;
-    }
-    .detail-item i {
-        font-size: 1.5rem;
-        margin-right: 10px;
-    }
-    .social-links-contact a {
-        font-size: 1.8rem;
-        margin: 0 8px;
-    }
-}
-
-/* --- Mensaje de feedback para 'Copiar al portapapeles' --- */
-.copy-feedback-message {
-    margin-left: 10px;
-    padding: 5px 10px;
-    background-color: var(--color-azul); /* Usa tu color azul */
-    color: var(--color-blanco);
-    border-radius: 5px;
-    font-size: 0.85rem;
-    white-space: nowrap; /* Evita que el texto se rompa */
-    opacity: 0;
-    animation: fadeInOut 1.5s forwards; /* Animación de aparición y desaparición */
-}
-
-@keyframes fadeInOut {
-    0% { opacity: 0; transform: translateY(-5px); }
-    20% { opacity: 1; transform: translateY(0); }
-    80% { opacity: 1; transform: translateY(0); }
-    100% { opacity: 0; transform: translateY(-5px); }
 }

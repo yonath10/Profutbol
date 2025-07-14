@@ -4,80 +4,233 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profutbol JC</title>
-     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Profutbol JC - Torneos</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-        integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/torneo.css">
 
 </head>
+
 <body>
     <header>
-        <nav class="navbar">
-            <a href="index.html" class="logo">
-                <img src="images/profutbol.png" alt="Logo ProFutbol Complejo Deportivo y Recreativo">
-            </a>
-            <div class="hamburger-menu" id="hamburger-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/profutbol.png" alt="Logo ProFutbol Complejo Deportivo y Recreativo" height="50">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="torneos.html">Torneos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="servicios.html">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.html">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="torneos.html">Torneos</a></li>
-                 <li><a href="servicios.html" class="active">Servicios</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
         </nav>
     </header>
 
-
-
-     <footer>
-        <div class="footer-content">
-            <div class="footer-section about">
-                <a href="index.html" class="footer-logo">
-                    <img src="images/profutbol.png" alt="Logo ProFutbol">
-                </a>
-                <p>ProFutbol: Tu complejo deportivo y recreativo, donde la pasión por el fútbol cobra vida.</p>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/p/Profutbol-JC-100083072811985/" target="_blank"
-                        aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/profutboljc/?hl=es" target="_blank" aria-label="Instagram"><i
-                            class="fab fa-instagram"></i></a>
-                   <a href="https://www.tiktok.com/@profutbol.jc" target="_blank" aria-label="tiktok"> <i class="fab fa-tiktok"></i></a>
+    <main>
+        <section class="page-hero hero-torneos d-flex align-items-center text-white text-center">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-lg-9">
+                        <h1 class="display-3 fw-bold mb-4">Nuestros Torneos</h1>
+                        <p class="lead mb-5">Participa en la emoción del fútbol. Encuentra tu torneo ideal y ¡sal a
+                            la cancha!</p>
+                        <a href="#proximos-torneos" class="btn btn-primary btn-lg mt-3">Ver Próximos Torneos</a>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="footer-section links">
-                <h3>Enlaces Rápidos</h3>
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="torneos.html">Torneos</a></li>
-                  <li><a href="servicios.html" class="active">Servicios</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                    <li><a href="#">Política de Privacidad</a></li>
-                </ul>
+        <section id="proximos-torneos" class="content-section py-5 light-background">
+            <div class="container">
+                <h2 class="text-center section-title mb-5">Próximos Eventos y Torneos</h2>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-6 col-lg-4 d-flex">
+                        <div class="card tournament-card shadow-sm rounded-3">
+                            <img src="images/tournament1.jpg" class="card-img-top" alt="Torneo Clausura 2025">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title text-primary">Torneo Clausura 2025</h3>
+                                <p class="card-text text-secondary mb-2">
+                                    <i class="far fa-calendar-alt me-2"></i> Fecha: 15 de Octubre - 15 de Diciembre
+                                </p>
+                                <p class="card-text text-secondary mb-2">
+                                    <i class="fas fa-futbol me-2"></i> Categoría: Adultos (Mayores de 18)
+                                </p>
+                                <p class="card-text text-secondary mb-3">
+                                    <i class="fas fa-info-circle me-2"></i> Formato: Liga + Playoffs
+                                </p>
+                                <span class="badge bg-success text-white mb-3 mt-auto">¡Inscripciones Abiertas!</span>
+                                <a href="contacto.html" class="btn btn-secondary mt-auto">Inscribirse Ahora</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 d-flex">
+                        <div class="card tournament-card shadow-sm rounded-3">
+                            <img src="images/tournament2.jpg" class="card-img-top" alt="Copa Juvenil ProFutbol">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title text-primary">Copa Juvenil ProFutbol</h3>
+                                <p class="card-text text-secondary mb-2">
+                                    <i class="far fa-calendar-alt me-2"></i> Fecha: 5 de Noviembre - 10 de Diciembre
+                                </p>
+                                <p class="card-text text-secondary mb-2">
+                                    <i class="fas fa-futbol me-2"></i> Categoría: Sub-15 & Sub-17
+                                </p>
+                                <p class="card-text text-secondary mb-3">
+                                    <i class="fas fa-info-circle me-2"></i> Formato: Eliminación Directa
+                                </p>
+                                <span class="badge bg-warning text-dark mb-3 mt-auto">Próximamente</span>
+                                <a href="contacto.html" class="btn btn-outline-secondary mt-auto">Más Información</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 d-flex">
+                        <div class="card tournament-card shadow-sm rounded-3">
+                            <img src="images/tournament3.jpg" class="card-img-top" alt="Torneo Relámpago Femenino">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title text-primary">Torneo Relámpago Femenino</h3>
+                                <p class="card-text text-secondary mb-2">
+                                    <i class="far fa-calendar-alt me-2"></i> Fecha: 25 de Octubre
+                                </p>
+                                <p class="card-text text-secondary mb-2">
+                                    <i class="fas fa-futbol me-2"></i> Categoría: Abierta Femenina
+                                </p>
+                                <p class="card-text text-secondary mb-3">
+                                    <i class="fas fa-info-circle me-2"></i> Formato: Un día, Grupos + Finales
+                                </p>
+                                <span class="badge bg-secondary text-white mb-3 mt-auto">Cupos Limitados</span>
+                                <a href="contacto.html" class="btn btn-outline-secondary mt-auto">Reservar Cupo</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
+        </section>
 
-            <div class="footer-section contact">
-                <h3>Contáctanos</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Dirección: Kilometro 3 via Siberia a, Tenjo, Cundinamarca,
-                    Colombia</p>
-                <p><i class="fas fa-phone"></i> Teléfono: +57 3203459145</p>
-                <p><i class="fas fa-envelope"></i> Email: info@profutbol.com</p>
+        <section id="past-tournaments" class="content-section py-5">
+            <div class="container">
+                <h2 class="text-center section-title mb-5">Momentos de Gloria: Galería de Torneos Pasados</h2>
+                <div class="row g-3">
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <img src="images/gallery1.jpg" class="img-fluid rounded shadow-sm gallery-img" alt="Ganadores Torneo Verano">
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <img src="images/gallery2.jpg" class="img-fluid rounded shadow-sm gallery-img" alt="Acción de Juego">
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <img src="images/gallery3.jpg" class="img-fluid rounded shadow-sm gallery-img" alt="Celebración de Equipo">
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <img src="images/gallery4.jpg" class="img-fluid rounded shadow-sm gallery-img" alt="Aficionados en la grada">
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <img src="images/gallery5.jpg" class="img-fluid rounded shadow-sm gallery-img" alt="Entrega de Trofeos">
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <img src="images/gallery6.jpg" class="img-fluid rounded shadow-sm gallery-img" alt="Jugadores en acción">
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <img src="images/gallery7.jpg" class="img-fluid rounded shadow-sm gallery-img" alt="Arbitro y jugadores">
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <img src="images/gallery8.jpg" class="img-fluid rounded shadow-sm gallery-img" alt="Equipo Campeón">
+                    </div>
+                </div>
+                <div class="text-center mt-5">
+                    <a href="contacto.html" class="btn btn-primary btn-lg">¡Pregunta por más fotos!</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta-tournament-info" class="content-section py-5 primary-background text-white text-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h2 class="mb-4 display-5 fw-bold">¿Listo para competir?</h2>
+                        <p class="lead mb-4">Si tienes preguntas sobre reglas, inscripciones o quieres organizar un
+                            torneo personalizado, no dudes en contactarnos.</p>
+                        <a href="contacto.html" class="btn btn-secondary btn-lg">¡Contacta para Inscribirte!</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0 text-center text-md-start">
+                    <a href="index.html" class="d-inline-block mb-3 footer-logo"> <img src="images/profutbol.png" alt="Logo ProFutbol">
+</a>
+                    <p class="text-white-50">ProFutbol: Tu complejo deportivo y recreativo, donde la pasión por el
+                        fútbol cobra vida.</p>
+                    <div class="social-links mt-3">
+                        <a href="https://www.facebook.com/p/Profutbol-JC-100083072811985/" target="_blank"
+                            aria-label="Facebook" class="text-white-50 me-3 fs-4"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/profutboljc/?hl=es" target="_blank" aria-label="Instagram"
+                            class="text-white-50 me-3 fs-4"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@profutbol.jc" target="_blank" aria-label="tiktok"
+                            class="text-white-50 fs-4"> <i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4 mb-md-0 text-center text-md-start">
+                    <h3 class="text-white mb-3">Enlaces Rápidos</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white-50 text-decoration-none">Inicio</a></li>
+                        <li><a href="torneos.html" class="text-white-50 text-decoration-none">Torneos</a></li>
+                        <li><a href="servicios.html" class="text-white-50 text-decoration-none">Servicios</a></li>
+                        <li><a href="contacto.html" class="text-white-50 text-decoration-none">Contacto</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Política de Privacidad</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 text-center text-md-start">
+                    <h3 class="text-white mb-3">Contáctanos</h3>
+                    <p class="text-white-50"><i class="fas fa-map-marker-alt me-2"></i> Dirección: Kilometro 3 via
+                        Siberia a, Tenjo, Cundinamarca, Colombia</p>
+                    <p class="text-white-50"><i class="fas fa-phone me-2"></i> Teléfono: +57 3203459145</p>
+                    <p class="text-white-50"><i class="fas fa-envelope me-2"></i> Email: info@profutbol.com</p>
+                </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 ProFutbol Complejo Deportivo y Recreativo. Todos los derechos reservados.</p>
+        <div class="footer-bottom text-center py-3 border-top border-secondary mt-4">
+            <p class="mb-0 text-white-50">© 2025 ProFutbol Complejo Deportivo y Recreativo. Todos los derechos
+                reservados.</p>
         </div>
     </footer>
-</body>
-   
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7FJ6rD+5b/N6F"
+        crossorigin="anonymous"></script>
 
     <script src="js/script.js"></script>
+</body>
 
 </html>
