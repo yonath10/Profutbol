@@ -1,20 +1,21 @@
 /* --- 1. Variables CSS (Colores de Marca) --- */
 :root {
-    --color-azul: #004D7A; /* Azul principal de tu marca */
-    --color-amarillo: #FFD700; /* Amarillo vibrante de tu marca */
+    --color-azul: #004D7A; /* Azul principal de tu marca (ProFutbol) */
+    --color-amarillo: #FFD700; /* Amarillo vibrante de tu marca (ProFutbol) */
     --color-negro: #1A1A1A;
     --color-blanco: #FFFFFF;
     --color-gris-claro: #F8F8F8;
     --color-gris-oscuro: #555555;
-    --color-dark-gray: #343a40; /* Color estándar de Bootstrap para fondos oscuros */
+    /* Este es un azul semitransparente (0080ff con 34% de opacidad), usado para loader y footer. */
+    --color-dark-gray: #0080ff34; 
 
     /* Fuentes */
-    --font-primary: 'Arial', sans-serif; /* O la fuente que estés usando */
-    --font-secondary: 'Helvetica', sans-serif;
+    --font-primary: 'Arial', sans-serif; /* Fuente principal para textos */
+    --font-secondary: 'Helvetica', sans-serif; /* Fuente para títulos y elementos destacados */
 }
 
 /* --- 2. Sobreescritura de Variables de Bootstrap con tus Colores --- */
-/* Esto hace que los componentes de Bootstrap (botones, etc.) usen los colores de tu marca */
+/* Esto asegura que los componentes de Bootstrap (botones, navbar, etc.) usen los colores de tu marca */
 
 /* Botón Primario */
 .btn-primary {
@@ -27,7 +28,7 @@
     --bs-btn-focus-shadow-rgb: 0, 77, 122; /* RGB del azul */
 }
 
-/* Botón Secundario (lo he configurado con tu amarillo) */
+/* Botón Secundario (configurado con tu amarillo) */
 .btn-secondary {
     --bs-btn-bg: var(--color-amarillo);
     --bs-btn-border-color: var(--color-amarillo);
@@ -69,16 +70,17 @@
 }
 .navbar-dark .navbar-nav .nav-link {
     color: rgba(255, 255, 255, 0.75); /* Color de enlaces normal */
-    transition: color 0.3s ease;
+    transition: color 0.3s ease; /* Transición suave para el color */
 }
 .navbar-dark .navbar-nav .nav-link:hover,
 .navbar-dark .navbar-nav .nav-link.active {
     color: var(--color-amarillo); /* Color de enlaces al hover y activo */
 }
 .navbar-dark .navbar-toggler {
-    border-color: rgba(255, 255, 255, 0.5);
+    border-color: rgba(255, 255, 255, 0.5); /* Borde del botón hamburguesa */
 }
 .navbar-dark .navbar-toggler-icon {
+    /* Icono SVG del botón hamburguesa (blanco semi-transparente) */
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
@@ -87,81 +89,134 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Modelo de caja estándar para todos los elementos */
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* Desplazamiento suave al anclar */
 }
 
 body {
     font-family: var(--font-primary);
-    line-height: 1.6;
+    line-height: 1.6; /* Espaciado entre líneas */
     color: var(--color-negro);
     background-color: var(--color-blanco);
-    overflow-x: hidden; /* Evita el scroll horizontal */
-    padding-top: 56px; /* Para que el contenido no quede detrás del navbar fixed-top */
+    overflow-x: hidden; /* Evita el scroll horizontal no deseado */
+    padding-top: 56px; /* Para que el contenido no quede detrás del navbar fixed-top de Bootstrap */
 }
 
 /* Ajustes básicos de tipografía */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-secondary);
     color: var(--color-negro);
-    margin-top: 0; /* Bootstrap ya tiene margen inferior por defecto */
+    margin-top: 0; /* Asegura que no haya margen superior adicional */
 }
 
 p {
-    margin-bottom: 1rem; /* Margen inferior estándar de Bootstrap */
+    margin-bottom: 1rem; /* Margen inferior estándar para párrafos */
 }
 
 a {
-    color: var(--color-azul);
-    text-decoration: none;
-    transition: color 0.3s ease;
+    color: var(--color-azul); /* Color de los enlaces */
+    text-decoration: none; /* Sin subrayado por defecto */
+    transition: color 0.3s ease; /* Transición suave al pasar el mouse */
 }
 
 a:hover {
-    color: var(--color-amarillo);
+    color: var(--color-amarillo); /* Color de los enlaces al pasar el mouse */
     text-decoration: none;
 }
 
 ul {
-    list-style: none;
+    list-style: none; /* Elimina los puntos/viñetas de las listas */
 }
 
 img {
-    max-width: 100%;
-    height: auto;
-    display: block; /* Para evitar espacios extra bajo las imágenes */
+    max-width: 100%; /* Las imágenes no superan el ancho de su contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Para evitar espacios extra bajo las imágenes (problema común de inline) */
 }
 
 
-/* --- 4. Estilos de Componentes Generales --- */
+/* --- 4. Estilos de Componentes Específicos --- */
 
 /* Logo en el Navbar */
 .navbar-brand img {
     height: 50px; /* Tamaño del logo en el navbar */
-    transition: height 0.3s ease; /* Transición para posible cambio de tamaño */
+    transition: height 0.3s ease; /* Transición para posible cambio de tamaño (ej. al hacer scroll) */
+}
+
+/* Estilos para la Pantalla de Carga (Loader) */
+#loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Utiliza el azul semitransparente definido en tus variables */
+    background-color: var(--color-dark-gray); 
+    z-index: 9999; /* Asegura que esté por encima de todo el contenido */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.7s ease-out, visibility 0.7s ease-out; /* Transición suave al desaparecer */
+}
+
+#loader-wrapper.hidden {
+    opacity: 0; /* Hace que el loader sea invisible */
+    visibility: hidden; /* Oculta el elemento del flujo del documento */
+}
+
+.loader {
+    width: 100px; /* Ancho del contenedor del balón */
+    height: 100px; /* Alto del contenedor del balón */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.bouncing-ball {
+    width: 80px; /* Tamaño del balón/logo que rebota */
+    height: 80px;
+    object-fit: contain; /* Asegura que la imagen se ajuste sin distorsionarse */
+    animation: bounce 1.2s infinite ease-in-out; /* Aplica la animación de rebote */
+    background: none; /* Asegura que no tenga fondo propio si la imagen tiene transparencia */
+}
+
+.loading-text {
+    color: var(--color-blanco);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Animación de Rebote para el Loader */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0); /* Posición inicial y final (abajo) */
+    }
+    50% {
+        transform: translateY(-30px); /* Posición más alta (rebotando hacia arriba) */
+    }
 }
 
 /* Footer General */
 footer {
-    background-color: var(--color-dark-gray); /* Asegura que este color esté definido en tus variables CSS */
+    background-color: var(--color-dark-gray); /* Utiliza el azul semitransparente para el footer */
     color: var(--color-blanco);
 }
 
 /* Ajuste del tamaño del logo en el footer */
 footer .footer-logo img {
-    height: 45px; /* Sigue ajustando este valor si 45px es muy grande o muy pequeño (ej. 40px, 35px). */
+    height: 45px; /* Tamaño del logo en el footer */
     width: auto;
     max-width: 100%;
     display: block;
-    margin: 0 auto;
-    /* No descomentes el !important a menos que los demás pasos fallen */
-    /* height: 45px !important; */
+    margin: 0 auto; /* Centra el logo en el footer */
 }
 
-/* Resto de tu CSS para el footer (h3, p, ul, li, a, etc.) */
+/* Estilos para la tipografía y enlaces del footer */
 footer h3 {
     color: var(--color-blanco);
     margin-bottom: 1.5rem;
@@ -169,13 +224,12 @@ footer h3 {
 }
 
 footer p {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.7); /* Texto ligeramente más claro */
     font-size: 0.95rem;
 }
 
 footer ul {
     padding-left: 0;
-    list-style: none;
 }
 
 footer ul li {
@@ -190,14 +244,15 @@ footer ul li a {
 }
 
 footer ul li a:hover {
-    color: var(--color-amarillo);
+    color: var(--color-amarillo); /* Color de hover para enlaces del footer */
 }
 
 footer .fas {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.7); /* Color para iconos de Font Awesome */
     margin-right: 0.5rem;
 }
 
+/* Enlaces de Redes Sociales en el Footer */
 footer .social-links a .fab {
     font-size: 1.5rem;
     margin-right: 1rem;
@@ -206,12 +261,12 @@ footer .social-links a .fab {
 }
 
 footer .social-links a:hover .fab {
-    color: var(--color-azul);
-    transform: translateY(-3px);
+    color: var(--color-azul); /* Color de hover para iconos sociales */
+    transform: translateY(-3px); /* Pequeño efecto de elevación al hacer hover */
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Línea divisoria superior */
     padding-top: 1.5rem;
 }
 
@@ -219,8 +274,149 @@ footer .social-links a:hover .fab {
     color: rgba(255, 255, 255, 0.5);
     margin-bottom: 0;
 }
-/* Ocultar el scrollbar si no lo quieres (opcional) */
-/* body::-webkit-scrollbar {
-    width: 0;
-    background: transparent;
-} */
+
+/* --- 5. Estilos Específicos del Carrusel de la Galería --- */
+.carousel-container {
+    position: relative;
+    max-width: 800px; /* Define un tamaño máximo para el carrusel */
+    margin: 0 auto; /* Centra el carrusel horizontalmente */
+}
+
+.carousel-slide-wrapper {
+    overflow: hidden; /* Oculta las imágenes que están fuera de la vista */
+}
+
+#carouselSlides {
+    display: flex; /* Permite que las imágenes se coloquen en una fila */
+    transition: transform 0.5s ease-in-out; /* Transición suave para el movimiento de los slides */
+}
+
+#carouselSlides img {
+    flex-shrink: 0;
+    width: 100%;
+    height: 500px; /* <--- IMPORTANTE: Define una altura fija para todas las imágenes */
+    object-fit: cover; /* <--- IMPORTANTE: Escala y recorta la imagen para que cubra todo el contenedor */
+    display: block;
+}
+/* Estilos para los botones de navegación (flechas) del carrusel */
+.carousel-button {
+    position: absolute;
+    top: 50%; /* Centra verticalmente */
+    transform: translateY(-50%); /* Ajusta el centro exacto */
+    border: none;
+    background-color: var(--color-blanco);
+    color: var(--color-negro);
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10; /* Asegura que los botones estén por encima de las imágenes */
+    opacity: 0.7; /* Ligeramente transparente */
+    transition: opacity 0.3s ease;
+    padding: 0.5rem 0.8rem; /* Ajuste de padding */
+    border-radius: 50%; /* Botones circulares */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra sutil */
+}
+
+.carousel-button:hover {
+    opacity: 1; /* Opacidad completa al pasar el mouse */
+    background-color: var(--color-gris-claro);
+}
+
+.carousel-button.prev {
+    left: 15px; /* Posición izquierda */
+}
+
+.carousel-button.next {
+    right: 15px; /* Posición derecha */
+}
+
+/* Estilos para los puntos de navegación (dots) del carrusel */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #bbb; /* Color del punto inactivo */
+    border-radius: 50%; /* Puntos circulares */
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: var(--color-azul); /* Color del punto activo (usando tu color de marca) */
+}
+
+
+/* --- 6. Animaciones al hacer scroll (para .content-section) --- */
+/* Estilo inicial para las secciones antes de ser visibles */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px); /* Un poco desplazado hacia abajo */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transición suave */
+}
+
+/* Estilo cuando la sección es visible */
+.fade-in-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* --- 7. Estilos para Mensajes "Copiado" (Copy to Clipboard) --- */
+.copy-feedback-message {
+    margin-left: 10px;
+    background-color: var(--color-azul);
+    color: var(--color-blanco);
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    white-space: nowrap; /* Evita que el texto se rompa */
+    opacity: 0;
+    transform: translateY(-5px);
+    animation: fadeInOut 1.5s forwards; /* Animación de aparecer y desaparecer */
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(-5px); }
+    10% { opacity: 1; transform: translateY(0); }
+    90% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-5px); }
+}
+
+
+/* --- 8. Media Queries para Responsividad (Ejemplos) --- */
+@media (max-width: 991.98px) {
+    /* Ajustes para tabletas y móviles (menor a lg de Bootstrap) */
+    .navbar-collapse {
+        background-color: var(--color-negro); /* Fondo oscuro para el menú desplegado */
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 100%; /* Debajo del navbar */
+        padding: 1rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-nav .nav-item {
+        margin-bottom: 0.5rem; /* Espaciado entre enlaces del menú móvil */
+        text-align: center;
+    }
+}
+
+@media (max-width: 767.98px) {
+    /* Ajustes para móviles (menor a md de Bootstrap) */
+    h1 {
+        font-size: 2.5rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    .footer-logo img {
+        margin-bottom: 1.5rem; /* Más espacio debajo del logo en móviles */
+    }
+}

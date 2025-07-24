@@ -14,7 +14,7 @@
 
 /* Imagen de fondo específica para el hero de Torneos */
 .hero-torneos {
-    background-image: url('../images/torneos-hero-bg.jpg'); /* Define una imagen de fondo para torneos */
+    background-image: url('../images/torneos.jpg'); /* Define una imagen de fondo para torneos */
     /* Sugerencia: crea esta imagen en tu carpeta images/ */
     /* Si no tienes una específica, puedes usar otra existente como images/2.jpg */
 }

@@ -1,19 +1,16 @@
-/* --- Estilos Generales de Contenido para Home (Ajustados para Bootstrap) --- */
-/* La mayoría de los paddings/margins/text-align ahora se manejan con clases de Bootstrap (py-5, mb-4, text-center, etc.) */
 .content-section {
-    /* Puedes mantener un padding si quieres que sea consistente en todas las secciones,
-       o confiar completamente en py-X de Bootstrap */
+
     padding-top: 80px;
     padding-bottom: 80px;
 }
 
 .content-section h2 {
-    font-size: 3rem; /* Tamaño de título grande */
+    font-size: 3rem; 
     color: var(--color-negro);
     /* margin-bottom y text-align manejados por Bootstrap: mb-4, text-center */
 }
 
-/* --- SECCIÓN HERO REDISEÑADA (Aprovecha las clases de Bootstrap para el layout) --- */
+/* --- SECCIÓN HERO  */
 .hero-home-redesigned {
     position: relative;
     width: 100%;

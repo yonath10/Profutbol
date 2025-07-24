@@ -6,10 +6,8 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: var(--color-blanco);
-    overflow: hidden;
-    /* Las propiedades de display y alineación se manejan en el HTML con Bootstrap:
-       d-flex align-items-center text-white text-center */
+    color: var(--color-gris-oscuro); /* Color de texto predeterminado para el hero */
+    overflow: hidden; /* Asegura que el contenido no desborde */
 }
 
 /* Imagen de fondo específica para el hero de Servicios */
@@ -17,7 +15,7 @@
     background-image: url('../images/2.jpg'); /* ¡Asegúrate que esta ruta sea correcta! */
 }
 
-/* Overlay para el hero */
+/* Overlay oscuro para mejorar la legibilidad del texto en el hero */
 .page-hero::before {
     content: '';
     position: absolute;
@@ -25,93 +23,89 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Overlay oscuro */
-    z-index: 1;
+    background: rgba(0, 0, 0, 0.6); /* Overlay oscuro (60% de opacidad) */
+    z-index: 1; /* Por debajo del contenido, por encima de la imagen de fondo */
 }
 
 /* Asegura que el contenido del hero esté por encima del overlay */
 .page-hero .container-fluid {
     position: relative;
-    z-index: 2;
+    z-index: 2; /* Por encima del overlay */
 }
 
-/* Estilos para el texto del hero (aparte de lo que maneja Bootstrap con display-3, lead) */
+/* Estilos para el texto del hero (complementando las clases de Bootstrap) */
 .page-hero h1,
 .page-hero p {
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Sombra de texto */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Sombra de texto para mejorar contraste */
 }
 
-/* El botón ya usa btn btn-primary en el HTML */
 
+/* --- Estilos Generales de Contenido (complementando base.css y utilidades de Bootstrap) --- */
 
-/* --- Estilos Generales de Contenido (complementando base.css) --- */
-/* Las clases content-section y light-background están en base.css/Bootstrap utilities */
 .section-description {
     font-size: 1.15rem;
-    max-width: 900px;
+    max-width: 900px; /* Limita el ancho del texto para mejor lectura */
     margin-left: auto;
     margin-right: auto;
     color: var(--color-gris-oscuro);
-    /* margin-bottom y text-center manejados por Bootstrap en HTML */
 }
 
-/* Colores de fondo para secciones específicas */
+/* Colores de fondo para secciones específicas, usando variables globales */
 .light-background {
     background-color: var(--color-gris-claro);
 }
 
 .secondary-background {
-    background-color: var(--color-dark-gray); /* Oscuro para el carrusel de eventos */
+    background-color: var(--color-negro); /* Usando el azul semitransparente de tus variables */
     color: var(--color-blanco);
 }
 
 .primary-background {
-    background-color: var(--color-azul); /* Azul para el CTA final */
+    background-color: var(--color-azul); /* Usando el azul principal de tu marca */
     color: var(--color-blanco);
 }
 
 
-/* --- Sección "Nuestras Canchas" (feature-item ahora es Bootstrap Card) --- */
-/* Los estilos visuales se aplican directamente a las tarjetas de Bootstrap */
+/* --- Sección "Nuestras Canchas" (Estilos para las tarjetas de cancha) --- */
 #our-fields .card {
-    border: none;
+    border: none; /* Elimina el borde predeterminado de Bootstrap */
     border-radius: 12px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%; /* Para igualar alturas en filas de Bootstrap */
-    padding: 25px; /* Ajusta el padding si el de Bootstrap no es suficiente */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave al pasar el mouse */
+    height: 100%; /* Para igualar alturas de las tarjetas en filas de Bootstrap */
+    padding: 25px;
 }
 
 #our-fields .card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15) !important; /* !important para sobreescribir la sombra de Bootstrap */
+    transform: translateY(-8px); /* Efecto de elevación al pasar el mouse */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15) !important; /* Sombra más pronunciada, !important para sobreescribir */
 }
 
 .feature-icon {
-    color: var(--color-amarillo); /* Color para los íconos */
-    /* display-4 y mb-3 se aplican en el HTML con clases de Bootstrap */
+    color: var(--color-amarillo); /* Color para los íconos de las características */
 }
 
-/* --- Sección "Nuestros Clientes Destacados" (client-card ahora es Bootstrap Card) --- */
-/* Usamos .client-card-custom para estilizar estas tarjetas sin afectar otras .card */
+
+/* --- Sección "Nuestros Clientes Destacados" (Estilos para las tarjetas de cliente) --- */
+/* Se utiliza .client-card-custom para estilizar estas tarjetas sin afectar otras .card */
 .client-card-custom {
     background-color: var(--color-blanco);
     border-radius: 12px;
     border: 1px solid var(--color-gris-claro);
     padding: 30px;
     transition: all 0.3s ease;
-    height: 100%; /* Para igualar alturas */
+    height: 100%; /* Para igualar alturas de las tarjetas */
 }
 
 .client-card-custom:hover {
-    transform: scale(1.03);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+    transform: scale(1.03); /* Ligeramente más grande al pasar el mouse */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important; /* Sombra al pasar el mouse */
 }
 
 .client-logo-container {
-    width: 100px; /* Tamaño fijo para el logo */
+    width: 100px; /* Tamaño fijo para el contenedor del logo del cliente */
     height: 100px;
     overflow: hidden;
-    border-radius: 50%;
+    border-radius: 50%; /* Forma circular para el contenedor */
     background-color: var(--color-gris-claro);
     display: flex;
     align-items: center;
@@ -120,10 +114,10 @@
 }
 
 .client-logo-container img {
-    max-width: 80%; /* Ajustar el tamaño del logo dentro del contenedor */
+    max-width: 80%; /* Ajusta el tamaño del logo dentro de su contenedor */
     max-height: 80%;
-    object-fit: contain;
-    border-radius: 0; /* Asegurar que no tenga border-radius extra */
+    object-fit: contain; /* Asegura que la imagen se ajuste sin distorsión */
+    border-radius: 0; /* Asegura que no tenga border-radius extra de otros estilos de imagen */
 }
 
 .client-card-custom .card-title {
@@ -137,144 +131,37 @@
     font-size: 0.95rem;
 }
 
-/* --- Sección "Nuestros Eventos" (Carrusel Personalizado) --- */
+
+/* --- Sección "Nuestros Eventos" (Título específico para fondo oscuro) --- */
+/* Los estilos del carrusel en sí (botones, dots, etc.) están en base.css */
 #gallery-carousel h2 {
-    color: var(--color-blanco); /* Título blanco para fondo oscuro */
+    color: var(--color-blanco); /* Título blanco para el fondo oscuro de esta sección */
 }
 
-.carousel-container {
-    /* max-width y margin: auto se manejan con mx-auto en el HTML */
-    /* position: relative; se maneja en el HTML */
-    overflow: hidden; /* Asegura que las imágenes no desborden */
-}
-
-.carousel-slide-wrapper {
-    overflow: hidden;
-}
-
-#carouselSlides {
-    /* d-flex y transition-transform se manejan en el HTML */
-    width: fit-content; /* Permite que el contenedor de slides crezca con las imágenes */
-}
-
-.carousel-slide {
-    /* width: 100%; (ahora es w-100 en img) */
-    /* flex-shrink-0 en img */
-    /* height: auto; (en img) */
-    display: block; /* Asegura que la imagen sea un bloque */
-}
-
-.carousel-slide img {
-    border-radius: 15px; /* Bordes redondeados para las imágenes */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
-.carousel-button {
-    /* position: absolute; top-50; translate-middle-y; start-0/end-0; etc. en el HTML con Bootstrap */
-    /* background-color, color, border, padding, font-size, border-radius, z-index, transition */
-    background-color: rgba(255, 255, 255, 0.2); /* Fondo semitransparente para los botones */
-    color: var(--color-blanco);
-    border: none;
-    padding: 0.8rem 1rem;
-    cursor: pointer;
-    font-size: 1.5rem;
-    border-radius: 50%;
-    z-index: 10;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.carousel-button:hover {
-    background-color: var(--color-azul); /* Azul al pasar el ratón */
-    color: var(--color-blanco);
-}
-
-.carousel-dots {
-    /* d-flex, justify-content-center, mt-3 se manejan en el HTML */
-}
-
-.carousel-dot {
-    width: 12px;
-    height: 12px;
-    background-color: rgba(255, 255, 255, 0.4);
-    border-radius: 50%;
-    margin: 0 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.carousel-dot.active {
-    background-color: var(--color-amarillo); /* Punto activo en amarillo */
-}
-
+/* Estilo para el pie de foto del carrusel */
 .carousel-caption {
-    color: var(--color-blanco);
+    color: rgba(255, 255, 255, 0.9);
     font-size: 1.1rem;
-    margin-top: 30px;
-    /* text-center y mt-4 se manejan en el HTML */
-}
-
-
-/* --- Sección "Programas de Rendimiento y Formación" (program-card ahora es Bootstrap Card) --- */
-/* Usamos .program-card-custom para estilizar estas tarjetas */
-.program-card-custom {
-    border: none;
-    border-radius: 12px;
-    padding: 30px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%; /* Para igualar alturas en filas de Bootstrap */
-    display: flex; /* Para flex-grow-1 en card-text y mt-auto en botón */
-    flex-direction: column;
-    justify-content: space-between; /* Empuja el botón al final */
-}
-
-.program-card-custom:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15) !important; /* !important para sobreescribir la sombra de Bootstrap */
-}
-
-.program-icon {
-    color: var(--color-amarillo); /* Color para los íconos de programa */
-    /* display-4 y mb-3 se aplican en el HTML con clases de Bootstrap */
-}
-
-.program-card-custom .card-title {
-    color: var(--color-azul);
-    font-size: 1.8rem;
-}
-
-.program-card-custom .card-text {
-    color: var(--color-gris-oscuro);
-    flex-grow: 1; /* Permite que el texto ocupe espacio y empuje el botón hacia abajo */
-}
-
-.program-card-custom ul li {
-    color: var(--color-negro);
-    font-size: 0.95rem;
-}
-
-.program-card-custom ul li i {
-    color: var(--color-azul); /* Color para los íconos de check */
+    line-height: 1.4;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 
 /* --- Sección CTA Contacto (Estilos complementarios) --- */
-/* primary-background ya definido arriba */
 #cta-contact h2,
 #cta-contact p {
-    color: var(--color-blanco); /* Asegura texto blanco para fondo azul */
+    color: var(--color-blanco); /* Asegura texto blanco para el fondo azul de esta sección */
 }
 #cta-contact p {
-    color: rgba(255, 255, 255, 0.8); /* Un poco más transparente */
+    color: rgba(255, 255, 255, 0.8); /* Un poco más transparente para el párrafo */
 }
 
-/* El botón usa btn btn-secondary btn-lg en el HTML */
 
+/* --- Media Queries (Ajustadas para complementar Bootstrap y la página de servicios) --- */
 
-/* --- Media Queries (Ajustadas para complementar Bootstrap) --- */
-
-@media (max-width: 991.98px) { /* Menor que 'lg' (tablets y móviles) */
+@media (max-width: 991.98px) { /* Para pantallas menores a 992px (tabletas y móviles) */
     .page-hero {
-        min-height: 70vh;
+        min-height: 70vh; /* Ajusta la altura del hero en dispositivos más pequeños */
     }
     .page-hero h1 {
         font-size: 2.8rem;
@@ -285,6 +172,7 @@
     .section-description {
         font-size: 1.05rem;
     }
+    /* Los botones del carrusel ya tienen estilos responsivos en base.css, pero se pueden ajustar más aquí si es necesario */
     .carousel-button {
         padding: 0.6rem 0.8rem;
         font-size: 1.2rem;
@@ -294,23 +182,23 @@
     }
 }
 
-@media (max-width: 767.98px) { /* Menor que 'md' (móviles) */
+@media (max-width: 767.98px) { /* Para pantallas menores a 768px (móviles pequeños) */
     .page-hero {
         min-height: 60vh;
     }
     .page-hero h1 {
         font-size: 2.2rem;
-        margin-bottom: 1rem !important; /* Ajuste más agresivo para móviles */
+        margin-bottom: 1rem !important; /* Ajuste más agresivo del margen para móviles */
     }
     .page-hero p {
         font-size: 0.95rem;
-        margin-bottom: 2rem !important; /* Ajuste más agresivo */
+        margin-bottom: 2rem !important; /* Ajuste más agresivo del margen */
     }
     .section-description {
         font-size: 0.95rem;
     }
     .client-logo-container {
-        width: 80px;
+        width: 80px; /* Reduce el tamaño del logo del cliente */
         height: 80px;
         margin-bottom: 10px;
     }
@@ -324,7 +212,7 @@
         padding: 0.5rem 0.7rem;
         font-size: 1rem;
     }
-    .carousel-dot {
+    .dot { /* Corregido: de .carousel-dot a .dot */
         width: 10px;
         height: 10px;
         margin: 0 4px;

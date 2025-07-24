@@ -1,58 +1,30 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Obtenemos los elementos del DOM
-    const hamburgerMenu = document.getElementById('hamburger-menu');
-    const navLinks = document.getElementById('nav-links');
-
-    // Verificamos que ambos elementos existan antes de añadir el event listener
-    if (hamburgerMenu && navLinks) {
-        // Añadimos un "escuchador de eventos" al icono de la hamburguesa
-        hamburgerMenu.addEventListener('click', () => {
-            // Cuando se haga clic, alternamos la clase 'active' en los enlaces de navegación
-            navLinks.classList.toggle('active');
-
-            // Opcional: Para animar el icono de la hamburguesa (cruces, etc.)
-            // Podrías añadir/quitar otra clase aquí o directamente en el mismo toggle
-            hamburgerMenu.classList.toggle('open');
-        });
-    } else {
-        console.warn("No se encontraron los elementos 'hamburger-menu' o 'nav-links'. Asegúrate de que los IDs sean correctos.");
+    // --- Lógica del Loader ---
+    // Asegura que la pantalla de carga se oculte después de un tiempo.
+    // Se ejecuta una vez que el HTML está completamente cargado.
+    const loaderWrapper = document.getElementById("loader-wrapper");
+    if (loaderWrapper) {
+        // Oculta el loader después de un pequeño retraso para que la animación sea visible
+        // Puedes ajustar el tiempo (en milisegundos)
+        setTimeout(function() {
+            loaderWrapper.classList.add("hidden");
+        }, 1000); // 1000 ms = 1 segundo
     }
 
-    // Opcional: Cerrar el menú si se hace clic fuera de él (útil en móviles)
-    document.addEventListener('click', (event) => {
-        // Si el clic no fue dentro del menú ni en el botón de hamburguesa
-        if (!navLinks.contains(event.target) && !hamburgerMenu.contains(event.target)) {
-            // Y el menú está abierto, entonces ciérralo
-            if (navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
-                hamburgerMenu.classList.remove('open'); // Si usas la clase 'open' para la animación
-            }
-        }
-    });
-});
 
-// (Tu código JS del Navbar aquí arriba)
-
-document.addEventListener('DOMContentLoaded', () => {
-    // ... (código existente del navbar) ...
-
-    // --- Funcionalidad para la Sección Hero ---
+    // --- Funcionalidad para la Sección Hero (Ejemplo de parallax sutil) ---
     const heroSection = document.getElementById('hero-home');
     if (heroSection) {
-        // Opción 1: Establecer la imagen de fondo dinámicamente (si es necesario)
-        // Por ahora, lo dejaremos en CSS. Si quisieras rotar imágenes, etc., lo harías aquí.
-        // heroSection.style.backgroundImage = "url('images/tu-imagen-hero.jpg')";
-
-        // Ejemplo básico: efecto de desplazamiento sutil para el fondo
-        // Puedes descomentar y usar esto si quieres un efecto parallax muy ligero
+        // Descomenta y ajusta el valor '0.3' para un efecto parallax muy ligero
         // window.addEventListener('scroll', () => {
         //     const scrollPosition = window.pageYOffset;
-        //     heroSection.style.backgroundPositionY = -scrollPosition * 0.3 + 'px'; // Ajusta el 0.3 para más o menos efecto
+        //     heroSection.style.backgroundPositionY = -scrollPosition * 0.3 + 'px';
         // });
     }
 
-    // --- Animación de secciones al hacer scroll (Ejemplo mejorado) ---
-    // Si quieres que las secciones aparezcan con una animación suave al entrar en la vista
+
+    // --- Animación de secciones al hacer scroll (Intersection Observer) ---
+    // Añade la clase 'visible' a las secciones cuando entran en la vista para activar animaciones CSS.
     const sectionsToAnimate = document.querySelectorAll('.content-section');
 
     const observerOptions = {
@@ -71,17 +43,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }, observerOptions);
 
     sectionsToAnimate.forEach(section => {
-        section.classList.add('fade-in-section'); // Clase inicial para la animación
+        section.classList.add('fade-in-section'); // Clase inicial para la animación (asegúrate de que exista en tu CSS)
         sectionObserver.observe(section);
     });
-});
 
-// ... (Tu código JS del Navbar y animaciones de secciones aquí) ...
-
-document.addEventListener('DOMContentLoaded', () => {
-    // ... (código existente del navbar y observer para secciones) ...
 
     // --- Validación de Formulario en Tiempo Real para Contacto ---
+    // Valida los campos del formulario de contacto mientras el usuario escribe.
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
         const nameInput = document.getElementById('name');
@@ -103,30 +71,29 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
 
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Simple regex para email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Regex simple para email
 
-        nameInput.addEventListener('input', () => {
-            validateInput(nameInput); // Solo validación de campo vacío
-        });
+        // Event listeners para validación en tiempo real
+        if (nameInput) {
+            nameInput.addEventListener('input', () => validateInput(nameInput));
+        }
+        if (emailInput) {
+            emailInput.addEventListener('input', () => validateInput(emailInput, emailRegex, 'Por favor, introduce un correo electrónico válido.'));
+        }
+        if (messageInput) {
+            messageInput.addEventListener('input', () => validateInput(messageInput));
+        }
 
-        emailInput.addEventListener('input', () => {
-            validateInput(emailInput, emailRegex, 'Por favor, introduce un correo electrónico válido.');
-        });
-
-        messageInput.addEventListener('input', () => {
-            validateInput(messageInput); // Solo validación de campo vacío
-        });
-
-        // Asegúrate de que el evento 'submit' para Formspree esté DESPUÉS de esto
-        // para que las validaciones se ejecuten antes del envío.
-        // El código de Formspree ya hace preventDefault().
+        // Si usas Formspree, su script ya manejará el evento 'submit' y hará preventDefault().
+        // Asegúrate de que su script se cargue después de este para que la validación se ejecute primero.
     }
 
-    // --- Efecto "Copy to Clipboard" para Email y Teléfono ---
+
+    // --- Efecto "Copy to Clipboard" para Email y Teléfono en Contacto ---
     const phoneDetail = document.querySelector('.contact-details-container a[href^="tel:"]');
     const emailDetail = document.querySelector('.contact-details-container a[href^="mailto:"]');
 
-    const createCopyMessage = (element, textToCopy, originalText) => {
+    const createCopyMessage = (element) => {
         const copyMessage = document.createElement('span');
         copyMessage.className = 'copy-feedback-message';
         copyMessage.textContent = '¡Copiado!';
@@ -139,10 +106,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (phoneDetail) {
         phoneDetail.addEventListener('click', (event) => {
-            event.preventDefault(); // Evita que se active la llamada/email por defecto
+            event.preventDefault(); // Evita que se active la llamada por defecto
             const phoneNumber = phoneDetail.textContent.trim();
             navigator.clipboard.writeText(phoneNumber).then(() => {
-                createCopyMessage(phoneDetail, phoneNumber, phoneDetail.textContent);
+                createCopyMessage(phoneDetail);
             }).catch(err => {
                 console.error('Error al copiar el teléfono:', err);
             });
@@ -154,89 +121,102 @@ document.addEventListener('DOMContentLoaded', () => {
             event.preventDefault(); // Evita que se abra el cliente de correo por defecto
             const emailAddress = emailDetail.textContent.trim();
             navigator.clipboard.writeText(emailAddress).then(() => {
-                createCopyMessage(emailDetail, emailAddress, emailDetail.textContent);
+                createCopyMessage(emailDetail);
             }).catch(err => {
                 console.error('Error al copiar el email:', err);
             });
         });
     }
-});
 
 
-// ... (Tu código JS del Navbar y validación de formulario de contacto aquí) ...
+    // --- Lógica del Carrusel con Auto-avance ---
+    // Esta lógica gestiona el movimiento del carrusel, botones y puntos, incluyendo el auto-avance.
+    const carouselSlides = document.getElementById('carouselSlides');
+    const prevButton = document.querySelector('.carousel-button.prev');
+    const nextButton = document.querySelector('.carousel-button.next');
+    const carouselDotsContainer = document.querySelector('.carousel-dots');
 
-document.addEventListener('DOMContentLoaded', () => {
-    // ... (código existente del navbar, observer para secciones y formulario de contacto) ...
+    // Solo inicializar el carrusel si todos sus elementos necesarios están presentes
+    if (carouselSlides && prevButton && nextButton && carouselDotsContainer) {
+        const images = carouselSlides.querySelectorAll('img');
+        let currentSlideIndex = 0;
+        const slideIntervalTime = 8000; // 3 segundos (3000 milisegundos)
 
-    // --- Carrusel de Galería en Página de Servicios ---
-    const carouselContainer = document.querySelector('#gallery-carousel .carousel-container');
-    if (carouselContainer) {
-        const slides = carouselContainer.querySelectorAll('.carousel-slide');
-        const prevButton = carouselContainer.querySelector('.carousel-button.prev');
-        const nextButton = carouselContainer.querySelector('.carousel-button.next');
-        const dotsContainer = carouselContainer.querySelector('.carousel-dots');
-        let currentSlide = 0;
+        let autoSlideInterval; // Variable para almacenar el ID del intervalo de auto-avance
 
-        // Crear los puntos (dots)
-        slides.forEach((_, index) => {
-            const dot = document.createElement('span');
-            dot.classList.add('dot');
-            if (index === 0) {
-                dot.classList.add('active');
+        // Función para actualizar la visualización del carrusel (mover las imágenes)
+        function updateCarousel() {
+            if (images.length === 0) return;
+            const offset = -currentSlideIndex * 100; // Calcular el desplazamiento en porcentaje
+            carouselSlides.style.transform = `translateX(${offset}%)`;
+            updateDots(); // Actualizar los puntos de navegación
+        }
+
+        // Función para actualizar los puntos de navegación (dots)
+        function updateDots() {
+            carouselDotsContainer.innerHTML = ''; // Limpiar los puntos existentes
+            images.forEach((_, index) => {
+                const dot = document.createElement('span');
+                dot.classList.add('dot');
+                if (index === currentSlideIndex) {
+                    dot.classList.add('active'); // Marcar el punto activo
+                }
+                dot.addEventListener('click', () => {
+                    currentSlideIndex = index; // Ir al slide correspondiente al punto clicado
+                    updateCarousel();
+                    resetAutoSlide(); // Reiniciar el temporizador de auto-avance al interactuar
+                });
+                carouselDotsContainer.appendChild(dot);
+            });
+        }
+
+        // Función para avanzar al siguiente slide
+        function moveToNextSlide() {
+            currentSlideIndex++;
+            if (currentSlideIndex >= images.length) {
+                currentSlideIndex = 0; // Volver al primer slide si se llega al final
             }
-            dot.addEventListener('click', () => {
-                showSlide(index);
-            });
-            dotsContainer.appendChild(dot);
+            updateCarousel();
+        }
+
+        // Función para iniciar el auto-avance
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(moveToNextSlide, slideIntervalTime);
+        }
+
+        // Función para reiniciar el temporizador de auto-avance (cuando el usuario interactúa)
+        function resetAutoSlide() {
+            clearInterval(autoSlideInterval); // Detener el temporizador actual
+            startAutoSlide(); // Iniciar un nuevo temporizador
+        }
+
+        // Inicializar el carrusel la primera vez
+        updateCarousel(); // Mostrar el primer slide y los puntos
+        startAutoSlide(); // Iniciar el auto-avance
+
+        // Event listeners para los botones de navegación
+        prevButton.addEventListener('click', () => {
+            currentSlideIndex--;
+            if (currentSlideIndex < 0) {
+                currentSlideIndex = images.length - 1; // Ir al último slide si se va hacia atrás desde el primero
+            }
+            updateCarousel();
+            resetAutoSlide(); // Reiniciar el temporizador de auto-avance
         });
 
-        const dots = dotsContainer.querySelectorAll('.dot');
-
-        const showSlide = (index) => {
-            slides.forEach((slide, i) => {
-                slide.classList.remove('active');
-                slide.style.opacity = 0; // Reset opacity for transition
-                if (i === index) {
-                    slide.classList.add('active');
-                    slide.style.opacity = 1; // Fade in active slide
-                }
-            });
-            dots.forEach((dot, i) => {
-                dot.classList.remove('active');
-                if (i === index) {
-                    dot.classList.add('active');
-                }
-            });
-            currentSlide = index;
-        };
-
-        const nextSlide = () => {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        };
-
-        const prevSlide = () => {
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            showSlide(currentSlide);
-        };
-
-        prevButton.addEventListener('click', prevSlide);
-        nextButton.addEventListener('click', nextSlide);
-
-        // Mostrar la primera slide al cargar
-        showSlide(currentSlide);
-
-        // Opcional: Autoplay del carrusel
-        let carouselInterval = setInterval(nextSlide, 5000); // Cambia cada 5 segundos
-
-        // Pausar autoplay al pasar el ratón y reanudar al salir
-        carouselContainer.addEventListener('mouseenter', () => {
-            clearInterval(carouselInterval);
+        nextButton.addEventListener('click', () => {
+            moveToNextSlide(); // Ya maneja el incremento y actualización
+            resetAutoSlide(); // Reiniciar el temporizador de auto-avance
         });
-        carouselContainer.addEventListener('mouseleave', () => {
-            carouselInterval = setInterval(nextSlide, 5000);
-        });
+
+        // Opcional: Pausar el auto-avance cuando el mouse está sobre el carrusel y reanudar al salir
+        const carouselContainer = document.querySelector('.carousel-container');
+        if (carouselContainer) {
+            carouselContainer.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+            carouselContainer.addEventListener('mouseleave', startAutoSlide);
+        }
     }
+
 
     // --- Smooth Scroll para botón "Explorar Canchas" ---
     const scrollDownButton = document.querySelector('.scroll-down-button');
@@ -250,3 +230,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Nota: El código para el menú hamburguesa personalizado que tenías al principio
+// ha sido eliminado. Si estás usando el componente Navbar de Bootstrap,
+// este ya maneja su propio comportamiento responsivo sin necesidad de JS adicional.
+// Si tu Navbar no es de Bootstrap o requiere JS muy específico,
+// por favor, házmelo saber para reintegrar esa lógica.
