@@ -22,34 +22,4 @@ Actualmente, el proyecto se encuentra en una fase avanzada de desarrollo, con fu
 * **JavaScript (Vanilla JS):** Interactividad, menú hamburguesa, carruseles de imágenes y validación de formulario.
 * **Font Awesome:** Biblioteca de iconos para elementos visuales.
 
-### Backend (Mencionado en el desarrollo, pero no incluido en este repositorio Frontend)
-* **Node.js:** Entorno de ejecución de JavaScript para el servidor.
-* **Express.js:** Framework web para construir la API RESTful (CRUD y gestión de datos).
 
-### Herramientas
-* **Git:** Sistema de control de versiones.
-* **GitHub:** Plataforma de alojamiento de repositorios.
-* **Formspree:** Servicio para el procesamiento de formularios de contacto sin necesidad de un backend propio para esta función.
-* **Visual Studio Code:** Editor de código.
-
-## 🚀 Cómo Ejecutar el Proyecto Localmente
-
-Para ver y probar esta aplicación web en tu entorno local:
-
-1.  **Clona el Repositorio:**
-    ```bash
-    git clone [https://github.com/yonath10/Profutbol.git](https://github.com/yonath10/Profutbol.git)
-    cd Profutbol # Asegúrate de que el nombre del repo sea correcto
-    ```
-2.  **Abrir en el Navegador:**
-    * Este es un proyecto puramente frontend (excepto la parte de Formspree). Simplemente abre el archivo `index.html` en tu navegador web preferido (`Chrome`, `Firefox`, `Edge`, etc.).
-    * Para una experiencia de desarrollo más robusta (con "live server"), puedes usar extensiones como `Live Server` en Visual Studio Code.
-
-3.  **Configuración de Formspree (para el formulario de contacto):**
-    * Ve a [Formspree.io](https://formspree.io/) y crea una cuenta.
-    * Crea un nuevo formulario y copia el "Form ID" que te proporcionan (ej. `xvovqjza`).
-    * En `contacto.html`, busca la línea del formulario y reemplaza `YOUR_FORMSPREE_FORM_ID` con tu ID real:
-        ```html
-        <form action="[https://formspree.io/f/YOUR_FORMSPREE_FORM_ID](https://formspree.io/f/YOUR_FORMSPREE_FORM_ID)" method="POST" class="contact-form">
-        ```
-    * Realiza un primer envío de prueba desde el navegador para activar tu formulario en Formspree.
