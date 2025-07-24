@@ -14,9 +14,8 @@
 
 /* Imagen de fondo específica para el hero de Contacto */
 .hero-contacto {
-    background-image: url('../images/5.jpg'); /* Define una imagen de fondo para contacto si tienes una, o usa la misma que en index */
-    /* Sugerencia: crea esta imagen en tu carpeta images/ */
-    background-image: url('../images/2.jpg'); /* Si no tienes una específica, puedes usar esta */
+    background-image: url('../images/03c26283-de5a-4e9f-9373-fc4c8e4c4c53.jpg'); /* Define una imagen de fondo para contacto si tienes una, o usa la misma que en index */
+
 }
 
 
