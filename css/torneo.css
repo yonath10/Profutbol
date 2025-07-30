@@ -14,9 +14,9 @@
 
 /* Imagen de fondo específica para el hero de Torneos */
 .hero-torneos {
-    background-image: url('../images/torneos.jpg'); /* Define una imagen de fondo para torneos */
-    /* Sugerencia: crea esta imagen en tu carpeta images/ */
-    filter: brightness(100%); /* O un valor similar */
+    background-image: url('../images/torneos.png'); /* Define una imagen de fondo para torneos */
+  
+    filter: brightness(100%); 
 }
 
 /* Overlay para el hero */

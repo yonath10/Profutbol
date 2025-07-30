@@ -4,15 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profutbol JC</title>
+    <title>Profutbol JC - Complejo Deportivo y Recreativo</title>
+    <meta name="description"
+        content="Complejo deportivo con canchas de fútbol, torneos emocionantes y servicios recreativos en Tenjo, Cundinamarca">
+    <meta name="keywords" content="fútbol, canchas, torneos, deporte, recreación, Tenjo, Cota, Sabana, Bogota">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
 
-    <script src="ruta/a/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-        integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/home.css">
 
@@ -23,8 +26,17 @@
         <div class="loader">
             <img src="images/carga.png" alt="Cargando..." class="bouncing-ball">
         </div>
-        <p class="loading-text"></p>
+        <p class="loading-text">Cargando la pasión por el fútbol...</p>
     </div>
+
+    <a href="https://wa.me/573203459145" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp whatsapp-icon"></i>
+    </a>
+
+    <button id="back-to-top" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
@@ -57,42 +69,171 @@
 
     <main>
         <section class="hero-home-redesigned d-flex align-items-center text-white text-center">
+            <video autoplay muted loop id="hero-video" class="hero-video-bg">
+                <source src="videos/head.mp4" type="video/mp4">
+                <img src="images/1.jpg" alt="Fondo de cancha de fútbol" class="hero-fallback-img">
+            </video>
             <div class="container-fluid">
                 <div class="row justify-content-center">
                     <div class="col-lg-9">
-                        <h1 class="display-3 fw-bold mb-4">¡Vive la Pasión del Fútbol en ProFutbol!</h1>
-                        <p class="lead mb-5">Tu complejo deportivo y recreativo con los mejores torneos y servicios.</p>
-                        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-                            <a href="torneos.html" class="btn btn-primary btn-lg px-4">Ver Próximos Torneos</a>
-                            <a href="contacto.html" class="btn btn-outline-light btn-lg px-4">Contáctanos</a>
+                        <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInDown">¡Vive la Pasión del
+                            Fútbol en ProFutbol!</h1>
+                        <p class="lead mb-5 animate__animated animate__fadeIn animate__delay-1s">Tu complejo deportivo y
+                            recreativo con los mejores torneos y servicios.</p>
+                    </div>
+                </div>
+            </div>
+            <a href="#about-us"
+                class="scroll-down-btn animate__animated animate__bounce animate__infinite animate__slow">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </section>
+
+        <section class="stats-counter py-4 bg-primary text-white">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-3 col-6 mb-4 mb-md-0">
+                        <div class="counter-item">
+                            <div class="counter-number" data-count="25">10</div>
+                            <div class="counter-label">Torneos Organizados</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4 mb-md-0">
+                        <div class="counter-item">
+                            <div class="counter-number" data-count="4">5</div>
+                            <div class="counter-label">Canchas Disponibles</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4 mb-md-0">
+                        <div class="counter-item">
+                            <div class="counter-number" data-count="98">100</div>
+                            <div class="counter-label">% Satisfacción</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="counter-item">
+                            <div class="counter-number" data-count="200">200</div>
+                            <div class="counter-label">Jugadores Activos</div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="about-us" class="content-section py-5">
+        <section id="about-us" class="content-section py-5 fade-in-section">
             <div class="container">
-                <h2 class="text-center mb-4">¿Quiénes Somos?</h2>
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <p class="lead text-center">En ProFutbol Complejo Deportivo y Recreativo, estamos dedicados a
-                            fomentar el amor por el fútbol
-                            en un ambiente de sana competencia y diversión. Contamos con instalaciones de primer nivel y
-                            un
-                            equipo apasionado para organizar los torneos más emocionantes y ofrecer servicios que
-                            superan tus
-                            expectativas.</p>
-                        <p class="text-center">Desde ligas locales hasta eventos especiales y empresariales nuestra
-                            misión es ofrecer una
-                            experiencia futbolística
-                            inolvidable para jugadores de todas las edades y niveles. ¡Únete a la comunidad ProFutbol!
-                        </p>
-                        <div class="text-center mt-4">
-                            <a href="servicios.html" class="btn btn-outline-primary btn-lg">Descubre Nuestros
+                <h2 class="text-center mb-5">¿Quiénes Somos?</h2>
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <div class="about-image rounded-4 overflow-hidden shadow-lg">
+                            <img src="images/4.jpg" alt="Equipo de ProFutbol" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <p class="lead">En ProFutbol Complejo Deportivo y Recreativo, estamos dedicados a fomentar el
+                            amor por el fútbol en un ambiente de sana competencia y diversión.</p>
+                        <p>Contamos con instalaciones de primer nivel y un equipo apasionado para organizar los torneos
+                            más emocionantes y ofrecer servicios que superan tus expectativas.</p>
+                        <div class="features-list mt-4">
+                            <div class="feature-item d-flex mb-3">
+                                <div class="feature-icon me-3 text-primary">
+                                    <i class="fas fa-futbol fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1">Canchas profesionales</h5>
+                                    <p class="mb-0">Superficies de última generación para un juego óptimo</p>
+                                </div>
+                            </div>
+                            <div class="feature-item d-flex mb-3">
+                                <div class="feature-icon me-3 text-primary">
+                                    <i class="fas fa-trophy fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1">Torneos emocionantes</h5>
+                                    <p class="mb-0">Competencias organizadas con estándares profesionales</p>
+                                </div>
+                            </div>
+                            <div class="feature-item d-flex">
+                                <div class="feature-icon me-3 text-primary">
+                                    <i class="fas fa-users fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1">Comunidad activa</h5>
+                                    <p class="mb-0">Más de 200 jugadores regulares participando</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center text-lg-start mt-4"> <a href="servicios.html"
+                                class="btn btn-outline-primary btn-lg">Descubre Nuestros
                                 Servicios</a>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-section py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center mb-5">Nuestras Instalaciones</h2>
+                <div class="row g-3">
+                    <div class="col-md-4 col-6">
+                        <a href="images/12.jpg" data-fancybox="gallery" data-caption="Cancha de fútbol principal"
+                            class="gallery-item">
+                            <img src="images/12.jpg" alt="Cancha 1" class="img-fluid rounded-3 shadow-sm">
+                            <div class="gallery-overlay">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 col-6">
+                        <a href="images/13.jpg" data-fancybox="gallery" data-caption="Vista aérea de las canchas"
+                            class="gallery-item">
+                            <img src="images/13.jpg" alt="Cancha 2" class="img-fluid rounded-3 shadow-sm">
+                            <div class="gallery-overlay">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 col-6">
+                        <a href="images/15.jpg" data-fancybox="gallery"
+                            data-caption="Cancha de fútbol con iluminación nocturna" class="gallery-item">
+                            <img src="images/15.jpg" alt="Cancha 3" class="img-fluid rounded-3 shadow-sm">
+                            <div class="gallery-overlay">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 col-6">
+                        <a href="images/torneo.JPG" data-fancybox="gallery" data-caption="Jugadores en un torneo"
+                            class="gallery-item">
+                            <img src="images/torneo.JPG" alt="Torneo 1" class="img-fluid rounded-3 shadow-sm">
+                            <div class="gallery-overlay">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 col-6">
+                        <a href="images/torneos.png" data-fancybox="gallery" data-caption="Equipo campeón de torneo"
+                            class="gallery-item">
+                            <img src="images/torneos.png" alt="Torneo 2" class="img-fluid rounded-3 shadow-sm">
+                            <div class="gallery-overlay">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 col-6">
+                        <a href="images/6.jpg" data-fancybox="gallery"
+                            data-caption="Evento empresarial en Profutbol JC" class="gallery-item">
+                            <img src="images/6.jpg" alt="Evento empresarial"
+                                class="img-fluid rounded-3 shadow-sm">
+                            <div class="gallery-overlay">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="servicios.html#galeria" class="btn btn-primary">Ver más fotos</a>
                 </div>
             </div>
         </section>
@@ -102,35 +243,83 @@
                 <h2 class="text-center mb-5">Nuestros Destacados</h2>
                 <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
                     <div class="col">
-                        <div class="card h-100 shadow-sm text-center">
-                            <div class="card-body">
+                        <div class="card h-100 shadow-sm text-center highlight-card">
+                            <div class="card-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="card-body d-flex flex-column">
                                 <h3 class="card-title text-primary">Torneos Emocionantes</h3>
-                                <p class="card-text">Participa en nuestras ligas y copas, ¡demuestra tu talento y
+                                <p class="card-text">Participa en nuestras ligas, ¡demuestra tu talento y
                                     compite por la gloria!</p>
-                                <a href="torneos.html" class="btn btn-sm btn-secondary mt-3">Más sobre Torneos</a>
+                                <a href="torneos.html" class="btn btn-sm btn-secondary mt-auto">Más sobre Torneos</a>
                             </div>
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card h-100 shadow-sm text-center">
-                            <div class="card-body">
+                        <div class="card h-100 shadow-sm text-center highlight-card">
+                            <div class="card-icon">
+                                <i class="fas fa-futbol"></i>
+                            </div>
+                            <div class="card-body d-flex flex-column">
                                 <h3 class="card-title text-primary">Servicios de Calidad</h3>
-                                <p class="card-text">Alquiler de canchas, escuela de fútbol, eventos privados y mucho
+                                <p class="card-text">Alquiler de canchas, eventos privados y mucho
                                     más a tu disposición.</p>
-                                <a href="servicios.html" class="btn btn-sm btn-secondary mt-3">Nuestros Servicios</a>
+                                <a href="servicios.html" class="btn btn-sm btn-secondary mt-auto">Nuestros Servicios</a>
                             </div>
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card h-100 shadow-sm text-center">
-                            <div class="card-body">
+                        <div class="card h-100 shadow-sm text-center highlight-card">
+                            <div class="card-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="card-body d-flex flex-column">
                                 <h3 class="card-title text-primary">Únete a la Comunidad</h3>
                                 <p class="card-text">Forma parte de ProFutbol y conecta con otros apasionados del
                                     deporte.</p>
-                                <a href="contacto.html" class="btn btn-sm btn-secondary mt-3">Contáctanos Hoy</a>
+                                <a href="contacto.html" class="btn btn-sm btn-secondary mt-auto">Contáctanos Hoy</a>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="content-section py-5 bg-dark text-white">
+            <div class="container">
+                <h2 class="text-center mb-5 text-white">Lo que dicen nuestros clientes</h2>
+                <div class="testimonial-carousel-container mx-auto" style="max-width: 800px;">
+                    <div class="testimonial-slide active text-center">
+                        <p class="lead">"Excelentes instalaciones y organización. Los torneos son muy bien planificados
+                            y las canchas
+                            están en perfecto estado. ¡Totalmente recomendado!"</p>
+                        <cite class="d-block mt-3">- Juan Pérez, Jugador frecuente</cite>
+                    </div>
+                    <div class="testimonial-slide text-center">
+                        <p class="lead">"Llevo 2 años jugando aquí y cada vez mejora más. El trato es excelente y la
+                            pasión por el
+                            fútbol se siente en cada rincón del complejo."</p>
+                        <cite class="d-block mt-3">- Mario Gómez, Jugador frecuente</cite>
+                    </div>
+                    <div class="testimonial-slide text-center">
+                        <p class="lead">"Organizamos un evento empresarial en ProFutbol y fue un éxito total. El
+                            servicio es
+                            impecable y las instalaciones son de primera."</p>
+                        <cite class="d-block mt-3">- Carlos Rodríguez, TechSolutions</cite>
+                    </div>
+                    <button class="testimonial-button prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="testimonial-button next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <section id="home-cta" class="content-section py-5 text-center">
+            <div class="container">
+                <h2 class="mb-4">¿Listo para vivir la experiencia ProFutbol?</h2>
+                <p class="lead mb-5">Únete a nuestra comunidad deportiva o reserva tu cancha hoy mismo.</p>
+                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                    <a href="contacto.html" class="btn btn-dark btn-lg px-4 me-sm-3">Reservar Ahora</a>
+                    <a href="torneos.html" class="btn btn-outline-dark btn-lg px-4">Inscribirse a Torneo</a>
                 </div>
             </div>
         </section>
@@ -140,8 +329,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 mb-4 mb-md-0 text-center text-md-start">
-                    <a href="index.html" class="d-inline-block mb-3 footer-logo"> <img src="images/profutbol.png"
-                            alt="Logo ProFutbol">
+                    <a href="index.html" class="d-inline-block mb-3 footer-logo">
+                        <img src="images/profutbol.png" alt="Logo ProFutbol" height="50">
                     </a>
                     <p class="text-white-50">ProFutbol: Tu complejo deportivo y recreativo, donde la pasión por el
                         fútbol cobra vida.</p>
@@ -158,35 +347,44 @@
                 <div class="col-md-4 mb-4 mb-md-0 text-center text-md-start">
                     <h3 class="text-white mb-3">Enlaces Rápidos</h3>
                     <ul class="list-unstyled">
-                        <li><a href="index.html" class="text-white-50 text-decoration-none">Inicio</a></li>
-                        <li><a href="torneos.html" class="text-white-50 text-decoration-none">Torneos</a></li>
-                        <li><a href="servicios.html" class="text-white-50 text-decoration-none">Servicios</a></li>
-                        <li><a href="contacto.html" class="text-white-50 text-decoration-none">Contacto</a></li>
-                        <li><a href="politica.html" class="text-white-50 text-decoration-none">Política de
+                        <li class="mb-2"><a href="index.html"
+                                class="text-white-50 text-decoration-none hover-effect">Inicio</a></li>
+                        <li class="mb-2"><a href="torneos.html"
+                                class="text-white-50 text-decoration-none hover-effect">Torneos</a></li>
+                        <li class="mb-2"><a href="servicios.html"
+                                class="text-white-50 text-decoration-none hover-effect">Servicios</a></li>
+                        <li class="mb-2"><a href="contacto.html"
+                                class="text-white-50 text-decoration-none hover-effect">Contacto</a></li>
+                        <li><a href="politica.html" class="text-white-50 text-decoration-none hover-effect">Política de
                                 Privacidad</a></li>
                     </ul>
                 </div>
 
                 <div class="col-md-4 text-center text-md-start">
                     <h3 class="text-white mb-3">Contáctanos</h3>
-                    <p class="text-white-50"><i class="fas fa-map-marker-alt me-2"></i> Dirección: Kilometro 3 via
+                    <p class="text-white-50 mb-3"><i class="fas fa-map-marker-alt me-2"></i> Dirección: Kilometro 3 via
                         Siberia a, Tenjo, Cundinamarca, Colombia</p>
-                    <p class="text-white-50"><i class="fas fa-phone me-2"></i> Teléfono: +57 3203459145</p>
-                    <p class="text-white-50"><i class="fas fa-envelope me-2"></i> Email: info@profutbol.com</p>
+                    <p class="text-white-50 mb-3"><i class="fas fa-phone me-2"></i> Teléfono: +57 3203459145</p>
+                    <p class="text-white-50 mb-3"><i class="fas fa-envelope me-2"></i> Email: info@profutbol.com</p>
+                    <div class="map-container mt-3">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15904.341103259582!2d-74.12061320000001!3d4.8580556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f848b9f1a2315%3A0xc3f8e6b2d1c6a74c!2sTenjo%2C%20Cundinamarca%2C%20Colombia!5e0!3m2!1ses!2ses!4v1722394998765!5m2!1ses!2ses"
+                            width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy"
+                            class="rounded-3"></iframe>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="footer-bottom text-center py-3 border-top border-secondary mt-4">
-            <p class="mb-0 text-white-50">&copy; 2025 ProFutbol Complejo Deportivo y Recreativo. Todos los derechos
+            <p class="mb-0 text-white-50">© 2025 ProFutbol Complejo Deportivo y Recreativo. Todos los derechos
                 reservados.</p>
         </div>
     </footer>
 
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
         crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <script src="js/script.js"></script>
 </body>
 

@@ -7,15 +7,13 @@
     --color-gris-claro: #F8F8F8;
     --color-gris-oscuro: #555555;
     /* Este es un azul semitransparente (0080ff con 34% de opacidad), usado para loader y footer. */
-    --color-dark-gray: #0080ff34; 
+    --color-dark-gray: #167ade34; 
 
     /* Fuentes */
     --font-primary: 'Arial', sans-serif; /* Fuente principal para textos */
     --font-secondary: 'Helvetica', sans-serif; /* Fuente para títulos y elementos destacados */
 }
 
-/* --- 2. Sobreescritura de Variables de Bootstrap con tus Colores --- */
-/* Esto asegura que los componentes de Bootstrap (botones, navbar, etc.) usen los colores de tu marca */
 
 /* Botón Primario */
 .btn-primary {
