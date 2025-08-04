@@ -1,198 +1,312 @@
-/* --- Estilos para la sección Hero de la página de Contacto --- */
-.page-hero {
+/* ==========================================================================
+   CONTACTO - ESTILOS MODERNOS
+   ========================================================================== */
+
+/* Variables CSS adicionales para la página de contacto */
+:root {
+    --contact-hero-bg: linear-gradient(135deg, #004D7A 0%, #002D4A 100%);
+    --contact-card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --contact-card-hover-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    --contact-border-radius: 12px;
+    --contact-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* --------------------------------------------------
+   HERO SECTION MODERNA
+   -------------------------------------------------- */
+.hero-contacto-simple {
+    background: var(--contact-hero-bg);
+    color: white;
+    height: 40vh;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
     position: relative;
-    width: 100%;
-    min-height: 80vh; /* Altura del hero, ajusta según necesidad */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: var(--color-blanco);
     overflow: hidden;
-    /* Las propiedades de display y alineación se manejan en el HTML con Bootstrap:
-       d-flex align-items-center text-white text-center */
 }
 
-/* Imagen de fondo específica para el hero de Contacto */
-.hero-contacto {
-    background-image: url('../images/03c26283-de5a-4e9f-9373-fc4c8e4c4c53.jpg'); /* Define una imagen de fondo para contacto si tienes una, o usa la misma que en index */
-
-}
-
-
-/* Overlay para el hero */
-.page-hero::before {
+.hero-contacto-simple::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Overlay oscuro */
+    background: url('../images/futbol-texture.png') center/cover no-repeat;
+    opacity: 0.1;
     z-index: 1;
 }
 
-/* Asegura que el contenido del hero esté por encima del overlay */
-.page-hero .container-fluid {
+.hero-contacto-simple .container-fluid {
     position: relative;
     z-index: 2;
 }
 
-/* Estilos para el texto del hero (aparte de lo que maneja Bootstrap con display-3, lead) */
-.page-hero h1,
-.page-hero p {
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Sombra de texto */
+.hero-contacto-simple h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    color: white;
+    letter-spacing: -0.5px;
 }
 
-
-/* --- Sección de Formulario e Información de Contacto --- */
-/* Las cuadrículas contact-grid y los form-group antiguos se reemplazan por row y col de Bootstrap */
-
-.contact-form-container {
-    border: 1px solid var(--color-gris-claro);
-    /* padding y shadow-sm, rounded-3 se aplican en el HTML con clases de Bootstrap */
+.hero-contacto-simple p {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    margin: 0 auto;
 }
 
+/* --------------------------------------------------
+   SECCIÓN DE FORMULARIO E INFORMACIÓN
+   -------------------------------------------------- */
+.contact-form-container,
+.contact-details-container {
+    border: none;
+    border-radius: var(--contact-border-radius);
+    transition: var(--contact-transition);
+    box-shadow: var(--contact-card-shadow);
+    background-color: white;
+}
+
+.contact-details-container {
+    background-color: #f8f9fa;
+}
+
+.contact-form-container:hover,
+.contact-details-container:hover {
+    box-shadow: var(--contact-card-hover-shadow);
+    transform: translateY(-5px);
+}
+
+/* Estilos modernos para el formulario */
 .contact-form label {
     font-weight: 600;
-    margin-bottom: 0.5rem; /* Espacio debajo de la etiqueta */
-    color: var(--color-gris-oscuro);
+    margin-bottom: 0.75rem;
+    color: var(--color-azul);
+    display: block;
+    font-size: 0.95rem;
 }
 
 .contact-form .form-control {
     border-radius: 8px;
-    padding: 0.8rem 1rem;
-    border: 1px solid var(--color-gris);
+    padding: 1rem 1.25rem;
+    border: 2px solid #e9ecef;
     font-size: 1rem;
-    transition: border-color 0.3s ease;
+    transition: var(--contact-transition);
+    height: auto;
 }
 
 .contact-form .form-control:focus {
     border-color: var(--color-azul);
-    box-shadow: 0 0 0 0.25rem rgba(var(--color-azul-rgb), 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(0, 77, 122, 0.15);
 }
 
+.contact-form textarea.form-control {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* Botón moderno */
 .contact-form button[type="submit"] {
+    background-color: var(--color-azul);
+    border: none;
+    padding: 1rem 2rem;
     font-size: 1.1rem;
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
-    /* Las clases btn btn-primary w-100 se aplican en el HTML */
-}
-
-.form-success-message {
     font-weight: 600;
-    /* text-success y text-center se aplican en el HTML */
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-radius: 8px;
+    transition: var(--contact-transition);
 }
 
-.contact-details-container {
-    border: 1px solid var(--color-gris-claro);
-    background-color: var(--color-claro); /* light-background para los detalles */
-    /* padding y shadow-sm, rounded-3 se aplican en el HTML con clases de Bootstrap */
+.contact-form button[type="submit"]:hover {
+    background-color: #003350;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 77, 122, 0.3);
+}
+
+/* Estilos para los detalles de contacto */
+.detail-item {
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    transition: var(--contact-transition);
+    background-color: white;
+    border: 1px solid #e9ecef;
+}
+
+.detail-item:hover {
+    background-color: #f8f9fa;
+    border-color: var(--color-azul);
 }
 
 .detail-item i {
-    color: var(--color-azul); /* Color para los íconos de detalle */
-    /* fs-4 y me-3 se aplican en el HTML con clases de Bootstrap */
+    color: var(--color-azul);
+    font-size: 1.25rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 77, 122, 0.1);
+    border-radius: 50%;
+    transition: var(--contact-transition);
+}
+
+.detail-item:hover i {
+    background-color: rgba(0, 77, 122, 0.2);
+    transform: scale(1.1);
 }
 
 .detail-item p {
     margin-bottom: 0;
-    color: var(--color-gris-oscuro);
+    color: #495057;
 }
 
-.detail-item p strong {
+.detail-item .fw-bold {
     color: var(--color-negro);
 }
 
-.detail-item a {
-    color: var(--color-gris-oscuro);
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.detail-item a:hover {
-    color: var(--color-azul);
+/* Redes sociales modernas */
+.social-links-contact {
+    margin-top: 2rem;
 }
 
 .social-links-contact h3 {
     color: var(--color-negro);
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+    position: relative;
+    display: inline-block;
+}
+
+.social-links-contact h3::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--color-azul);
 }
 
 .social-links-contact a {
-    color: var(--color-azul); /* Color para los íconos sociales */
-    transition: transform 0.2s ease;
-    /* fs-3 y me-3 se aplican en el HTML con clases de Bootstrap */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: rgba(0, 77, 122, 0.1);
+    border-radius: 50%;
+    color: var(--color-azul);
+    font-size: 1.25rem;
+    margin-right: 1rem;
+    transition: var(--contact-transition);
 }
 
 .social-links-contact a:hover {
+    background-color: var(--color-azul);
+    color: white;
     transform: translateY(-3px);
 }
 
+/* --------------------------------------------------
+   SECCIÓN DEL MAPA MODERNA
+   -------------------------------------------------- */
+#map-location {
+    background-color: #f8f9fa;
+    position: relative;
+}
 
-/* --- Sección del Mapa --- */
 #map-location h2 {
     color: var(--color-negro);
     text-align: center;
     margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+#map-location h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--color-azul);
+    border-radius: 2px;
 }
 
 .map-container {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
-    height: 0;
+    border-radius: var(--contact-border-radius);
     overflow: hidden;
-    /* rounded-3, overflow-hidden, shadow-sm se aplican en el HTML */
+    box-shadow: var(--contact-card-shadow);
+    border: none;
 }
 
 .map-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
+    filter: grayscale(20%) contrast(90%);
+    transition: var(--contact-transition);
 }
 
+.map-container:hover iframe {
+    filter: grayscale(0%) contrast(100%);
+}
 
-/* --- Media Queries (Ajustadas para complementar Bootstrap) --- */
-
-@media (max-width: 991.98px) { /* Menor que 'lg' (tablets y móviles) */
-    .page-hero {
-        min-height: 70vh;
+/* --------------------------------------------------
+   MEDIA QUERIES PARA RESPONSIVIDAD
+   -------------------------------------------------- */
+@media (max-width: 991.98px) {
+    .hero-contacto-simple {
+        height: 35vh;
+        min-height: 250px;
     }
-    .page-hero h1 {
-        font-size: 2.8rem;
-    }
-    .page-hero p {
-        font-size: 1.1rem;
-    }
-    #contact-info-form .col-lg-7,
-    #contact-info-form .col-lg-5 {
-        margin-bottom: 2rem; /* Espacio entre columnas en tablet/móvil */
-    }
+    
     .contact-form-container,
     .contact-details-container {
-        padding: 2rem; /* Menor padding en pantallas más pequeñas */
+        padding: 2rem !important;
     }
 }
 
-@media (max-width: 767.98px) { /* Menor que 'md' (móviles) */
-    .page-hero {
-        min-height: 60vh;
+@media (max-width: 767.98px) {
+    .hero-contacto-simple {
+        height: 30vh;
+        min-height: 200px;
     }
-    .page-hero h1 {
-        font-size: 2.2rem;
-        margin-bottom: 1rem !important;
+    
+    .hero-contacto-simple h1 {
+        font-size: 2.5rem;
     }
-    .page-hero p {
-        font-size: 0.95rem;
-        margin-bottom: 2rem !important;
+    
+    #contact-info-form .row > div {
+        margin-bottom: 2rem;
     }
-    .contact-form-container,
-    .contact-details-container {
-        padding: 1.5rem;
+}
+
+@media (max-width: 575.98px) {
+    .hero-contacto-simple {
+        height: 25vh;
+        min-height: 180px;
     }
-    .social-links-contact {
-        text-align: center !important; /* Asegura centrado en móviles */
+    
+    .hero-contacto-simple h1 {
+        font-size: 2rem;
+    }
+    
+    .contact-form button[type="submit"] {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .social-links-contact a {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+        margin-right: 0.75rem;
     }
 }

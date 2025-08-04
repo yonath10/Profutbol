@@ -1,52 +1,90 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="h-100">
 
 <head>
+    <!-- Metadatos básicos -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profutbol JC - Complejo Deportivo y Recreativo</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Metadatos SEO -->
+    <title>Profutbol JC - Complejo Deportivo y Recreativo en Tenjo | Canchas de Fútbol</title>
     <meta name="description"
-        content="Complejo deportivo con canchas de fútbol, torneos emocionantes y servicios recreativos en Tenjo, Cundinamarca">
-    <meta name="keywords" content="fútbol, canchas, torneos, deporte, recreación, Tenjo, Cota, Sabana, Bogota">
+        content="Complejo deportivo con canchas de fútbol, torneos emocionantes y servicios recreativos en Tenjo, Cundinamarca. Alquiler de canchas, eventos empresariales y más.">
+    <meta name="keywords"
+        content="fútbol, canchas, torneos, deporte, recreación, Tenjo, Cota, Sabana, Bogotá, alquiler canchas, ligas de fútbol">
+    <meta name="author" content="Profutbol JC">
+
+    <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Preconexiones para mejorar rendimiento -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Hojas de estilo externas -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/fancybox/fancybox.css">
 
+    <!-- Hojas de estilo locales -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/home.css">
 
+    <!-- Metaetiquetas para redes sociales -->
+    <meta property="og:title" content="Profutbol JC - Complejo Deportivo y Recreativo">
+    <meta property="og:description" content="Canchas de fútbol, torneos y servicios recreativos en Tenjo, Cundinamarca">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.profutboljc.com">
+    <meta property="og:image" content="https://www.profutboljc.com/images/profutbol-social.jpg">
+
+    <!-- Preload para recursos críticos -->
+    <link rel="preload" href="videos/head.mp4" as="video" type="video/mp4">
+    <link rel="preload" href="images/profutbol.png" as="image">
 </head>
 
-<body>
-    <div id="loader-wrapper">
+<body class="d-flex flex-column h-100">
+    <!-- Pantalla de carga inicial -->
+    <div id="loader-wrapper" aria-live="polite" aria-label="Cargando contenido">
         <div class="loader">
-            <img src="images/carga.png" alt="Cargando..." class="bouncing-ball">
+            <img src="images/carga.png" alt="Cargando..." class="bouncing-ball" width="80" height="80">
         </div>
         <p class="loading-text">Cargando la pasión por el fútbol...</p>
     </div>
 
-    <a href="https://wa.me/573203459145" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
-        <i class="fab fa-whatsapp whatsapp-icon"></i>
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/573203459145" class="whatsapp-float" target="_blank" rel="noopener noreferrer"
+        aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp whatsapp-icon" aria-hidden="true"></i>
+        <span class="visually-hidden">Contactar por WhatsApp</span>
     </a>
 
-    <button id="back-to-top" aria-label="Volver arriba">
-        <i class="fas fa-arrow-up"></i>
+    <!-- Botón para volver arriba -->
+    <button id="back-to-top" aria-label="Volver arriba" class="btn-back-top">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+        <span class="visually-hidden">Volver al inicio de la página</span>
     </button>
 
-    <header>
+    <!-- Cabecera del sitio -->
+    <header role="banner">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    <img src="images/profutbol.png" alt="Logo ProFutbol Complejo Deportivo y Recreativo" height="50">
+                <!-- Logo -->
+                <a class="navbar-brand" href="index.html" aria-label="Inicio Profutbol JC">
+                    <img src="images/profutbol.png" alt="Logo ProFutbol Complejo Deportivo y Recreativo" height="50"
+                        width="180" loading="lazy">
                 </a>
+
+                <!-- Botón móvil -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
+                <!-- Menú de navegación -->
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
@@ -67,52 +105,59 @@
         </nav>
     </header>
 
-    <main>
-        <section class="hero-home-redesigned d-flex align-items-center text-white text-center">
-            <video autoplay muted loop id="hero-video" class="hero-video-bg">
+    <!-- Contenido principal -->
+    <main class="flex-shrink-0" role="main">
+        <!-- Sección Hero con video -->
+        <section class="hero-home-redesigned d-flex align-items-center text-white text-center"
+            aria-labelledby="main-heading">
+            <div class="hero-overlay"></div>
+            <video autoplay muted loop id="hero-video" class="hero-video-bg" aria-hidden="true" playsinline>
                 <source src="videos/head.mp4" type="video/mp4">
                 <img src="images/1.jpg" alt="Fondo de cancha de fútbol" class="hero-fallback-img">
             </video>
             <div class="container-fluid">
                 <div class="row justify-content-center">
                     <div class="col-lg-9">
-                        <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInDown">¡Vive la Pasión del
-                            Fútbol en ProFutbol!</h1>
+                        <h1 id="main-heading" class="display-3 fw-bold mb-4 animate__animated animate__fadeInDown">¡Vive
+                            la Pasión del Fútbol en ProFutbol!</h1>
                         <p class="lead mb-5 animate__animated animate__fadeIn animate__delay-1s">Tu complejo deportivo y
-                            recreativo con los mejores torneos y servicios.</p>
+                            recreativo con los mejores torneos y servicios en Tenjo, Cundinamarca.</p>
                     </div>
                 </div>
             </div>
             <a href="#about-us"
-                class="scroll-down-btn animate__animated animate__bounce animate__infinite animate__slow">
-                <i class="fas fa-chevron-down"></i>
+                class="scroll-down-btn animate__animated animate__bounce animate__infinite animate__slow"
+                aria-label="Desplazarse hacia abajo">
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
             </a>
         </section>
 
-        <section class="stats-counter py-4 bg-primary text-white">
+        <!-- Estadísticas destacadas -->
+        <section class="stats-counter py-4 bg-primary text-white" aria-labelledby="stats-heading">
             <div class="container">
+                <h2 id="stats-heading" class="visually-hidden">Estadísticas de Profutbol JC</h2>
                 <div class="row text-center">
                     <div class="col-md-3 col-6 mb-4 mb-md-0">
                         <div class="counter-item">
-                            <div class="counter-number" data-count="25">10</div>
+                            <div class="counter-number" data-count="10">0</div>
                             <div class="counter-label">Torneos Organizados</div>
                         </div>
                     </div>
                     <div class="col-md-3 col-6 mb-4 mb-md-0">
                         <div class="counter-item">
-                            <div class="counter-number" data-count="4">5</div>
+                            <div class="counter-number" data-count="5">0</div>
                             <div class="counter-label">Canchas Disponibles</div>
                         </div>
                     </div>
                     <div class="col-md-3 col-6 mb-4 mb-md-0">
                         <div class="counter-item">
-                            <div class="counter-number" data-count="98">100</div>
+                            <div class="counter-number" data-count="98">0</div>
                             <div class="counter-label">% Satisfacción</div>
                         </div>
                     </div>
                     <div class="col-md-3 col-6">
                         <div class="counter-item">
-                            <div class="counter-number" data-count="200">200</div>
+                            <div class="counter-number" data-count="200">0</div>
                             <div class="counter-label">Jugadores Activos</div>
                         </div>
                     </div>
@@ -120,164 +165,235 @@
             </div>
         </section>
 
-        <section id="about-us" class="content-section py-5 fade-in-section">
+        <!-- Sección "Quiénes Somos" -->
+        <section id="about-us" class="content-section py-5 fade-in-section" aria-labelledby="about-heading">
             <div class="container">
-                <h2 class="text-center mb-5">¿Quiénes Somos?</h2>
+                <div class="section-header text-center mb-5">
+                    <span class="section-subtitle">Conoce más sobre</span>
+                    <h2 id="about-heading" class="section-title">¿Quiénes Somos?</h2>
+                </div>
                 <div class="row justify-content-center align-items-center">
                     <div class="col-lg-6 mb-4 mb-lg-0">
                         <div class="about-image rounded-4 overflow-hidden shadow-lg">
-                            <img src="images/4.jpg" alt="Equipo de ProFutbol" class="img-fluid">
+                            <img src="images/4.jpg" alt="Equipo de ProFutbol en las canchas" class="img-fluid"
+                                width="600" height="400" loading="lazy">
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <p class="lead">En ProFutbol Complejo Deportivo y Recreativo, estamos dedicados a fomentar el
-                            amor por el fútbol en un ambiente de sana competencia y diversión.</p>
-                        <p>Contamos con instalaciones de primer nivel y un equipo apasionado para organizar los torneos
-                            más emocionantes y ofrecer servicios que superan tus expectativas.</p>
+                        <p class="lead">En <strong>ProFutbol Complejo Deportivo y Recreativo</strong>, estamos dedicados
+                            a fomentar el amor por el fútbol en un ambiente de sana competencia y diversión.</p>
+                        <p>Ubicados estratégicamente en Tenjo, Cundinamarca, contamos con instalaciones de primer nivel
+                            y un equipo apasionado para organizar los torneos más emocionantes y ofrecer servicios que
+                            superan tus expectativas.</p>
+
                         <div class="features-list mt-4">
                             <div class="feature-item d-flex mb-3">
                                 <div class="feature-icon me-3 text-primary">
-                                    <i class="fas fa-futbol fa-2x"></i>
+                                    <i class="fas fa-futbol fa-2x" aria-hidden="true"></i>
                                 </div>
                                 <div>
-                                    <h5 class="mb-1">Canchas profesionales</h5>
-                                    <p class="mb-0">Superficies de última generación para un juego óptimo</p>
+                                    <h3 class="h5 mb-1">Canchas profesionales</h3>
+                                    <p class="mb-0">Superficies de última generación para un juego óptimo y seguro</p>
                                 </div>
                             </div>
                             <div class="feature-item d-flex mb-3">
                                 <div class="feature-icon me-3 text-primary">
-                                    <i class="fas fa-trophy fa-2x"></i>
+                                    <i class="fas fa-trophy fa-2x" aria-hidden="true"></i>
                                 </div>
                                 <div>
-                                    <h5 class="mb-1">Torneos emocionantes</h5>
-                                    <p class="mb-0">Competencias organizadas con estándares profesionales</p>
+                                    <h3 class="h5 mb-1">Torneos emocionantes</h3>
+                                    <p class="mb-0">Competencias organizadas con estándares profesionales y arbitraje
+                                        calificado</p>
                                 </div>
                             </div>
                             <div class="feature-item d-flex">
                                 <div class="feature-icon me-3 text-primary">
-                                    <i class="fas fa-users fa-2x"></i>
+                                    <i class="fas fa-users fa-2x" aria-hidden="true"></i>
                                 </div>
                                 <div>
-                                    <h5 class="mb-1">Comunidad activa</h5>
-                                    <p class="mb-0">Más de 200 jugadores regulares participando</p>
+                                    <h3 class="h5 mb-1">Comunidad activa</h3>
+                                    <p class="mb-0">Más de 200 jugadores regulares participando en nuestras actividades
+                                    </p>
                                 </div>
                             </div>
                         </div>
-                        <div class="text-center text-lg-start mt-4"> <a href="servicios.html"
-                                class="btn btn-outline-primary btn-lg">Descubre Nuestros
-                                Servicios</a>
+
+                        <div class="text-center text-lg-start mt-4">
+                            <a href="servicios.html" class="btn btn-outline-primary btn-lg">
+                                Descubre Nuestros Servicios
+                                <i class="fas fa-arrow-right ms-2" aria-hidden="true"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="gallery-section py-5 bg-light">
+        <!-- Galería de instalaciones -->
+        <section class="gallery-section py-5 bg-light" aria-labelledby="gallery-heading">
             <div class="container">
-                <h2 class="text-center mb-5">Nuestras Instalaciones</h2>
+                <div class="section-header text-center mb-5">
+                    <span class="section-subtitle">Explora nuestro</span>
+                    <h2 id="gallery-heading" class="section-title">Complejo Deportivo</h2>
+                </div>
+
                 <div class="row g-3">
+                    <!-- Imagen 1 -->
                     <div class="col-md-4 col-6">
-                        <a href="images/12.jpg" data-fancybox="gallery" data-caption="Cancha de fútbol principal"
-                            class="gallery-item">
-                            <img src="images/12.jpg" alt="Cancha 1" class="img-fluid rounded-3 shadow-sm">
+                        <a href="images/12.jpg" data-fancybox="gallery"
+                            data-caption="Cancha de fútbol principal con iluminación profesional" class="gallery-item">
+                            <img src="images/12.jpg" alt="Cancha principal de Profutbol JC"
+                                class="img-fluid rounded-3 shadow-sm" width="400" height="300" loading="lazy">
                             <div class="gallery-overlay">
-                                <i class="fas fa-search-plus"></i>
+                                <i class="fas fa-search-plus" aria-hidden="true"></i>
                             </div>
                         </a>
                     </div>
+
+                    <!-- Imagen 2 -->
                     <div class="col-md-4 col-6">
-                        <a href="images/13.jpg" data-fancybox="gallery" data-caption="Vista aérea de las canchas"
-                            class="gallery-item">
-                            <img src="images/13.jpg" alt="Cancha 2" class="img-fluid rounded-3 shadow-sm">
+                        <a href="images/13.jpg" data-fancybox="gallery"
+                            data-caption="Vista aérea de nuestras canchas de fútbol" class="gallery-item">
+                            <img src="images/13.jpg" alt="Vista aérea de las canchas"
+                                class="img-fluid rounded-3 shadow-sm" width="400" height="300" loading="lazy">
                             <div class="gallery-overlay">
-                                <i class="fas fa-search-plus"></i>
+                                <i class="fas fa-search-plus" aria-hidden="true"></i>
                             </div>
                         </a>
                     </div>
+
+                    <!-- Imagen 3 -->
                     <div class="col-md-4 col-6">
                         <a href="images/15.jpg" data-fancybox="gallery"
-                            data-caption="Cancha de fútbol con iluminación nocturna" class="gallery-item">
-                            <img src="images/15.jpg" alt="Cancha 3" class="img-fluid rounded-3 shadow-sm">
+                            data-caption="Cancha sintética para partidos de alta intensidad" class="gallery-item">
+                            <img src="images/15.jpg" alt="Cancha sintética de Profutbol JC"
+                                class="img-fluid rounded-3 shadow-sm" width="400" height="300" loading="lazy">
                             <div class="gallery-overlay">
-                                <i class="fas fa-search-plus"></i>
+                                <i class="fas fa-search-plus" aria-hidden="true"></i>
                             </div>
                         </a>
                     </div>
+
+                    <!-- Imagen 4 -->
                     <div class="col-md-4 col-6">
-                        <a href="images/torneo.JPG" data-fancybox="gallery" data-caption="Jugadores en un torneo"
-                            class="gallery-item">
-                            <img src="images/torneo.JPG" alt="Torneo 1" class="img-fluid rounded-3 shadow-sm">
+                        <a href="images/torneo.JPG" data-fancybox="gallery"
+                            data-caption="Equipos participantes en nuestros torneos locales" class="gallery-item">
+                            <img src="images/torneo.JPG" alt="Participantes de torneo en Profutbol JC"
+                                class="img-fluid rounded-3 shadow-sm" width="400" height="300" loading="lazy">
                             <div class="gallery-overlay">
-                                <i class="fas fa-search-plus"></i>
+                                <i class="fas fa-search-plus" aria-hidden="true"></i>
                             </div>
                         </a>
                     </div>
+
+                    <!-- Imagen 5 -->
                     <div class="col-md-4 col-6">
-                        <a href="images/torneos.png" data-fancybox="gallery" data-caption="Equipo campeón de torneo"
-                            class="gallery-item">
-                            <img src="images/torneos.png" alt="Torneo 2" class="img-fluid rounded-3 shadow-sm">
+                        <a href="images/torneos.png" data-fancybox="gallery"
+                            data-caption="Final de torneo con entrega de trofeos" class="gallery-item">
+                            <img src="images/torneos.png" alt="Entrega de trofeos en torneo"
+                                class="img-fluid rounded-3 shadow-sm" width="400" height="300" loading="lazy">
                             <div class="gallery-overlay">
-                                <i class="fas fa-search-plus"></i>
+                                <i class="fas fa-search-plus" aria-hidden="true"></i>
                             </div>
                         </a>
                     </div>
+
+                    <!-- Imagen 6 -->
                     <div class="col-md-4 col-6">
                         <a href="images/6.jpg" data-fancybox="gallery"
-                            data-caption="Evento empresarial en Profutbol JC" class="gallery-item">
-                            <img src="images/6.jpg" alt="Evento empresarial"
-                                class="img-fluid rounded-3 shadow-sm">
+                            data-caption="Evento empresarial en nuestras instalaciones" class="gallery-item">
+                            <img src="images/6.jpg" alt="Evento corporativo en Profutbol JC"
+                                class="img-fluid rounded-3 shadow-sm" width="400" height="300" loading="lazy">
                             <div class="gallery-overlay">
-                                <i class="fas fa-search-plus"></i>
+                                <i class="fas fa-search-plus" aria-hidden="true"></i>
                             </div>
                         </a>
                     </div>
                 </div>
+
                 <div class="text-center mt-4">
-                    <a href="servicios.html#galeria" class="btn btn-primary">Ver más fotos</a>
+                    <a href="servicios.html#gallery-carousel" class="btn btn-primary btn-gallery">
+                        Ver más fotos
+                        <i class="fas fa-images ms-2" aria-hidden="true"></i>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <section id="highlights" class="content-section light-background py-5">
+        <!-- Sección de destacados -->
+        <section id="highlights" class="content-section light-background py-5" aria-labelledby="highlights-heading">
             <div class="container">
-                <h2 class="text-center mb-5">Nuestros Destacados</h2>
+                <div class="section-header text-center mb-5">
+                    <span class="section-subtitle">Descubre nuestros</span>
+                    <h2 id="highlights-heading" class="section-title">Servicios Destacados</h2>
+                </div>
+
                 <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+                    <!-- Tarjeta 1: Torneos -->
                     <div class="col">
                         <div class="card h-100 shadow-sm text-center highlight-card">
                             <div class="card-icon">
-                                <i class="fas fa-trophy"></i>
+                                <i class="fas fa-trophy" aria-hidden="true"></i>
                             </div>
                             <div class="card-body d-flex flex-column">
                                 <h3 class="card-title text-primary">Torneos Emocionantes</h3>
-                                <p class="card-text">Participa en nuestras ligas, ¡demuestra tu talento y
-                                    compite por la gloria!</p>
-                                <a href="torneos.html" class="btn btn-sm btn-secondary mt-auto">Más sobre Torneos</a>
+                                <p class="card-text">Participa en nuestras ligas y torneos organizados con estándares
+                                    profesionales. ¡Demuestra tu talento y compite por la gloria!</p>
+                                <ul class="text-start mt-auto mb-3 ps-3">
+                                    <li>Torneos mensuales</li>
+                                    <li>Categorías para todas las edades</li>
+                                    <li>Premios y reconocimientos</li>
+                                </ul>
+                                <a href="torneos.html" class="btn btn-sm btn-secondary mt-auto align-self-center">
+                                    Más sobre Torneos
+                                    <i class="fas fa-arrow-right ms-1" aria-hidden="true"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Tarjeta 2: Servicios -->
                     <div class="col">
                         <div class="card h-100 shadow-sm text-center highlight-card">
                             <div class="card-icon">
-                                <i class="fas fa-futbol"></i>
+                                <i class="fas fa-futbol" aria-hidden="true"></i>
                             </div>
                             <div class="card-body d-flex flex-column">
                                 <h3 class="card-title text-primary">Servicios de Calidad</h3>
-                                <p class="card-text">Alquiler de canchas, eventos privados y mucho
-                                    más a tu disposición.</p>
-                                <a href="servicios.html" class="btn btn-sm btn-secondary mt-auto">Nuestros Servicios</a>
+                                <p class="card-text">Ofrecemos diversas opciones para disfrutar del fútbol y la
+                                    recreación en nuestras instalaciones.</p>
+                                <ul class="text-start mt-auto mb-3 ps-3">
+                                    <li>Alquiler de canchas por horas</li>
+                                    <li>Eventos empresariales</li>
+                                    <li>Escuelas de formación</li>
+                                </ul>
+                                <a href="servicios.html" class="btn btn-sm btn-secondary mt-auto align-self-center">
+                                    Nuestros Servicios
+                                    <i class="fas fa-arrow-right ms-1" aria-hidden="true"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Tarjeta 3: Comunidad -->
                     <div class="col">
                         <div class="card h-100 shadow-sm text-center highlight-card">
                             <div class="card-icon">
-                                <i class="fas fa-users"></i>
+                                <i class="fas fa-users" aria-hidden="true"></i>
                             </div>
                             <div class="card-body d-flex flex-column">
                                 <h3 class="card-title text-primary">Únete a la Comunidad</h3>
                                 <p class="card-text">Forma parte de ProFutbol y conecta con otros apasionados del
-                                    deporte.</p>
-                                <a href="contacto.html" class="btn btn-sm btn-secondary mt-auto">Contáctanos Hoy</a>
+                                    deporte en un ambiente familiar.</p>
+                                <ul class="text-start mt-auto mb-3 ps-3">
+                                    <li>Equipos amateurs</li>
+                                    <li>Eventos sociales</li>
+                                    <li>Descuentos para miembros</li>
+                                </ul>
+                                <a href="contacto.html" class="btn btn-sm btn-secondary mt-auto align-self-center">
+                                    Contáctanos Hoy
+                                    <i class="fas fa-arrow-right ms-1" aria-hidden="true"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -285,7 +401,8 @@
             </div>
         </section>
 
-        <section id="testimonials" class="content-section py-5 bg-dark text-white">
+        <!-- Testimonios de clientes -->
+ <section id="testimonials" class="content-section py-5 bg-dark text-white">
             <div class="container">
                 <h2 class="text-center mb-5 text-white">Lo que dicen nuestros clientes</h2>
                 <div class="testimonial-carousel-container mx-auto" style="max-width: 800px;">
@@ -313,79 +430,103 @@
             </div>
         </section>
 
-        <section id="home-cta" class="content-section py-5 text-center">
+        <!-- Llamado a la acción -->
+        <section id="home-cta" class="content-section py-5 text-center bg-cta" aria-labelledby="cta-heading">
             <div class="container">
-                <h2 class="mb-4">¿Listo para vivir la experiencia ProFutbol?</h2>
+                <h2 id="cta-heading" class="mb-4">¿Listo para vivir la experiencia ProFutbol?</h2>
                 <p class="lead mb-5">Únete a nuestra comunidad deportiva o reserva tu cancha hoy mismo.</p>
                 <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-                    <a href="contacto.html" class="btn btn-dark btn-lg px-4 me-sm-3">Reservar Ahora</a>
-                    <a href="torneos.html" class="btn btn-outline-dark btn-lg px-4">Inscribirse a Torneo</a>
+                    <a href="contacto.html" class="btn btn-dark btn-lg px-4 me-sm-3">
+                        <i class="fas fa-calendar-check me-2" aria-hidden="true"></i>
+                        Reservar Ahora
+                    </a>
+                    <a href="torneos.html" class="btn btn-outline-dark btn-lg px-4">
+                        <i class="fas fa-clipboard-list me-2" aria-hidden="true"></i>
+                        Inscribirse a Torneo
+                    </a>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="bg-dark text-white py-5">
+    <!-- Pie de página -->
+    <footer class="bg-dark text-white py-4 mt-auto" role="contentinfo">
         <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-4 mb-md-0 text-center text-md-start">
-                    <a href="index.html" class="d-inline-block mb-3 footer-logo">
-                        <img src="images/profutbol.png" alt="Logo ProFutbol" height="50">
+            <div class="row align-items-center">
+                <!-- Columna 1: Logo y redes -->
+                <div class="col-md-5 mb-3 mb-md-0 text-center text-md-start">
+                    <a href="index.html" class="d-inline-block footer-logo" aria-label="Inicio Profutbol JC">
+                        <img src="images/profutbol.png" alt="Logo ProFutbol" height="40" width="160" loading="lazy">
                     </a>
-                    <p class="text-white-50">ProFutbol: Tu complejo deportivo y recreativo, donde la pasión por el
-                        fútbol cobra vida.</p>
-                    <div class="social-links mt-3">
+                    <p class="text-white-50 mt-2 mb-2 d-none d-md-block">ProFutbol: Tu complejo deportivo y recreativo,
+                        donde la pasión por el fútbol cobra vida en Tenjo, Cundinamarca.</p>
+
+                    <div class="social-links mt-2">
                         <a href="https://www.facebook.com/p/Profutbol-JC-100083072811985/" target="_blank"
-                            aria-label="Facebook" class="text-white-50 me-3 fs-4"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/profutboljc/?hl=es" target="_blank" aria-label="Instagram"
-                            class="text-white-50 me-3 fs-4"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.tiktok.com/@profutbol.jc" target="_blank" aria-label="tiktok"
-                            class="text-white-50 fs-4"><i class="fab fa-tiktok"></i></a>
+                            rel="noopener noreferrer" aria-label="Facebook" class="text-white-50 me-3 fs-5">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.instagram.com/profutboljc/?hl=es" target="_blank" rel="noopener noreferrer"
+                            aria-label="Instagram" class="text-white-50 me-3 fs-5">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@profutbol.jc" target="_blank" rel="noopener noreferrer"
+                            aria-label="TikTok" class="text-white-50 fs-5">
+                            <i class="fab fa-tiktok" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </div>
 
-                <div class="col-md-4 mb-4 mb-md-0 text-center text-md-start">
-                    <h3 class="text-white mb-3">Enlaces Rápidos</h3>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="index.html"
-                                class="text-white-50 text-decoration-none hover-effect">Inicio</a></li>
-                        <li class="mb-2"><a href="torneos.html"
-                                class="text-white-50 text-decoration-none hover-effect">Torneos</a></li>
-                        <li class="mb-2"><a href="servicios.html"
-                                class="text-white-50 text-decoration-none hover-effect">Servicios</a></li>
-                        <li class="mb-2"><a href="contacto.html"
-                                class="text-white-50 text-decoration-none hover-effect">Contacto</a></li>
-                        <li><a href="politica.html" class="text-white-50 text-decoration-none hover-effect">Política de
-                                Privacidad</a></li>
-                    </ul>
-                </div>
+                <!-- Columna 2: Enlaces y contacto -->
+                <div class="col-md-7 text-center text-md-end">
+                    <div class="d-flex flex-wrap justify-content-center justify-content-md-end align-items-center">
+                        <a href="index.html" class="text-white-50 text-decoration-none mx-2 hover-effect">Inicio</a>
+                        <a href="torneos.html" class="text-white-50 text-decoration-none mx-2 hover-effect">Torneos</a>
+                        <a href="servicios.html"
+                            class="text-white-50 text-decoration-none mx-2 hover-effect">Servicios</a>
+                        <a href="contacto.html"
+                            class="text-white-50 text-decoration-none mx-2 hover-effect">Contacto</a>
+                        <a href="politica.html" class="text-white-50 text-decoration-none mx-2 hover-effect">Política de
+                            Privacidad</a>
 
-                <div class="col-md-4 text-center text-md-start">
-                    <h3 class="text-white mb-3">Contáctanos</h3>
-                    <p class="text-white-50 mb-3"><i class="fas fa-map-marker-alt me-2"></i> Dirección: Kilometro 3 via
-                        Siberia a, Tenjo, Cundinamarca, Colombia</p>
-                    <p class="text-white-50 mb-3"><i class="fas fa-phone me-2"></i> Teléfono: +57 3203459145</p>
-                    <p class="text-white-50 mb-3"><i class="fas fa-envelope me-2"></i> Email: info@profutbol.com</p>
-                    <div class="map-container mt-3">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15904.341103259582!2d-74.12061320000001!3d4.8580556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f848b9f1a2315%3A0xc3f8e6b2d1c6a74c!2sTenjo%2C%20Cundinamarca%2C%20Colombia!5e0!3m2!1ses!2ses!4v1722394998765!5m2!1ses!2ses"
-                            width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy"
-                            class="rounded-3"></iframe>
+                        <div class="d-flex align-items-center ms-4">
+                            <i class="fas fa-phone me-1 text-white-50" aria-hidden="true"></i>
+                            <a href="tel:+573203459145" class="text-white-50 text-decoration-none">+57 320 345 9145</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom text-center py-3 border-top border-secondary mt-4">
-            <p class="mb-0 text-white-50">© 2025 ProFutbol Complejo Deportivo y Recreativo. Todos los derechos
-                reservados.</p>
+
+            <!-- Línea de copyright -->
+            <div class="footer-bottom text-center py-3 border-top border-secondary mt-3">
+                <p class="mb-0 text-white-50">
+                    © <span id="current-year">2025</span> ProFutbol Complejo Deportivo y Recreativo. Todos los derechos
+                    reservados.
+                    
+                </p>
+            </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/fancybox/fancybox.umd.js"></script>
+
+    <!-- Scripts locales -->
     <script src="js/script.js"></script>
+
+    <!-- Inicialización de plugins -->
+    <script>
+        // Inicializar Fancybox para la galería
+        Fancybox.bind("[data-fancybox]", {
+            // Opciones de configuración
+        });
+
+        // Actualizar año de copyright
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 
 </html>

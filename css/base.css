@@ -1,12 +1,12 @@
 /* --- 1. Variables CSS (Colores de Marca) --- */
 :root {
-    --color-azul: #004D7A; /* Azul principal de tu marca (ProFutbol) */
-    --color-amarillo: #FFD700; /* Amarillo vibrante de tu marca (ProFutbol) */
+    --color-azul: #004D7A; 
+    --color-amarillo: #FFD700; 
     --color-negro: #1A1A1A;
     --color-blanco: #FFFFFF;
     --color-gris-claro: #F8F8F8;
     --color-gris-oscuro: #555555;
-    /* Este es un azul semitransparente (0080ff con 34% de opacidad), usado para loader y footer. */
+    /* usado para loader y footer. */
     --color-dark-gray: #167ade34; 
 
     /* Fuentes */
@@ -378,7 +378,48 @@ footer .social-links a:hover .fab {
     transform: translateY(-5px);
     animation: fadeInOut 1.5s forwards; /* Animación de aparecer y desaparecer */
 }
+/* Botón de WhatsApp flotante */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    color: var(--color-blanco);
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: var(--shadow-lg);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-normal);
+    animation: pulse-whatsapp 2s infinite;
+}
 
+.whatsapp-float:hover {
+    background-color: #128C7E;
+    transform: scale(1.1);
+    color: var(--color-blanco);
+}
+
+.whatsapp-icon {
+    transition: var(--transition-normal);
+}
+
+@keyframes pulse-whatsapp {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
 @keyframes fadeInOut {
     0% { opacity: 0; transform: translateY(-5px); }
     10% { opacity: 1; transform: translateY(0); }

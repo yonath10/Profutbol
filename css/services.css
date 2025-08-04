@@ -1,21 +1,32 @@
-/* --- Estilos para la sección Hero de la página de Servicios --- */
+/*
+=============================================================================
+Archivo: services.css
+Descripción: Estilos personalizados para la página de Servicios.
+Complementa los estilos base de 'base.css' y las utilidades de Bootstrap.
+=============================================================================
+*/
+
+/* --- SECCIÓN HERO PRINCIPAL DE LA PÁGINA DE SERVICIOS --- */
+
 .page-hero {
     position: relative;
     width: 100%;
-    min-height: 80vh; /* Altura del hero, ajusta según necesidad */
+    min-height: 80vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: var(--color-gris-oscuro); /* Color de texto predeterminado para el hero */
-    overflow: hidden; /* Asegura que el contenido no desborde */
+    color: var(--color-blanco); /* Se usa blanco por el overlay oscuro */
+    overflow: hidden;
+    display: flex;
+    align-items: center; /* Centra el contenido verticalmente */
 }
 
-/* Imagen de fondo específica para el hero de Servicios */
+/* Imagen de fondo específica para el hero de la página de Servicios */
 .hero-services {
-    background-image: url('../images/2.jpg'); /* ¡Asegúrate que esta ruta sea correcta! */
+    background-image: url('../images/2.jpg');
 }
 
-/* Overlay oscuro para mejorar la legibilidad del texto en el hero */
+/* Capa de superposición (overlay) para mejorar la legibilidad del texto */
 .page-hero::before {
     content: '';
     position: absolute;
@@ -23,119 +34,73 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Overlay oscuro (60% de opacidad) */
-    z-index: 1; /* Por debajo del contenido, por encima de la imagen de fondo */
+    background: rgba(0, 0, 0, 0.6); /* Overlay oscuro con 60% de opacidad */
+    z-index: 1; /* Coloca el overlay por debajo del contenido, pero por encima de la imagen */
 }
 
-/* Asegura que el contenido del hero esté por encima del overlay */
+/* Contenedor del texto del hero, asegurando que esté por encima del overlay */
 .page-hero .container-fluid {
     position: relative;
-    z-index: 2; /* Por encima del overlay */
+    z-index: 2;
 }
 
-/* Estilos para el texto del hero (complementando las clases de Bootstrap) */
+/* Estilos para el texto del hero para un mejor contraste y visibilidad */
 .page-hero h1,
 .page-hero p {
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Sombra de texto para mejorar contraste */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
 }
 
 
-/* --- Estilos Generales de Contenido (complementando base.css y utilidades de Bootstrap) --- */
+/* --- ESTILOS GENERALES PARA SECCIONES DE CONTENIDO --- */
 
 .section-description {
     font-size: 1.15rem;
-    max-width: 900px; /* Limita el ancho del texto para mejor lectura */
+    max-width: 900px; /* Ancho máximo para mejorar la legibilidad del texto */
     margin-left: auto;
     margin-right: auto;
     color: var(--color-gris-oscuro);
 }
 
-/* Colores de fondo para secciones específicas, usando variables globales */
+/* Clases de utilidad para fondos de secciones */
 .light-background {
     background-color: var(--color-gris-claro);
 }
 
 .secondary-background {
-    background-color: var(--color-negro); /* Usando el azul semitransparente de tus variables */
+    background-color: var(--color-negro);
     color: var(--color-blanco);
 }
 
 .primary-background {
-    background-color: var(--color-azul); /* Usando el azul principal de tu marca */
+    background-color: var(--color-azul);
     color: var(--color-blanco);
 }
 
 
-/* --- Sección "Nuestras Canchas" (Estilos para las tarjetas de cancha) --- */
+/* --- SECCIÓN "NUESTRAS CANCHAS" --- */
+
 #our-fields .card {
-    border: none; /* Elimina el borde predeterminado de Bootstrap */
+    border: none;
     border-radius: 12px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave al pasar el mouse */
-    height: 100%; /* Para igualar alturas de las tarjetas en filas de Bootstrap */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
     padding: 25px;
 }
 
 #our-fields .card:hover {
     transform: translateY(-8px); /* Efecto de elevación al pasar el mouse */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15) !important; /* Sombra más pronunciada, !important para sobreescribir */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15) !important;
 }
 
 .feature-icon {
-    color: var(--color-amarillo); /* Color para los íconos de las características */
+    color: var(--color-amarillo);
 }
 
 
-/* --- Sección "Nuestros Clientes Destacados" (Estilos para las tarjetas de cliente) --- */
-/* Se utiliza .client-card-custom para estilizar estas tarjetas sin afectar otras .card */
-.client-card-custom {
-    background-color: var(--color-blanco);
-    border-radius: 12px;
-    border: 1px solid var(--color-gris-claro);
-    padding: 30px;
-    transition: all 0.3s ease;
-    height: 100%; /* Para igualar alturas de las tarjetas */
-}
+/* --- SECCIÓN "GALERÍA DE INSTALACIONES" (CARRUSEL) --- */
 
-.client-card-custom:hover {
-    transform: scale(1.03); /* Ligeramente más grande al pasar el mouse */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important; /* Sombra al pasar el mouse */
-}
-
-.client-logo-container {
-    width: 100px; /* Tamaño fijo para el contenedor del logo del cliente */
-    height: 100px;
-    overflow: hidden;
-    border-radius: 50%; /* Forma circular para el contenedor */
-    background-color: var(--color-gris-claro);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 15px auto; /* Centrar y margen inferior */
-}
-
-.client-logo-container img {
-    max-width: 80%; /* Ajusta el tamaño del logo dentro de su contenedor */
-    max-height: 80%;
-    object-fit: contain; /* Asegura que la imagen se ajuste sin distorsión */
-    border-radius: 0; /* Asegura que no tenga border-radius extra de otros estilos de imagen */
-}
-
-.client-card-custom .card-title {
-    color: var(--color-azul);
-    font-size: 1.6rem;
-}
-
-.client-card-custom .card-text {
-    color: var(--color-gris-oscuro);
-    font-style: italic;
-    font-size: 0.95rem;
-}
-
-
-/* --- Sección "Nuestros Eventos" (Título específico para fondo oscuro) --- */
-/* Los estilos del carrusel en sí (botones, dots, etc.) están en base.css */
 #gallery-carousel h2 {
-    color: var(--color-blanco); /* Título blanco para el fondo oscuro de esta sección */
+    color: var(--color-blanco); /* Título en blanco para el fondo oscuro */
 }
 
 /* Estilo para el pie de foto del carrusel */
@@ -147,21 +112,45 @@
 }
 
 
-/* --- Sección CTA Contacto (Estilos complementarios) --- */
+/* --- SECCIÓN "FOTOGRAFÍA DEPORTIVA" --- */
+
+.program-card-custom {
+    /* Mantiene los estilos para la tarjeta de fotografía, similar a las de "Nuestras Canchas" */
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.program-card-custom:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.program-icon {
+    color: var(--color-amarillo);
+}
+
+
+/* --- SECCIÓN "CALL TO ACTION" (CTA) --- */
+
 #cta-contact h2,
 #cta-contact p {
-    color: var(--color-blanco); /* Asegura texto blanco para el fondo azul de esta sección */
+    color: var(--color-blanco);
 }
+
 #cta-contact p {
-    color: rgba(255, 255, 255, 0.8); /* Un poco más transparente para el párrafo */
+    color: rgba(255, 255, 255, 0.8);
 }
 
 
-/* --- Media Queries (Ajustadas para complementar Bootstrap y la página de servicios) --- */
+/* --- MEDIA QUERIES (AJUSTES PARA RESPONSIVE DESIGN) --- */
 
-@media (max-width: 991.98px) { /* Para pantallas menores a 992px (tabletas y móviles) */
+/* Para pantallas medianas y pequeñas (hasta 991.98px) */
+@media (max-width: 991.98px) {
     .page-hero {
-        min-height: 70vh; /* Ajusta la altura del hero en dispositivos más pequeños */
+        min-height: 70vh;
     }
     .page-hero h1 {
         font-size: 2.8rem;
@@ -172,50 +161,26 @@
     .section-description {
         font-size: 1.05rem;
     }
-    /* Los botones del carrusel ya tienen estilos responsivos en base.css, pero se pueden ajustar más aquí si es necesario */
-    .carousel-button {
-        padding: 0.6rem 0.8rem;
-        font-size: 1.2rem;
-    }
     .carousel-caption {
         font-size: 1rem;
     }
 }
 
-@media (max-width: 767.98px) { /* Para pantallas menores a 768px (móviles pequeños) */
+/* Para pantallas extra pequeñas (hasta 767.98px) */
+@media (max-width: 767.98px) {
     .page-hero {
         min-height: 60vh;
     }
     .page-hero h1 {
         font-size: 2.2rem;
-        margin-bottom: 1rem !important; /* Ajuste más agresivo del margen para móviles */
+        margin-bottom: 1rem !important;
     }
     .page-hero p {
         font-size: 0.95rem;
-        margin-bottom: 2rem !important; /* Ajuste más agresivo del margen */
+        margin-bottom: 2rem !important;
     }
     .section-description {
         font-size: 0.95rem;
-    }
-    .client-logo-container {
-        width: 80px; /* Reduce el tamaño del logo del cliente */
-        height: 80px;
-        margin-bottom: 10px;
-    }
-    .client-card-custom .card-title {
-        font-size: 1.4rem;
-    }
-    .client-card-custom .card-text {
-        font-size: 0.9rem;
-    }
-    .carousel-button {
-        padding: 0.5rem 0.7rem;
-        font-size: 1rem;
-    }
-    .dot { /* Corregido: de .carousel-dot a .dot */
-        width: 10px;
-        height: 10px;
-        margin: 0 4px;
     }
     #cta-contact h2 {
         font-size: 2.5rem;
