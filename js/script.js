@@ -221,3 +221,51 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+
+/* ==========================================================================
+   FUNCIONALIDAD DEL BANNER DE COOKIES (CON ACEPTAR/RECHAZAR)
+   ========================================================================== */
+document.addEventListener('DOMContentLoaded', () => {
+    const cookieBanner = document.getElementById('cookie-banner');
+    const acceptCookiesBtn = document.getElementById('accept-cookies-btn');
+    const rejectCookiesBtn = document.getElementById('reject-cookies-btn'); // Nuevo botón
+
+    // Si no encontramos los elementos, no hacemos nada.
+    if (!cookieBanner || !acceptCookiesBtn || !rejectCookiesBtn) {
+        return;
+    }
+
+    // Comprobamos si ya se ha tomado una decisión (aceptado o rechazado)
+    const consentGiven = localStorage.getItem('cookie_consent');
+
+    // Si no hay una decisión guardada, mostramos el banner
+    if (!consentGiven) {
+        cookieBanner.classList.add('show');
+    }
+    
+    // Función para manejar el consentimiento y ocultar el banner
+    const handleConsent = (consentType) => {
+        // Guardamos el tipo de consentimiento ('accepted' o 'rejected')
+        localStorage.setItem('cookie_consent', consentType);
+        
+        // Ocultamos el banner con una animación
+        cookieBanner.style.opacity = '0';
+        cookieBanner.style.transform = 'translateY(100%)';
+        
+        // Esperamos a que termine la animación para quitarlo del todo
+        setTimeout(() => {
+            cookieBanner.style.display = 'none';
+        }, 500);
+    };
+
+    // Event listener para el botón de ACEPTAR
+    acceptCookiesBtn.addEventListener('click', () => {
+        handleConsent('accepted');
+    });
+
+    // Event listener para el botón de RECHAZAR
+    rejectCookiesBtn.addEventListener('click', () => {
+        handleConsent('rejected');
+    });
+});

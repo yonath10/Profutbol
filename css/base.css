@@ -459,3 +459,110 @@ footer .social-links a:hover .fab {
         margin-bottom: 1.5rem; /* Más espacio debajo del logo en móviles */
     }
 }
+/* ============================================= */
+/* 9. ESTILOS DEL BANNER DE COOKIES */
+/* ============================================= */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(26, 26, 26, 0.95); /* Negro semi-transparente, como el navbar */
+    color: var(--color-blanco);
+    z-index: 1100; /* Prioridad alta para que se muestre sobre otros elementos */
+    padding: 1rem;
+    display: none; /* Inicialmente oculto */
+    backdrop-filter: blur(5px);
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+    font-size: 0.9rem;
+}
+
+.cookie-banner.show {
+    display: block;
+    animation: slideUp 0.5s ease-out forwards;
+}
+
+.cookie-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 1rem; /* Espacio entre el texto y el botón */
+}
+
+.cookie-text {
+    margin: 0;
+    flex-grow: 1; /* El texto ocupa el espacio disponible */
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.cookie-link {
+    color: var(--color-amarillo); /* Amarillo para destacar el enlace */
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.cookie-link:hover {
+    color: var(--color-blanco);
+}
+
+.cookie-button {
+    background-color: var(--color-amarillo);
+    color: var(--color-negro);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    font-weight: 700;
+    white-space: nowrap; /* Evita que el texto del botón se parta */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cookie-button:hover {
+    background-color: #E6B800; /* Amarillo más oscuro */
+    transform: scale(1.05);
+}
+
+/* Animación para que el banner aparezca desde abajo */
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 767.98px) {
+    .cookie-content {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .cookie-text {
+        margin-bottom: 1rem;
+    }
+}
+/* Estilos para el contenedor de los botones */
+.cookie-buttons {
+    display: flex;
+    gap: 0.75rem; /* Espacio entre los botones */
+    flex-shrink: 0; /* Evita que los botones se encojan en espacios pequeños */
+}
+
+/* Estilo para el botón de rechazar (menos prominente) */
+.cookie-button.reject {
+    background-color: transparent;
+    color: var(--color-blanco);
+    border: 2px solid var(--color-gris-oscuro);
+}
+
+.cookie-button.reject:hover {
+    background-color: var(--color-gris-oscuro);
+    color: var(--color-blanco);
+}
