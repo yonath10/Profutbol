@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Términos y Condiciones - ProFutbol JC</title>
 
-    <meta name="description" content="Consulta los términos y condiciones para el uso de nuestro sitio web y la reserva de servicios en Profutbol JC.">
+    <meta name="description"
+        content="Consulta los términos y condiciones para el uso de nuestro sitio web y la reserva de servicios en Profutbol JC.">
 
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -14,43 +15,48 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
         crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/home.css">
 </head>
 
 <body>
-    <a href="https://wa.me/573203459145" class="whatsapp-float" target="_blank" aria-label="Contáctanos vía WhatsApp">
-        <i class="fab fa-whatsapp whatsapp-icon" aria-hidden="true"></i>
-    </a>
 
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <header id="header">
+        <nav class="navbar navbar-expand-lg fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    <img src="images/profutbol.png" alt="Logo ProFutbol JC" height="50">
+                <a class="navbar-brand" href="#inicio">
+                    <img src="images/profutbol.png" alt="Logo Profutbol JC">
+                    <span>PROFUTBOL JC</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <i class="fas fa-bars"></i>
                 </button>
-
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="torneos.html">Torneos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#servicios">Servicios</a></li>
+
+                        <li class="nav-item"><a class="nav-link" href="index.html#nosotros">Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#contacto">Contacto</a></li>
+                    </ul>
+                    <ul class="navbar-nav nav-icons ms-lg-4">
+                        <li class="nav-item"><a href="https://wa.me/573203459145" target="_blank" class="nav-link"
+                                aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></li>
+                        
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-
     <main class="py-5" role="main">
         <section class="container my-5">
             <h1 class="text-center mb-5 text-primary">Términos y Condiciones de Uso</h1>
 
             <article>
                 <p class="lead">
-                    Bienvenido a ProFutbol JC. Al utilizar nuestro sitio web y contratar nuestros servicios, usted acepta cumplir y quedar vinculado por los siguientes términos y condiciones. Por favor, léalos detenidamente.
+                    Bienvenido a ProFutbol JC. Al utilizar nuestro sitio web y contratar nuestros servicios, usted
+                    acepta cumplir y quedar vinculado por los siguientes términos y condiciones. Por favor, léalos
+                    detenidamente.
                 </p>
 
                 <section aria-labelledby="identificacion">
@@ -66,56 +72,77 @@
 
                 <section>
                     <h2>2. Objeto y Aceptación</h2>
-                    <p>El presente documento establece las condiciones mediante las cuales se regirá el uso del sitio web y la contratación de los servicios ofrecidos por ProFutbol S.A.S, que incluyen, pero no se limitan a, el alquiler de canchas deportivas, organización de torneos y eventos empresariales.</p>
+                    <p>El presente documento establece las condiciones mediante las cuales se regirá el uso del sitio
+                        web y la contratación de los servicios ofrecidos por ProFutbol S.A.S, que incluyen, pero no se
+                        limitan a, el alquiler de canchas deportivas, organización de torneos y eventos empresariales.
+                    </p>
                 </section>
 
                 <section>
                     <h2>3. Condiciones del Servicio</h2>
-                    
+
                     <h4>3.1. Reserva de Canchas</h4>
                     <ul>
-                        <li>Las reservas se realizan a través de nuestros canales oficiales de contacto (WhatsApp, teléfono o formulario de contacto).</li>
-                        <li>La reserva solo se considerará confirmada una vez se haya recibido el pago correspondiente y la confirmación por parte de nuestro equipo.</li>
+                        <li>Las reservas se realizan a través de nuestros canales oficiales de contacto (WhatsApp,
+                            teléfono o formulario de contacto).</li>
+                        <li>La reserva solo se considerará confirmada una vez se haya recibido el pago correspondiente y
+                            la confirmación por parte de nuestro equipo.</li>
                         <li>El usuario se compromete a utilizar las instalaciones de manera adecuada.</li>
                     </ul>
 
                     <h4>3.2. Política de Pagos y Tarifas</h4>
                     <ul>
-                        <li>Las tarifas vigentes para el alquiler de canchas y otros servicios serán las publicadas en nuestros canales oficiales o informadas al momento de la consulta.</li>
-                        <li> Se requiere el pago del 50% del valor total para confirmar una reserva. El 50% restante deberá ser cancelado antes de ingresar a la cancha.</li>
-                        <li>Aceptamos los siguientes métodos de pago: <strong>Efectivo, Transferencia Bancolombia, Nequi, Daviplata</strong>.</li>
+                        <li>Las tarifas vigentes para el alquiler de canchas y otros servicios serán las publicadas en
+                            nuestros canales oficiales o informadas al momento de la consulta.</li>
+                        <li> Se requiere el pago del 50% del valor total para confirmar una reserva. El 50% restante
+                            deberá ser cancelado antes de ingresar a la cancha.</li>
+                        <li>Aceptamos los siguientes métodos de pago: <strong>Efectivo, Transferencia Bancolombia,
+                                Nequi, Daviplata</strong>.</li>
                     </ul>
 
                     <h4>3.3. Política de Cancelación y Reembolsos</h4>
                     <ul>
-                        <li>Cancelaciones realizadas con más de <strong> 48 horas</strong> de antelación a la hora reservada podrán ser reprogramadas o recibirán un reembolso del <strong> 100%</strong> del abono.</li>
-                        <li>Cancelaciones realizadas con menos de <strong> 48 horas</strong> de antelación no serán elegibles para reembolso.</li>
-                        <li>En caso de que ProFutbol S.A.S deba cancelar una reserva por motivos de fuerza mayor, se ofrecerá la opción de reprogramar o un reembolso completo.</li>
+                        <li>Cancelaciones realizadas con más de <strong> 48 horas</strong> de antelación a la hora
+                            reservada podrán ser reprogramadas o recibirán un reembolso del <strong> 100%</strong> del
+                            abono.</li>
+                        <li>Cancelaciones realizadas con menos de <strong> 48 horas</strong> de antelación no serán
+                            elegibles para reembolso.</li>
+                        <li>En caso de que ProFutbol S.A.S deba cancelar una reserva por motivos de fuerza mayor, se
+                            ofrecerá la opción de reprogramar o un reembolso completo.</li>
                     </ul>
                 </section>
-                
+
                 <section>
                     <h2>4. Reglamento y Responsabilidad</h2>
                     <ul>
-                        <li>Todos los usuarios y visitantes deben acatar las normas de comportamiento y seguridad del complejo deportivo.</li>
-                        <li>ProFutbol S.A.S no se hace responsable por lesiones personales ocurridas durante la práctica deportiva, la cual se realiza bajo el propio riesgo del participante.</li>
-                        <li>No nos hacemos responsables por la pérdida o daño de objetos personales dentro de las instalaciones.</li>
+                        <li>Todos los usuarios y visitantes deben acatar las normas de comportamiento y seguridad del
+                            complejo deportivo.</li>
+                        <li>ProFutbol S.A.S no se hace responsable por lesiones personales ocurridas durante la práctica
+                            deportiva, la cual se realiza bajo el propio riesgo del participante.</li>
+                        <li>No nos hacemos responsables por la pérdida o daño de objetos personales dentro de las
+                            instalaciones.</li>
                     </ul>
                 </section>
 
                 <section>
                     <h2>5. Propiedad Intelectual</h2>
-                    <p>Todo el contenido publicado en este sitio web, incluyendo textos, gráficos, logos, e imágenes, es propiedad de ProFutbol S.A.S y está protegido por las leyes de derechos de autor de Colombia.</p>
+                    <p>Todo el contenido publicado en este sitio web, incluyendo textos, gráficos, logos, e imágenes, es
+                        propiedad de ProFutbol S.A.S y está protegido por las leyes de derechos de autor de Colombia.
+                    </p>
                 </section>
-                
+
                 <section>
                     <h2>6. Tratamiento de Datos Personales</h2>
-                    <p>El tratamiento de los datos personales recolectados a través de este sitio web se rige por nuestra <a href="politica.html">Política de Tratamiento de Datos Personales</a>, en cumplimiento con la Ley 1581 de 2012.</p>
+                    <p>El tratamiento de los datos personales recolectados a través de este sitio web se rige por
+                        nuestra <a href="politica.html">Política de Tratamiento de Datos Personales</a>, en cumplimiento
+                        con la Ley 1581 de 2012.</p>
                 </section>
-                
+
                 <section>
                     <h2>7. Ley Aplicable y Jurisdicción</h2>
-                    <p>Cualquier controversia derivada de estos términos y condiciones se regirá por la legislación colombiana y será sometida a la jurisdicción de los tribunales competentes de la República de Colombia.</p>
+                    <p>Cualquier controversia derivada de estos términos y condiciones se regirá por la legislación
+                        colombiana y será sometida a la jurisdicción de los tribunales competentes de la República de
+                        Colombia.</p>
                 </section>
 
             </article>
@@ -123,69 +150,69 @@
     </main>
 
     <!-- Pie de página -->
-    <footer class="bg-dark text-white py-4 mt-auto" role="contentinfo">
+    <footer class="footer-section">
         <div class="container">
-            <div class="row align-items-center">
-                <!-- Columna 1: Logo y redes -->
-                <div class="col-md-5 mb-3 mb-md-0 text-center text-md-start">
-                    <a href="index.html" class="d-inline-block footer-logo" aria-label="Inicio Profutbol JC">
-                        <img src="images/profutbol.png" alt="Logo ProFutbol" height="40" width="160" loading="lazy">
-                    </a>
-                    <p class="text-white-50 mt-2 mb-2 d-none d-md-block">ProFutbol: Tu complejo deportivo y recreativo,
-                        donde la pasión por el fútbol cobra vida en Tenjo, Cundinamarca.</p>
-
-                    <div class="social-links mt-2">
-                        <a href="https://www.facebook.com/p/Profutbol-JC-100083072811985/" target="_blank"
-                            rel="noopener noreferrer" aria-label="Facebook" class="text-white-50 me-3 fs-5">
-                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+            <div class="row">
+                <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                    <div class="footer-about">
+                        <a class="footer-brand" href="#inicio">
+                            <img src="images/profutbol.png" alt="Logo Profutbol JC">
+                            Profutbol JC
                         </a>
-                        <a href="https://www.instagram.com/profutboljc/?hl=es" target="_blank" rel="noopener noreferrer"
-                            aria-label="Instagram" class="text-white-50 me-3 fs-5">
-                            <i class="fab fa-instagram" aria-hidden="true"></i>
-                        </a>
-                        <a href="https://www.tiktok.com/@profutbol.jc" target="_blank" rel="noopener noreferrer"
-                            aria-label="TikTok" class="text-white-50 fs-5">
-                            <i class="fab fa-tiktok" aria-hidden="true"></i>
-                        </a>
+                        <p>El mejor lugar para vivir tu pasión por el fútbol. Canchas profesionales, fotografía
+                            deportiva y torneos emocionantes.</p>
                     </div>
                 </div>
-
-                <!-- Columna 2: Enlaces y contacto -->
-                <div class="col-md-7 text-center text-md-end">
-                    <div class="d-flex flex-wrap justify-content-center justify-content-md-end align-items-center">
-                        <a href="index.html" class="text-white-50 text-decoration-none mx-2 hover-effect">Inicio</a>
-                        <a href="torneos.html" class="text-white-50 text-decoration-none mx-2 hover-effect">Torneos</a>
-                        <a href="servicios.html"
-                            class="text-white-50 text-decoration-none mx-2 hover-effect">Servicios</a>
-                        <a href="contacto.html"
-                            class="text-white-50 text-decoration-none mx-2 hover-effect">Contacto</a>
-                        <a href="politica.html" class="text-white-50 text-decoration-none mx-2 hover-effect">Política de
-                            Privacidad</a>
-                        <a href="terminos.html" class="text-white-50 text-decoration-none mx-2 hover-effect">Terminos y condiciones</a>
-                        <div class="d-flex align-items-center ms-4">
-                            <i class="fas fa-phone me-1 text-white-50" aria-hidden="true"></i>
-                            <a href="tel:+573203459145" class="text-white-50 text-decoration-none">+57 320 345 9145</a>
-                        </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <h5 class="footer-title">Enlaces Rápidos</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html#inicio">Inicio</a></li>
+                        <li><a href="index.html#servicios">Servicios</a></li>
+                        <li><a href="index.html#nosotros">Nosotros</a></li>
+                        <li><a href="index.html#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6">
+                    <h5 class="footer-title">Contacto</h5>
+                    <ul class="footer-links contact-details">
+                        <li><i class="fas fa-phone"></i><a href="tel:+573203459145">+57 320 345 9145</a></li>
+                        <li><i class="fas fa-envelope"></i><a
+                                href="mailto:profutboljc@gmail.com">info@profutboljc.com</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i><span>Km 3 via Siberia, Tenjo</span></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="footer-title">Síguenos</h5>
+                    <p>Mantente al día con nuestras últimas noticias y eventos.</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/p/Profutbol-JC-100083072811985/" target="_blank"
+                            aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/profutboljc/?hl=es" target="_blank" aria-label="Instagram"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@profutbol.jc" target="_blank" aria-label="TikTok"><i
+                                class="fab fa-tiktok"></i></a>
                     </div>
                 </div>
             </div>
-
-            <!-- Línea de copyright -->
-            <div class="footer-bottom text-center py-3 border-top border-secondary mt-3">
-                <p class="mb-0 text-white-50">
-                    © <span id="current-year">2025</span> ProFutbol Complejo Deportivo y Recreativo. Todos los derechos
-                    reservados.
-
-                </p>
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="copyright-text">© <span id="current-year"></span> Profutbol JC. Hecho con ❤️ para los
+                            amantes del fútbol</p>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="footer-legal-links">
+                            <li><a href="politica.html" target="_blank">Políticas de Privacidad</a></li>
+                            <li><a href="terminos.html" target="_blank">Términos y Condiciones</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
-
-    <div id="cookie-banner" class="cookie-banner">
-        </div>
 </body>
 
 </html>

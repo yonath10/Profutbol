@@ -1,568 +1,191 @@
-/* --- 1. Variables CSS (Colores de Marca) --- */
+/* ==========================================================================
+   BASE STYLES - PROFUTBOL JC (LIGHT THEME REDESIGN)
+   ========================================================================== */
+
+/* --- 1. Importación de Fuentes y Variables CSS --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 :root {
-    --color-azul: #004D7A; 
-    --color-amarillo: #FFD700; 
-    --color-negro: #1A1A1A;
-    --color-blanco: #FFFFFF;
-    --color-gris-claro: #F8F8F8;
-    --color-gris-oscuro: #555555;
-    /* usado para loader y footer. */
-    --color-dark-gray: #167ade34; 
+    /* Paleta de Colores Limpia y Profesional */
+    --color-primary: #FDB813;     /* Amarillo/Dorado principal */
+    --color-dark: #121212;        /* Negro para textos fuertes */
+    --color-body-text: #555555;   /* Gris para textos de cuerpo */
+    --color-background: #FFFFFF;
+    --color-light-gray: #F7F7F7;  /* Gris claro para fondos de sección */
+    --color-border: #EAEAEA;      /* Color para bordes sutiles */
+    --color-white: #FFFFFF;
 
     /* Fuentes */
-    --font-primary: 'Arial', sans-serif; /* Fuente principal para textos */
-    --font-secondary: 'Helvetica', sans-serif; /* Fuente para títulos y elementos destacados */
+    --font-primary: 'Poppins', sans-serif;
+
+    /* Transiciones y Sombras */
+    --transition-smooth: all 0.3s ease-in-out;
+    --shadow-soft: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    --shadow-medium: 0px 8px 30px rgba(0, 0, 0, 0.08);
 }
 
-
-/* Botón Primario */
-.btn-primary {
-    --bs-btn-bg: var(--color-azul);
-    --bs-btn-border-color: var(--color-azul);
-    --bs-btn-hover-bg: #003350; /* Un azul ligeramente más oscuro para el hover */
-    --bs-btn-hover-border-color: #003350;
-    --bs-btn-active-bg: #003350;
-    --bs-btn-active-border-color: #003350;
-    --bs-btn-focus-shadow-rgb: 0, 77, 122; /* RGB del azul */
-}
-
-/* Botón Secundario (configurado con tu amarillo) */
-.btn-secondary {
-    --bs-btn-bg: var(--color-amarillo);
-    --bs-btn-border-color: var(--color-amarillo);
-    --bs-btn-color: var(--color-negro); /* Texto negro en botón amarillo */
-    --bs-btn-hover-bg: #E6B800; /* Un amarillo ligeramente más oscuro para el hover */
-    --bs-btn-hover-border-color: #E6B800;
-    --bs-btn-active-bg: #E6B800;
-    --bs-btn-active-border-color: #E6B800;
-    --bs-btn-focus-shadow-rgb: 255, 215, 0; /* RGB del amarillo */
-}
-
-/* Botón Outline Primario */
-.btn-outline-primary {
-    --bs-btn-color: var(--color-azul);
-    --bs-btn-border-color: var(--color-azul);
-    --bs-btn-hover-color: var(--color-blanco);
-    --bs-btn-hover-bg: var(--color-azul);
-    --bs-btn-hover-border-color: var(--color-azul);
-    --bs-btn-active-bg: var(--color-azul);
-    --bs-btn-active-border-color: var(--color-azul);
-    --bs-btn-focus-shadow-rgb: 0, 77, 122;
-}
-
-/* Botón Outline Claro (útil para fondos oscuros como el Hero) */
-.btn-outline-light {
-    --bs-btn-color: var(--color-blanco);
-    --bs-btn-border-color: var(--color-blanco);
-    --bs-btn-hover-color: var(--color-negro);
-    --bs-btn-hover-bg: var(--color-blanco);
-    --bs-btn-hover-border-color: var(--color-blanco);
-    --bs-btn-active-bg: var(--color-blanco);
-    --bs-btn-active-border-color: var(--color-blanco);
-    --bs-btn-focus-shadow-rgb: 255, 255, 255;
-}
-
-/* Navbar de Bootstrap (Ajustes de Color) */
-.navbar-dark.bg-dark {
-    background-color: var(--color-negro) !important; /* Asegura que el navbar sea negro */
-}
-.navbar-dark .navbar-nav .nav-link {
-    color: rgba(255, 255, 255, 0.75); /* Color de enlaces normal */
-    transition: color 0.3s ease; /* Transición suave para el color */
-}
-.navbar-dark .navbar-nav .nav-link:hover,
-.navbar-dark .navbar-nav .nav-link.active {
-    color: var(--color-amarillo); /* Color de enlaces al hover y activo */
-}
-.navbar-dark .navbar-toggler {
-    border-color: rgba(255, 255, 255, 0.5); /* Borde del botón hamburguesa */
-}
-.navbar-dark .navbar-toggler-icon {
-    /* Icono SVG del botón hamburguesa (blanco semi-transparente) */
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}
-
-
-/* --- 3. Estilos Globales (Resets y Básicos) --- */
-* {
+/* --- 2. Estilos Globales y Reseteo --- */
+*, *::before, *::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Modelo de caja estándar para todos los elementos */
 }
 
 html {
-    scroll-behavior: smooth; /* Desplazamiento suave al anclar */
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px; /* Ajuste para el navbar fijo */
 }
 
 body {
     font-family: var(--font-primary);
-    line-height: 1.6; /* Espaciado entre líneas */
-    color: var(--color-negro);
-    background-color: var(--color-blanco);
-    overflow-x: hidden; /* Evita el scroll horizontal no deseado */
-    padding-top: 56px; /* Para que el contenido no quede detrás del navbar fixed-top de Bootstrap */
+    background-color: var(--color-background);
+    color: var(--color-body-text);
+    line-height: 1.7;
+    overflow-x: hidden;
+    padding-top: 85px; /* Espacio para el navbar fijo */
 }
 
-/* Ajustes básicos de tipografía */
+/* --- 3. Tipografía --- */
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-secondary);
-    color: var(--color-negro);
-    margin-top: 0; /* Asegura que no haya margen superior adicional */
+    font-weight: 700;
+    color: var(--color-dark);
+    line-height: 1.3;
 }
 
 p {
-    margin-bottom: 1rem; /* Margen inferior estándar para párrafos */
+    margin-bottom: 1.25rem;
+    font-size: 1rem;
+    color: var(--color-body-text);
 }
 
 a {
-    color: var(--color-azul); /* Color de los enlaces */
-    text-decoration: none; /* Sin subrayado por defecto */
-    transition: color 0.3s ease; /* Transición suave al pasar el mouse */
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: var(--transition-smooth);
 }
 
 a:hover {
-    color: var(--color-amarillo); /* Color de los enlaces al pasar el mouse */
-    text-decoration: none;
+    color: var(--color-dark);
 }
 
-ul {
-    list-style: none; /* Elimina los puntos/viñetas de las listas */
+/* --- 4. Modificaciones de Bootstrap --- */
+.container {
+    max-width: 1140px;
 }
 
-img {
-    max-width: 100%; /* Las imágenes no superan el ancho de su contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
-    display: block; /* Para evitar espacios extra bajo las imágenes (problema común de inline) */
-}
+/* --- 5. Componentes Reutilizables --- */
 
-
-/* --- 4. Estilos de Componentes Específicos --- */
-
-/* Logo en el Navbar */
-.navbar-brand img {
-    height: 50px; /* Tamaño del logo en el navbar */
-    transition: height 0.3s ease; /* Transición para posible cambio de tamaño (ej. al hacer scroll) */
-}
-
-/* Estilos para la Pantalla de Carga (Loader) */
-#loader-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* Utiliza el azul semitransparente definido en tus variables */
-    background-color: var(--color-dark-gray); 
-    z-index: 9999; /* Asegura que esté por encima de todo el contenido */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: opacity 0.7s ease-out, visibility 0.7s ease-out; /* Transición suave al desaparecer */
-}
-
-#loader-wrapper.hidden {
-    opacity: 0; /* Hace que el loader sea invisible */
-    visibility: hidden; /* Oculta el elemento del flujo del documento */
-}
-
-.loader {
-    width: 100px; /* Ancho del contenedor del balón */
-    height: 100px; /* Alto del contenedor del balón */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.bouncing-ball {
-    width: 80px; /* Tamaño del balón/logo que rebota */
-    height: 80px;
-    object-fit: contain; /* Asegura que la imagen se ajuste sin distorsionarse */
-    animation: bounce 1.2s infinite ease-in-out; /* Aplica la animación de rebote */
-    background: none; /* Asegura que no tenga fondo propio si la imagen tiene transparencia */
-}
-
-.loading-text {
-    color: var(--color-blanco);
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-/* Animación de Rebote para el Loader */
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0); /* Posición inicial y final (abajo) */
-    }
-    50% {
-        transform: translateY(-30px); /* Posición más alta (rebotando hacia arriba) */
-    }
-}
-
-/* Footer General */
-footer {
-    background-color: var(--color-dark-gray); /* Utiliza el azul semitransparente para el footer */
-    color: var(--color-blanco);
-}
-
-/* Ajuste del tamaño del logo en el footer */
-footer .footer-logo img {
-    height: 45px; /* Tamaño del logo en el footer */
-    width: auto;
-    max-width: 100%;
-    display: block;
-    margin: 0 auto; /* Centra el logo en el footer */
-}
-
-/* Estilos para la tipografía y enlaces del footer */
-footer h3 {
-    color: var(--color-blanco);
-    margin-bottom: 1.5rem;
-    font-size: 1.5rem;
-}
-
-footer p {
-    color: rgba(255, 255, 255, 0.7); /* Texto ligeramente más claro */
-    font-size: 0.95rem;
-}
-
-footer ul {
-    padding-left: 0;
-}
-
-footer ul li {
-    margin-bottom: 0.5rem;
-}
-
-footer ul li a {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.95rem;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-footer ul li a:hover {
-    color: var(--color-amarillo); /* Color de hover para enlaces del footer */
-}
-
-footer .fas {
-    color: rgba(255, 255, 255, 0.7); /* Color para iconos de Font Awesome */
-    margin-right: 0.5rem;
-}
-
-/* Enlaces de Redes Sociales en el Footer */
-footer .social-links a .fab {
-    font-size: 1.5rem;
-    margin-right: 1rem;
-    color: rgba(255, 255, 255, 0.7);
-    transition: color 0.2s ease, transform 0.2s ease;
-}
-
-footer .social-links a:hover .fab {
-    color: var(--color-azul); /* Color de hover para iconos sociales */
-    transform: translateY(-3px); /* Pequeño efecto de elevación al hacer hover */
-}
-
-.footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Línea divisoria superior */
-    padding-top: 1.5rem;
-}
-
-.footer-bottom p {
-    color: rgba(255, 255, 255, 0.5);
-    margin-bottom: 0;
-}
-
-/* --- 5. Estilos Específicos del Carrusel de la Galería --- */
-.carousel-container {
-    position: relative;
-    max-width: 800px; /* Define un tamaño máximo para el carrusel */
-    margin: 0 auto; /* Centra el carrusel horizontalmente */
-}
-
-.carousel-slide-wrapper {
-    overflow: hidden; /* Oculta las imágenes que están fuera de la vista */
-}
-
-#carouselSlides {
-    display: flex; /* Permite que las imágenes se coloquen en una fila */
-    transition: transform 0.5s ease-in-out; /* Transición suave para el movimiento de los slides */
-}
-
-#carouselSlides img {
-    flex-shrink: 0;
-    width: 100%;
-    height: 500px; /* <--- IMPORTANTE: Define una altura fija para todas las imágenes */
-    object-fit: cover; /* <--- IMPORTANTE: Escala y recorta la imagen para que cubra todo el contenedor */
-    display: block;
-}
-/* Estilos para los botones de navegación (flechas) del carrusel */
-.carousel-button {
-    position: absolute;
-    top: 50%; /* Centra verticalmente */
-    transform: translateY(-50%); /* Ajusta el centro exacto */
-    border: none;
-    background-color: var(--color-blanco);
-    color: var(--color-negro);
-    font-size: 1.5rem;
-    cursor: pointer;
-    z-index: 10; /* Asegura que los botones estén por encima de las imágenes */
-    opacity: 0.7; /* Ligeramente transparente */
-    transition: opacity 0.3s ease;
-    padding: 0.5rem 0.8rem; /* Ajuste de padding */
-    border-radius: 50%; /* Botones circulares */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra sutil */
-}
-
-.carousel-button:hover {
-    opacity: 1; /* Opacidad completa al pasar el mouse */
-    background-color: var(--color-gris-claro);
-}
-
-.carousel-button.prev {
-    left: 15px; /* Posición izquierda */
-}
-
-.carousel-button.next {
-    right: 15px; /* Posición derecha */
-}
-
-/* Estilos para los puntos de navegación (dots) del carrusel */
-.carousel-dots {
-    display: flex;
-    justify-content: center;
-    margin-top: 15px;
-}
-
-.dot {
-    height: 10px;
-    width: 10px;
-    margin: 0 5px;
-    background-color: #bbb; /* Color del punto inactivo */
-    border-radius: 50%; /* Puntos circulares */
+/* Encabezados de Sección */
+.section-tag {
     display: inline-block;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.dot.active {
-    background-color: var(--color-azul); /* Color del punto activo (usando tu color de marca) */
-}
-
-
-/* --- 6. Animaciones al hacer scroll (para .content-section) --- */
-/* Estilo inicial para las secciones antes de ser visibles */
-.fade-in-section {
-    opacity: 0;
-    transform: translateY(20px); /* Un poco desplazado hacia abajo */
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transición suave */
-}
-
-/* Estilo cuando la sección es visible */
-.fade-in-section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
-/* --- 7. Estilos para Mensajes "Copiado" (Copy to Clipboard) --- */
-.copy-feedback-message {
-    margin-left: 10px;
-    background-color: var(--color-azul);
-    color: var(--color-blanco);
-    padding: 3px 8px;
-    border-radius: 5px;
+    background-color: rgba(253, 184, 19, 0.1);
+    color: var(--color-primary);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
     font-size: 0.8rem;
-    white-space: nowrap; /* Evita que el texto se rompa */
-    opacity: 0;
-    transform: translateY(-5px);
-    animation: fadeInOut 1.5s forwards; /* Animación de aparecer y desaparecer */
-}
-/* Botón de WhatsApp flotante */
-.whatsapp-float {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 60px;
-    height: 60px;
-    background-color: #25D366;
-    color: var(--color-blanco);
-    border-radius: 50%;
-    text-align: center;
-    font-size: 30px;
-    box-shadow: var(--shadow-lg);
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: var(--transition-normal);
-    animation: pulse-whatsapp 2s infinite;
+    letter-spacing: 0.5px;
 }
 
-.whatsapp-float:hover {
-    background-color: #128C7E;
-    transform: scale(1.1);
-    color: var(--color-blanco);
+.section-title {
+    font-weight: 700;
+    margin-bottom: 1rem;
 }
 
-.whatsapp-icon {
-    transition: var(--transition-normal);
-}
-
-@keyframes pulse-whatsapp {
-    0% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-    }
-    70% {
-        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-    }
-}
-@keyframes fadeInOut {
-    0% { opacity: 0; transform: translateY(-5px); }
-    10% { opacity: 1; transform: translateY(0); }
-    90% { opacity: 1; transform: translateY(0); }
-    100% { opacity: 0; transform: translateY(-5px); }
-}
-
-
-/* --- 8. Media Queries para Responsividad (Ejemplos) --- */
-@media (max-width: 991.98px) {
-    /* Ajustes para tabletas y móviles (menor a lg de Bootstrap) */
-    .navbar-collapse {
-        background-color: var(--color-negro); /* Fondo oscuro para el menú desplegado */
-        position: absolute;
-        width: 100%;
-        left: 0;
-        top: 100%; /* Debajo del navbar */
-        padding: 1rem;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .navbar-nav .nav-item {
-        margin-bottom: 0.5rem; /* Espaciado entre enlaces del menú móvil */
-        text-align: center;
-    }
-}
-
-@media (max-width: 767.98px) {
-    /* Ajustes para móviles (menor a md de Bootstrap) */
-    h1 {
-        font-size: 2.5rem;
-    }
-    h2 {
-        font-size: 2rem;
-    }
-    .footer-logo img {
-        margin-bottom: 1.5rem; /* Más espacio debajo del logo en móviles */
-    }
-}
-/* ============================================= */
-/* 9. ESTILOS DEL BANNER DE COOKIES */
-/* ============================================= */
+/* --- Banner de Cookies --- */
 .cookie-banner {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(26, 26, 26, 0.95); /* Negro semi-transparente, como el navbar */
-    color: var(--color-blanco);
-    z-index: 1100; /* Prioridad alta para que se muestre sobre otros elementos */
-    padding: 1rem;
+    background-color: rgba(18, 18, 18, 0.95); /* Negro semi-transparente */
+    color: var(--color-white);
+    z-index: 1100;
+    padding: 1.25rem;
     display: none; /* Inicialmente oculto */
     backdrop-filter: blur(5px);
     box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
     font-size: 0.9rem;
+    transform: translateY(100%);
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
 }
 
 .cookie-banner.show {
     display: block;
-    animation: slideUp 0.5s ease-out forwards;
+    transform: translateY(0);
 }
 
 .cookie-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1200px;
+    max-width: 1140px;
     margin: 0 auto;
-    gap: 1rem; /* Espacio entre el texto y el botón */
+    gap: 1.5rem;
 }
 
 .cookie-text {
     margin: 0;
-    flex-grow: 1; /* El texto ocupa el espacio disponible */
+    flex-grow: 1;
     color: rgba(255, 255, 255, 0.85);
 }
 
 .cookie-link {
-    color: var(--color-amarillo); /* Amarillo para destacar el enlace */
+    color: var(--color-primary);
     text-decoration: underline;
     font-weight: 600;
 }
 
 .cookie-link:hover {
-    color: var(--color-blanco);
+    color: var(--color-white);
+}
+
+.cookie-buttons {
+    display: flex;
+    gap: 0.75rem;
+    flex-shrink: 0;
 }
 
 .cookie-button {
-    background-color: var(--color-amarillo);
-    color: var(--color-negro);
+    background-color: var(--color-primary);
+    color: var(--color-dark);
     border: none;
     padding: 0.6rem 1.2rem;
-    border-radius: var(--border-radius-md);
+    border-radius: 8px;
     cursor: pointer;
     font-weight: 700;
-    white-space: nowrap; /* Evita que el texto del botón se parta */
+    white-space: nowrap;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .cookie-button:hover {
-    background-color: #E6B800; /* Amarillo más oscuro */
+    background-color: #eab00f;
     transform: scale(1.05);
 }
 
-/* Animación para que el banner aparezca desde abajo */
-@keyframes slideUp {
-    from {
-        transform: translateY(100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+.cookie-button.reject {
+    background-color: transparent;
+    color: var(--color-white);
+    border: 2px solid #555;
 }
 
-/* Ajustes para pantallas pequeñas */
-@media (max-width: 767.98px) {
+.cookie-button.reject:hover {
+    background-color: #555;
+    color: var(--color-white);
+}
+
+@media (max-width: 767px) {
     .cookie-content {
         flex-direction: column;
         align-items: stretch;
         text-align: center;
     }
-
     .cookie-text {
         margin-bottom: 1rem;
     }
-}
-/* Estilos para el contenedor de los botones */
-.cookie-buttons {
-    display: flex;
-    gap: 0.75rem; /* Espacio entre los botones */
-    flex-shrink: 0; /* Evita que los botones se encojan en espacios pequeños */
-}
-
-/* Estilo para el botón de rechazar (menos prominente) */
-.cookie-button.reject {
-    background-color: transparent;
-    color: var(--color-blanco);
-    border: 2px solid var(--color-gris-oscuro);
-}
-
-.cookie-button.reject:hover {
-    background-color: var(--color-gris-oscuro);
-    color: var(--color-blanco);
+    .cookie-buttons {
+        justify-content: center;
+    }
 }
